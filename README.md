@@ -20,4 +20,4 @@ IWXXM-SX is a trimmed down version of IWXXM which has removed all legacy package
 
 # See Also
 
-[IWXXM-SX modelling on GitHub](https://github.com/blchoy/iwxxm-sx-modelling)
+[IWXXM-SX modelling on GitHub](https://github.com/team-sx/iwxxm-sx-modelling)
