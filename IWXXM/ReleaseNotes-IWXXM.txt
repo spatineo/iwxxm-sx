@@ -1,0 +1,11 @@
+=========================================
+SX Release Candidate 1 - May 2023
+=========================================
+Initial release based on IWXXM 2023-1
+
+Main package (Version SXRC1)
+* Updated the documentation in iwxxm.xsd
+Package Meteorological Feature (Version 1.0.1RC1)
+* Promoted iwxxm:MeteorologicalFeatureType from an extension to gml:AbstractGMLType to gml:AbstractFeatureType
+Packages METAR/SPECI, TAF, SIGMET, AIRMET, Tropical Cyclone Advisory, Volcanic Ash Advisory and Space Weather Advisory
+* Removed

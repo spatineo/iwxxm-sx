@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema elementFormDefault="qualified" targetNamespace="http://icao.int/iwxxm/sx" version="sxRC1" xmlns:iwxxm="http://icao.int/iwxxm/sx" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema">
+	<include schemaLocation="measures.xsd"></include>
+	<include schemaLocation="common.xsd"></include>
+	<include schemaLocation="metFeature.xsd"></include>
+	<include schemaLocation="WAFSSigWxFC.xsd"></include>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"></import>
+	<annotation>
+		<documentation>The ICAO Meteorological Information Exchange Model (IWXXM) defines representations of meteorological and associated information in accordance to the Standards And Recommended Practices (SARPs) in ICAO Annex 3. It is essential for interoperable exchange of meteorological information which has an increasingly significant contribution to safe and efficient air navigation worldwide.
+
+IWXXM and its constituent packages are built upon the ISO 19100 family (ISO TC211) and WMO standard meteorological modeling constructs. Additionally, the constructs in this application schema refer to a number of aviation constructs such Runway and Airspace from AIXM.  The full relationship of this package with external dependencies are shown in the 'Package Dependencies' diagram.
+
+References to WMO and ICAO Technical Regulations within this XML schema shall have no formal status and are for information purposes only. Where there are differences between the Technical Regulations and the schema, the Technical Regulations shall take precedence.  Technical Regulations may impose requirements that are not described in this schema.</documentation>
+		<appinfo>
+			<gml:gmlProfileSchema>gmliwxxm.xsd</gml:gmlProfileSchema>
+		</appinfo>
+	</annotation>
+</schema>
