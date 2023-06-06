@@ -1,6 +1,6 @@
 # IWXXM
 
-![build](https://github.com/blchoy/iwxxm-sx/actions/workflows/build.yml/badge.svg)
+![build](https://github.com/team-sx/iwxxm-sx/actions/workflows/build.yml/badge.svg)
 
 IWXXM (ICAO Meteorological Information Exchange Model) describes representations of aviation weather information as well as containers of ordered representations for exchange especially over the System Wide Information Management (SWIM) environment.
 
