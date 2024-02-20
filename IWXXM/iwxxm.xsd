@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema elementFormDefault="qualified" targetNamespace="http://icao.int/iwxxm/sx" version="sxRC1" xmlns:iwxxm="http://icao.int/iwxxm/sx" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema elementFormDefault="qualified" targetNamespace="http://icao.int/iwxxm/sx" version="sxRC2" xmlns:iwxxm="http://icao.int/iwxxm/sx" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema">
 	<include schemaLocation="measures.xsd"></include>
 	<include schemaLocation="common.xsd"></include>
 	<include schemaLocation="metFeature.xsd"></include>
+	<include schemaLocation="vona.xsd"></include>
+	<include schemaLocation="qvaci.xsd"></include>
 	<include schemaLocation="WAFSSigWxFC.xsd"></include>
 	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"></import>
 	<annotation>

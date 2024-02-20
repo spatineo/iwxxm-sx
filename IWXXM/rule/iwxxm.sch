@@ -45,6 +45,16 @@
          <sch:assert test="( iwxxm:phenomenonCategory = 'weatherForecasts' )">WAFSSignificantWeatherForecast.WAFSSignificantWeatherForecast-1: iwxxm:phenomenonCategory shall be equal to 'weatherForecasts'.</sch:assert>
       </sch:rule>
    </sch:pattern>
+   <sch:pattern id="QuantitativeVolcanicAshConcentrationInformation.VolcanicAshConcentrations">
+      <sch:rule context="//iwxxm:VolcanicAshConcentrations">
+         <sch:assert test="@xlink:href = document('codes.wmo.int-iwxxm-VolcanicAshConcentrations.rdf')/rdf:RDF//skos:member/skos:Concept/@*[local-name()='about'] or @nilReason">Element in iwxxm:VolcanicAshConcentrations should be a member of code list http://codes.wmo.int/iwxxm/VolcanicAshConcentrations</sch:assert>
+      </sch:rule>
+   </sch:pattern>
+   <sch:pattern id="QuantitativeVolcanicAshConcentrationInformation.VolcanicAshCloudConcentration.ashDensityCategory">
+      <sch:rule context="//iwxxm:VolcanicAshCloudConcentration/iwxxm:ashDensityCategory">
+         <sch:assert test="@xlink:href = document('codes.wmo.int-iwxxm-VolcanicAshConcentrations.rdf')/rdf:RDF//skos:member/skos:Concept/@*[local-name()='about'] or @nilReason">Element in iwxxm:VolcanicAshCloudConcentration/iwxxm:ashDensityCategory should be a member of code list http://codes.wmo.int/iwxxm/VolcanicAshConcentrations</sch:assert>
+      </sch:rule>
+   </sch:pattern>
    <sch:pattern id="MeteorologicalFeature.MeteorologicalFeature-1">
       <sch:rule context="//iwxxm:MeteorologicalFeature">
          <sch:assert test="( exists(gml:identifier) )">MeteorologicalFeature.MeteorologicalFeature-1: gml:identifier is mandatory</sch:assert>
@@ -66,12 +76,12 @@
       </sch:rule>
    </sch:pattern>
    <sch:pattern id="MeteorologicalFeature.MeteorologicalFeatureCollection.phenomenaList">
-      <sch:rule context="//iwxxm:MeteorologicalFeatureCollection/iwxxm:phenomenaList|//iwxxm:WAFSSignificantWeatherForecast/iwxxm:phenomenaList">
-         <sch:assert test="@xlink:href = document('codes.wmo.int-49-2-MeteorologicalFeature.rdf')/rdf:RDF//skos:member/skos:Concept/@*[local-name()='about'] or @nilReason">Element in iwxxm:MeteorologicalFeatureCollection/iwxxm:phenomenaList, iwxxm:WAFSSignificantWeatherForecast/iwxxm:phenomenaList should be a member of code list http://codes.wmo.int/49-2/MeteorologicalFeature</sch:assert>
+      <sch:rule context="//iwxxm:MeteorologicalFeatureCollection/iwxxm:phenomenaList|//iwxxm:WAFSSignificantWeatherForecast/iwxxm:phenomenaList|//iwxxm:QuantitativeVolcanicAshConcentrationInformation/iwxxm:phenomenaList|//iwxxm:VolcanoObservatoryNoticeForAviation/iwxxm:phenomenaList">
+         <sch:assert test="@xlink:href = document('codes.wmo.int-49-2-MeteorologicalFeature.rdf')/rdf:RDF//skos:member/skos:Concept/@*[local-name()='about'] or @nilReason">Element in iwxxm:MeteorologicalFeatureCollection/iwxxm:phenomenaList, iwxxm:WAFSSignificantWeatherForecast/iwxxm:phenomenaList, iwxxm:QuantitativeVolcanicAshConcentrationInformation/iwxxm:phenomenaList, iwxxm:VolcanoObservatoryNoticeForAviation/iwxxm:phenomenaList should be a member of code list http://codes.wmo.int/49-2/MeteorologicalFeature</sch:assert>
       </sch:rule>
    </sch:pattern>
    <sch:pattern id="MeteorologicalFeature.MeteorologicalFeatureCollection-1">
-      <sch:rule context="//iwxxm:MeteorologicalFeatureCollection|//iwxxm:WAFSSignificantWeatherForecast">
+      <sch:rule context="//iwxxm:MeteorologicalFeatureCollection|//iwxxm:WAFSSignificantWeatherForecast|//iwxxm:QuantitativeVolcanicAshConcentrationInformation|//iwxxm:VolcanoObservatoryNoticeForAviation">
          <sch:assert test="( exists(gml:identifier) )">MeteorologicalFeature.MeteorologicalFeatureCollection-1: gml:identifier is mandatory</sch:assert>
       </sch:rule>
    </sch:pattern>
@@ -116,17 +126,17 @@
       </sch:rule>
    </sch:pattern>
    <sch:pattern id="Common.BasicReport-3">
-      <sch:rule context="//iwxxm:BasicReport|//iwxxm:MeteorologicalFeatureCollection|//iwxxm:WAFSSignificantWeatherForecast|//iwxxm:Report">
+      <sch:rule context="//iwxxm:MeteorologicalFeatureCollection|//iwxxm:WAFSSignificantWeatherForecast|//iwxxm:QuantitativeVolcanicAshConcentrationInformation|//iwxxm:VolcanoObservatoryNoticeForAviation">
          <sch:assert test="( if( //@gml:id[not(matches(.,'uuid\.[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'))] ) then( false() ) else( true() ) )">Common.BasicReport-3: All gml:ids in IWXXM reports must be prefixed with 'uuid.' and must be UUID version 4</sch:assert>
       </sch:rule>
    </sch:pattern>
    <sch:pattern id="Common.BasicReport-1">
-      <sch:rule context="//iwxxm:BasicReport|//iwxxm:MeteorologicalFeatureCollection|//iwxxm:WAFSSignificantWeatherForecast|//iwxxm:Report">
+      <sch:rule context="//iwxxm:MeteorologicalFeatureCollection|//iwxxm:WAFSSignificantWeatherForecast|//iwxxm:QuantitativeVolcanicAshConcentrationInformation|//iwxxm:VolcanoObservatoryNoticeForAviation">
          <sch:assert test="( if( @permissibleUsage = 'NON-OPERATIONAL' ) then( exists(@permissibleUsageReason) ) else( true() ) )">Common.BasicReport-1: Non-operational reports must include a permissibleUsageReason</sch:assert>
       </sch:rule>
    </sch:pattern>
    <sch:pattern id="Common.BasicReport-2">
-      <sch:rule context="//iwxxm:BasicReport|//iwxxm:MeteorologicalFeatureCollection|//iwxxm:WAFSSignificantWeatherForecast|//iwxxm:Report">
+      <sch:rule context="//iwxxm:MeteorologicalFeatureCollection|//iwxxm:WAFSSignificantWeatherForecast|//iwxxm:QuantitativeVolcanicAshConcentrationInformation|//iwxxm:VolcanoObservatoryNoticeForAviation">
          <sch:assert test="( if( @permissibleUsage ='OPERATIONAL') then( empty(@permissibleUsageReason) ) else( true() ) )">Common.BasicReport-2: Operational reports should not include a permissibleUsageReason</sch:assert>
       </sch:rule>
    </sch:pattern>
