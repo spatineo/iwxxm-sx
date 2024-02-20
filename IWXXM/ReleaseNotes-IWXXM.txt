@@ -1,5 +1,5 @@
 =========================================
-SX Release Candidate 2 - Feb 2023
+SX Release Candidate 2 - Feb 2024
 =========================================
 Release based on IWXXM 2025-2RC1
 
