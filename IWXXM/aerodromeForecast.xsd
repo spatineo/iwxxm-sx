@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema elementFormDefault="qualified" targetNamespace="http://icao.int/iwxxm/sx" version="1.1.1RC1" xmlns:tsml-tvp="http://www.opengis.net/timeseriesml/1.2/tvp" xmlns:iwxxm="http://icao.int/iwxxm/sx" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:aixm="http://www.aixm.aero/schema/5.1.1" xmlns="http://www.w3.org/2001/XMLSchema">
+	<include schemaLocation="metFeature.xsd"></include>
+	<import namespace="http://www.aixm.aero/schema/5.1.1" schemaLocation="http://www.aixm.aero/schema/5.1.1/AIXM_Features.xsd"></import>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"></import>
+	<import namespace="http://www.opengis.net/timeseriesml/1.2/tvp" schemaLocation="../externalSchema/schemas.opengis.net/tsml/1.2/timeseriesTVP.xsd"></import>
+	
+	<annotation>
+		<documentation>TBA</documentation>
+	</annotation>
+	<element name="AerodromeWeatherForecast" type="iwxxm:AerodromeWeatherForecastType" substitutionGroup="iwxxm:MeteorologicalFeatureCollection">
+		<annotation>
+			<documentation>TBA</documentation>
+		</annotation>
+	</element>
+	<complexType name="AerodromeWeatherForecastType">
+		<complexContent>
+			<extension base="iwxxm:MeteorologicalFeatureCollectionType">
+				<sequence>
+					<element name="extension" type="iwxxm:ExtensionType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Extension block for optional and/or additional parameters for element AerodromeWeatherForecast</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AerodromeWeatherForecastPropertyType">
+		<sequence minOccurs="0">
+			<element ref="iwxxm:AerodromeWeatherForecast"></element>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"></attributeGroup>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"></attributeGroup>
+	</complexType>
+	
+	<element name="WeatherPhenomenonTimeseries" type="iwxxm:WeatherPhenomenonTimeseriesType" substitutionGroup="gml:AbstractGML">
+		<annotation>
+			<documentation>Child element of iwxxm:phenomenonProperty when the parent iwxxm:MeteorologicalFeature is being used to represent a timeseries of values of a predicted weather parameter or phenomenon.
+				
+				</documentation>
+		</annotation>
+	</element>
+	<complexType name="WeatherPhenomenonTimeseriesType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="observableProperty" type="gml:ReferenceType" minOccurs="1" maxOccurs="1"/>
+					<element name="values" type="tsml-tvp:TimeseriesTVPPropertyType" minOccurs="1" maxOccurs="1"/>
+					<element name="next" type="gml:ReferenceType" minOccurs="0" maxOccurs="1"/>
+					<element name="previous" type="gml:ReferenceType" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="WeatherPhenomenonTimeseriesPropertyType">
+		<sequence minOccurs="0">
+			<element ref="iwxxm:WeatherPhenomenonTimeseries"></element>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"></attributeGroup>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"></attributeGroup>
+	</complexType>
+	
+	
+</schema>

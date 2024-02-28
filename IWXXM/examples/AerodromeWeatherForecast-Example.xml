@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    A sample file for Aerodrome Weather Forecast Objects
+
+-->
+<iwxxm:AerodromeWeatherForecast 
+    xmlns:iwxxm="http://icao.int/iwxxm/sx"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:aixm="http://www.aixm.aero/schema/5.1.1"
+    xmlns:tsml-tvp="http://www.opengis.net/timeseriesml/1.2/tvp"
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.aixm.aero/schema/5.1.1 http://www.aixm.aero/schema/5.1.1/AIXM_Features.xsd
+    http://icao.int/iwxxm/sx ../iwxxm.xsd"
+    gml:id="uuid.ce3b61b9-d360-4da1-83b9-67e668406869" reportStatus="NORMAL" permissibleUsage="OPERATIONAL">
+
+    <!-- Unique identifier of the collective -->
+    <gml:identifier codeSpace="http://wafs/sigwxfc">3ae2138f-12d8-4392-b4d7-7a2d2e2e55d8</gml:identifier>
+    
+    <!-- A temporal bounding box containing the phenomenonTime of all objects -->
+    <iwxxm:boundingPeriod>
+        <gml:TimePeriod gml:id="uuid.76096601-6d6c-41f8-ad23-a25b1a8f3658">
+            <gml:beginPosition>2001-01-31T00:00:00Z</gml:beginPosition>
+            <gml:endPosition>2001-02-01T18:00:00Z</gml:endPosition>
+        </gml:TimePeriod>
+    </iwxxm:boundingPeriod>
+    
+    <!-- A spatial bounding box containing the phenomenonGeometry of all objects -->
+    <iwxxm:boundingVolume>
+        <iwxxm:ElevatedEnvelope>
+            <gml:lowerCorner srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">-90 -180</gml:lowerCorner>
+            <gml:upperCorner srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">90 180</gml:upperCorner>
+            <iwxxm:upperElevation uom="FL">600</iwxxm:upperElevation>
+            <iwxxm:upperVerticalReference>STD</iwxxm:upperVerticalReference>
+            <iwxxm:lowerElevation uom="FL">100</iwxxm:lowerElevation>
+            <iwxxm:lowerVerticalReference>STD</iwxxm:lowerVerticalReference>
+        </iwxxm:ElevatedEnvelope>
+    </iwxxm:boundingVolume>
+    
+    <!-- A list of all phenomena of all objects -->
+    <iwxxm:phenomenaList xlink:href="http://codes.wmo.int/49-2/MeteorologicalFeature/PHENOMENON"/>
+    
+    <!-- Issue time of the collective -->
+    <iwxxm:issueTime>
+        <gml:TimeInstant gml:id="uuid.4b5156bd-32e1-4fc9-a8f0-8f6b6c96e544">
+            <gml:timePosition>2001-01-30T21:00:00Z</gml:timePosition>
+        </gml:TimeInstant>
+    </iwxxm:issueTime>
+    
+    <!-- Originating centre of the collective -->
+    <iwxxm:originatingCentre>
+        <iwxxm:WorldAreaForecastCentre>London</iwxxm:WorldAreaForecastCentre>
+    </iwxxm:originatingCentre>
+    
+    <!-- Category of objects, either weatherObservations or weatherForecasts -->
+    <iwxxm:phenomenonCategory>weatherForecasts</iwxxm:phenomenonCategory>
+    
+    <!-- If the category is weatherForecasts the forecast base time (if available) -->
+    <iwxxm:phenomenonBaseTime>
+        <gml:TimeInstant gml:id="uuid.825a0f0f-0b48-4a0b-9270-7f1075fed151">
+            <gml:timePosition>2001-01-30T18:00:00Z</gml:timePosition>
+        </gml:TimeInstant>
+    </iwxxm:phenomenonBaseTime>
+    
+    <!-- phenomenonTime is the time when the collective is valid -->
+    <iwxxm:phenomenonTime>
+        <gml:TimeInstant gml:id="uuid.26328dbd-c763-4fd4-9b3c-40a6400795f0">
+            <gml:timePosition>2001-01-31T00:00:00Z</gml:timePosition>
+        </gml:TimeInstant>
+    </iwxxm:phenomenonTime>
+    
+    <!-- A Weather Phenomenon Tmeseries Object -->
+    <iwxxm:feature>
+        <iwxxm:MeteorologicalFeature gml:id="uuid.8c3d3467-e398-4627-ab23-f9e57c2215b5">
+            <gml:identifier codeSpace="http://wafs/sigwxobj">eb324455-236c-46f8-b80d-c6d42c3a634c</gml:identifier>
+            
+            <!-- What should we put here? -->
+            <iwxxm:phenomenon xlink:href="http://codes.wmo.int/49-2/MeteorologicalFeature/PHENOMENON"/>
+            
+            <iwxxm:phenomenonGeometry>
+                <!-- Need for describing the surroundings of the aerodrome rather than just an ARP? -->
+                <aixm:AirportHeliport gml:id="a1234">
+                    <aixm:timeSlice>
+                        <aixm:AirportHeliportTimeSlice gml:id="b45677">
+                            <gml:validTime></gml:validTime>
+                            <aixm:interpretation>SNAPSHOT</aixm:interpretation>
+                            <aixm:ARP>
+                                <aixm:ElevatedPoint gml:id="uuid.4f5ce1f8-ae4c-4dea-99c7-6bc15ca6b004" srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                                    <gml:pos>12.34 -12.34</gml:pos>
+                                    <aixm:elevation uom="M">12</aixm:elevation>
+                                    <aixm:verticalDatum>EGM_96</aixm:verticalDatum>
+                                </aixm:ElevatedPoint>
+                            </aixm:ARP>
+                        </aixm:AirportHeliportTimeSlice>
+                    </aixm:timeSlice>
+                </aixm:AirportHeliport>
+            </iwxxm:phenomenonGeometry>
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseries gml:id="temp1">
+                    <iwxxm:observableProperty xlink:href="http://preferred.observable-property.registry/surfaceTemperature"/>
+                    <iwxxm:values>
+                        <tsml-tvp:TimeseriesTVP gml:id="foo">
+                            <tsml-tvp:defaultPointMetadata>
+                                <tsml-tvp:PointMetadata>
+         
+                                    <tsml-tvp:uom xlink:href="https://unitsofmeasure.org/ucum#Cel"/>
+                                    
+                                    <tsml-tvp:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
+                                    
+                                    <!-- The uncertainty in TSML is intented for describing measurement accuracy, rather than confidence intervals,
+                                        so it may not be best suited for describing forecast uncertainties.
+                                        
+                                        From the TSML Standard: "The term uncertainty is used here in line with 'measurement uncertainty' as defined in the 
+                                        International Vocabulary of Metrology (VIM3, http://www.bipm.org/en/publications/guides/vim.html), 
+                                        however it is acknowledged that it is still quite common practice (e.g. in instrument specifications)
+                                        for the word accuracy to be used in place of uncertainty."
+                                    -->
+                                    
+                                    <tsml-tvp:uncertainty>
+                                        <swe:Quantity>
+                                            <swe:uom code="Cel"/>
+                                            <swe:value>0.1</swe:value>
+                                        </swe:Quantity>
+                                    </tsml-tvp:uncertainty>
+             
+                                    <tsml-tvp:aggregationDuration>PT10M</tsml-tvp:aggregationDuration>
+                                    
+                                </tsml-tvp:PointMetadata>
+                            </tsml-tvp:defaultPointMetadata>
+                            <tsml-tvp:point>
+                                <tsml-tvp:MeasurementTVP>
+                                    <tsml-tvp:time>2001-01-31T00:00:00Z</tsml-tvp:time>
+                                    <tsml-tvp:value>0.0</tsml-tvp:value>
+                                </tsml-tvp:MeasurementTVP>
+                            </tsml-tvp:point>
+                            <tsml-tvp:point>
+                                <tsml-tvp:MeasurementTVP>
+                                    <tsml-tvp:time>2001-01-31T00:10:00Z</tsml-tvp:time>
+                                    <tsml-tvp:value>1.1</tsml-tvp:value>
+                                </tsml-tvp:MeasurementTVP>
+                            </tsml-tvp:point>
+                            <tsml-tvp:point>
+                                <tsml-tvp:MeasurementTVP>
+                                    <tsml-tvp:time>2001-01-31T00:20:00Z</tsml-tvp:time>
+                                    <tsml-tvp:value>1.2</tsml-tvp:value>
+                                </tsml-tvp:MeasurementTVP>
+                            </tsml-tvp:point>
+                            <tsml-tvp:point>
+                                <tsml-tvp:MeasurementTVP>
+                                    <tsml-tvp:time>2001-01-31T00:30:00Z</tsml-tvp:time>
+                                    <tsml-tvp:value>0.9</tsml-tvp:value>
+                                </tsml-tvp:MeasurementTVP>
+                            </tsml-tvp:point>
+                        </tsml-tvp:TimeseriesTVP>
+                    </iwxxm:values>
+                    <iwxxm:next xlink:href="#temp2"/>
+                </iwxxm:WeatherPhenomenonTimeseries>
+            </iwxxm:phenomenonProperty>
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseries gml:id="temp2">
+                    <iwxxm:observableProperty xlink:href="http://preferred.observable-property.registry/surfaceTemperature"/>
+                    <iwxxm:values>
+                        <tsml-tvp:TimeseriesTVP gml:id="foo2">
+                            <tsml-tvp:defaultPointMetadata>
+                                <tsml-tvp:PointMetadata>
+                                    
+                                    <tsml-tvp:uom xlink:href="https://unitsofmeasure.org/ucum#Cel"/>
+                                    
+                                    <tsml-tvp:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
+                                                                        
+                                    <tsml-tvp:uncertainty>
+                                        <swe:Quantity>
+                                            <swe:uom code="Cel"/>
+                                            <swe:value>0.1</swe:value>
+                                        </swe:Quantity>
+                                    </tsml-tvp:uncertainty>
+                                    
+                                    <tsml-tvp:aggregationDuration>PT10M</tsml-tvp:aggregationDuration>
+                                    
+                                </tsml-tvp:PointMetadata>
+                            </tsml-tvp:defaultPointMetadata>
+                            <tsml-tvp:point>
+                                <tsml-tvp:MeasurementTVP>
+                                    <tsml-tvp:time>2001-01-31T00:04:00Z</tsml-tvp:time>
+                                    <tsml-tvp:value>0.0</tsml-tvp:value>
+                                </tsml-tvp:MeasurementTVP>
+                            </tsml-tvp:point>
+                            <tsml-tvp:point>
+                                <tsml-tvp:MeasurementTVP>
+                                    <tsml-tvp:time>2001-01-31T00:50:00Z</tsml-tvp:time>
+                                    <tsml-tvp:value>1.1</tsml-tvp:value>
+                                </tsml-tvp:MeasurementTVP>
+                            </tsml-tvp:point>
+                            <tsml-tvp:point>
+                                <tsml-tvp:MeasurementTVP>
+                                    <tsml-tvp:time>2001-01-31T01:00:00Z</tsml-tvp:time>
+                                    <tsml-tvp:value>1.2</tsml-tvp:value>
+                                </tsml-tvp:MeasurementTVP>
+                            </tsml-tvp:point>
+                            <tsml-tvp:point>
+                                <tsml-tvp:MeasurementTVP>
+                                    <tsml-tvp:time>2001-01-31T01:10:00Z</tsml-tvp:time>
+                                    <tsml-tvp:value>0.9</tsml-tvp:value>
+                                </tsml-tvp:MeasurementTVP>
+                            </tsml-tvp:point>
+                        </tsml-tvp:TimeseriesTVP>
+                    </iwxxm:values>
+                    <iwxxm:previous xlink:href="#temp1"/>
+                </iwxxm:WeatherPhenomenonTimeseries>
+                
+            </iwxxm:phenomenonProperty>
+        </iwxxm:MeteorologicalFeature>
+    </iwxxm:feature>
+</iwxxm:AerodromeWeatherForecast>

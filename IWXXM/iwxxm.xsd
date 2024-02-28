@@ -6,6 +6,7 @@
 	<include schemaLocation="vona.xsd"></include>
 	<include schemaLocation="qvaci.xsd"></include>
 	<include schemaLocation="WAFSSigWxFC.xsd"></include>
+	<include schemaLocation="aerodromeForecast.xsd"></include>
 	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"></import>
 	<annotation>
 		<documentation>The ICAO Meteorological Information Exchange Model (IWXXM) defines representations of meteorological and associated information in accordance to the Standards And Recommended Practices (SARPs) in ICAO Annex 3. It is essential for interoperable exchange of meteorological information which has an increasingly significant contribution to safe and efficient air navigation worldwide.
