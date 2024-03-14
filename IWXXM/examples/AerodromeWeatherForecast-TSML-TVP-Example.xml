@@ -8,7 +8,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:gml="http://www.opengis.net/gml/3.2"
     xmlns:aixm="http://www.aixm.aero/schema/5.1.1"
-    xmlns:tsml-tvp="http://www.opengis.net/timeseriesml/1.2/tvp"
+    xmlns:tsml-iwxxm="http://www.opengis.net/timeseriesml/1.3/iwxxm"
     xmlns:swe="http://www.opengis.net/swe/2.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.aixm.aero/schema/5.1.1 http://www.aixm.aero/schema/5.1.1/AIXM_Features.xsd
@@ -97,16 +97,16 @@
                 </aixm:AirportHeliport>
             </iwxxm:phenomenonGeometry>
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseries gml:id="temp1">
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="temp1">
                     <iwxxm:observableProperty xlink:href="http://preferred.observable-property.registry/surfaceTemperature"/>
                     <iwxxm:values>
-                        <tsml-tvp:TimeseriesTVP gml:id="foo">
-                            <tsml-tvp:defaultPointMetadata>
-                                <tsml-tvp:PointMetadata>
-         
-                                    <tsml-tvp:uom xlink:href="https://unitsofmeasure.org/ucum#Cel"/>
+                        <tsml-iwxxm:TimeseriesTVP gml:id="foo">
+                            <tsml-iwxxm:defaultPointMetadata>
+                                <tsml-iwxxm:PointMetadata>
                                     
-                                    <tsml-tvp:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
+                                    <tsml-iwxxm:uom xlink:href="https://unitsofmeasure.org/ucum#Cel"/>
+                                    
+                                    <tsml-iwxxm:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                                     
                                     <!-- The uncertainty in TSML is intented for describing measurement accuracy, rather than confidence intervals,
                                         so it may not be best suited for describing forecast uncertainties.
@@ -117,97 +117,97 @@
                                         for the word accuracy to be used in place of uncertainty."
                                     -->
                                     
-                                    <tsml-tvp:uncertainty>
+                                    <tsml-iwxxm:uncertainty>
                                         <swe:Quantity>
                                             <swe:uom code="Cel"/>
                                             <swe:value>0.1</swe:value>
                                         </swe:Quantity>
-                                    </tsml-tvp:uncertainty>
-             
-                                    <tsml-tvp:aggregationDuration>PT10M</tsml-tvp:aggregationDuration>
+                                    </tsml-iwxxm:uncertainty>
                                     
-                                </tsml-tvp:PointMetadata>
-                            </tsml-tvp:defaultPointMetadata>
-                            <tsml-tvp:point>
-                                <tsml-tvp:MeasurementTVP>
-                                    <tsml-tvp:time>2001-01-31T00:00:00Z</tsml-tvp:time>
-                                    <tsml-tvp:value>0.0</tsml-tvp:value>
-                                </tsml-tvp:MeasurementTVP>
-                            </tsml-tvp:point>
-                            <tsml-tvp:point>
-                                <tsml-tvp:MeasurementTVP>
-                                    <tsml-tvp:time>2001-01-31T00:10:00Z</tsml-tvp:time>
-                                    <tsml-tvp:value>1.1</tsml-tvp:value>
-                                </tsml-tvp:MeasurementTVP>
-                            </tsml-tvp:point>
-                            <tsml-tvp:point>
-                                <tsml-tvp:MeasurementTVP>
-                                    <tsml-tvp:time>2001-01-31T00:20:00Z</tsml-tvp:time>
-                                    <tsml-tvp:value>1.2</tsml-tvp:value>
-                                </tsml-tvp:MeasurementTVP>
-                            </tsml-tvp:point>
-                            <tsml-tvp:point>
-                                <tsml-tvp:MeasurementTVP>
-                                    <tsml-tvp:time>2001-01-31T00:30:00Z</tsml-tvp:time>
-                                    <tsml-tvp:value>0.9</tsml-tvp:value>
-                                </tsml-tvp:MeasurementTVP>
-                            </tsml-tvp:point>
-                        </tsml-tvp:TimeseriesTVP>
+                                    <tsml-iwxxm:aggregationDuration>PT10M</tsml-iwxxm:aggregationDuration>
+                                    
+                                </tsml-iwxxm:PointMetadata>
+                            </tsml-iwxxm:defaultPointMetadata>
+                            <tsml-iwxxm:point>
+                                <tsml-iwxxm:MeasurementTVP>
+                                    <tsml-iwxxm:time>2001-01-31T00:00:00Z</tsml-iwxxm:time>
+                                    <tsml-iwxxm:value>0.0</tsml-iwxxm:value>
+                                </tsml-iwxxm:MeasurementTVP>
+                            </tsml-iwxxm:point>
+                            <tsml-iwxxm:point>
+                                <tsml-iwxxm:MeasurementTVP>
+                                    <tsml-iwxxm:time>2001-01-31T00:10:00Z</tsml-iwxxm:time>
+                                    <tsml-iwxxm:value>1.1</tsml-iwxxm:value>
+                                </tsml-iwxxm:MeasurementTVP>
+                            </tsml-iwxxm:point>
+                            <tsml-iwxxm:point>
+                                <tsml-iwxxm:MeasurementTVP>
+                                    <tsml-iwxxm:time>2001-01-31T00:20:00Z</tsml-iwxxm:time>
+                                    <tsml-iwxxm:value>1.2</tsml-iwxxm:value>
+                                </tsml-iwxxm:MeasurementTVP>
+                            </tsml-iwxxm:point>
+                            <tsml-iwxxm:point>
+                                <tsml-iwxxm:MeasurementTVP>
+                                    <tsml-iwxxm:time>2001-01-31T00:30:00Z</tsml-iwxxm:time>
+                                    <tsml-iwxxm:value>0.9</tsml-iwxxm:value>
+                                </tsml-iwxxm:MeasurementTVP>
+                            </tsml-iwxxm:point>
+                        </tsml-iwxxm:TimeseriesTVP>
                     </iwxxm:values>
                     <iwxxm:next xlink:href="#temp2"/>
-                </iwxxm:WeatherPhenomenonTimeseries>
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseries gml:id="temp2">
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="temp2">
                     <iwxxm:observableProperty xlink:href="http://preferred.observable-property.registry/surfaceTemperature"/>
                     <iwxxm:values>
-                        <tsml-tvp:TimeseriesTVP gml:id="foo2">
-                            <tsml-tvp:defaultPointMetadata>
-                                <tsml-tvp:PointMetadata>
+                        <tsml-iwxxm:TimeseriesTVP gml:id="foo2">
+                            <tsml-iwxxm:defaultPointMetadata>
+                                <tsml-iwxxm:PointMetadata>
                                     
-                                    <tsml-tvp:uom xlink:href="https://unitsofmeasure.org/ucum#Cel"/>
+                                    <tsml-iwxxm:uom xlink:href="https://unitsofmeasure.org/ucum#Cel"/>
                                     
-                                    <tsml-tvp:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
-                                                                        
-                                    <tsml-tvp:uncertainty>
+                                    <tsml-iwxxm:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
+                                    
+                                    <tsml-iwxxm:uncertainty>
                                         <swe:Quantity>
                                             <swe:uom code="Cel"/>
                                             <swe:value>0.1</swe:value>
                                         </swe:Quantity>
-                                    </tsml-tvp:uncertainty>
+                                    </tsml-iwxxm:uncertainty>
                                     
-                                    <tsml-tvp:aggregationDuration>PT10M</tsml-tvp:aggregationDuration>
+                                    <tsml-iwxxm:aggregationDuration>PT10M</tsml-iwxxm:aggregationDuration>
                                     
-                                </tsml-tvp:PointMetadata>
-                            </tsml-tvp:defaultPointMetadata>
-                            <tsml-tvp:point>
-                                <tsml-tvp:MeasurementTVP>
-                                    <tsml-tvp:time>2001-01-31T00:04:00Z</tsml-tvp:time>
-                                    <tsml-tvp:value>0.0</tsml-tvp:value>
-                                </tsml-tvp:MeasurementTVP>
-                            </tsml-tvp:point>
-                            <tsml-tvp:point>
-                                <tsml-tvp:MeasurementTVP>
-                                    <tsml-tvp:time>2001-01-31T00:50:00Z</tsml-tvp:time>
-                                    <tsml-tvp:value>1.1</tsml-tvp:value>
-                                </tsml-tvp:MeasurementTVP>
-                            </tsml-tvp:point>
-                            <tsml-tvp:point>
-                                <tsml-tvp:MeasurementTVP>
-                                    <tsml-tvp:time>2001-01-31T01:00:00Z</tsml-tvp:time>
-                                    <tsml-tvp:value>1.2</tsml-tvp:value>
-                                </tsml-tvp:MeasurementTVP>
-                            </tsml-tvp:point>
-                            <tsml-tvp:point>
-                                <tsml-tvp:MeasurementTVP>
-                                    <tsml-tvp:time>2001-01-31T01:10:00Z</tsml-tvp:time>
-                                    <tsml-tvp:value>0.9</tsml-tvp:value>
-                                </tsml-tvp:MeasurementTVP>
-                            </tsml-tvp:point>
-                        </tsml-tvp:TimeseriesTVP>
+                                </tsml-iwxxm:PointMetadata>
+                            </tsml-iwxxm:defaultPointMetadata>
+                            <tsml-iwxxm:point>
+                                <tsml-iwxxm:MeasurementTVP>
+                                    <tsml-iwxxm:time>2001-01-31T00:04:00Z</tsml-iwxxm:time>
+                                    <tsml-iwxxm:value>0.0</tsml-iwxxm:value>
+                                </tsml-iwxxm:MeasurementTVP>
+                            </tsml-iwxxm:point>
+                            <tsml-iwxxm:point>
+                                <tsml-iwxxm:MeasurementTVP>
+                                    <tsml-iwxxm:time>2001-01-31T00:50:00Z</tsml-iwxxm:time>
+                                    <tsml-iwxxm:value>1.1</tsml-iwxxm:value>
+                                </tsml-iwxxm:MeasurementTVP>
+                            </tsml-iwxxm:point>
+                            <tsml-iwxxm:point>
+                                <tsml-iwxxm:MeasurementTVP>
+                                    <tsml-iwxxm:time>2001-01-31T01:00:00Z</tsml-iwxxm:time>
+                                    <tsml-iwxxm:value>1.2</tsml-iwxxm:value>
+                                </tsml-iwxxm:MeasurementTVP>
+                            </tsml-iwxxm:point>
+                            <tsml-iwxxm:point>
+                                <tsml-iwxxm:MeasurementTVP>
+                                    <tsml-iwxxm:time>2001-01-31T01:10:00Z</tsml-iwxxm:time>
+                                    <tsml-iwxxm:value>0.9</tsml-iwxxm:value>
+                                </tsml-iwxxm:MeasurementTVP>
+                            </tsml-iwxxm:point>
+                        </tsml-iwxxm:TimeseriesTVP>
                     </iwxxm:values>
                     <iwxxm:previous xlink:href="#temp1"/>
-                </iwxxm:WeatherPhenomenonTimeseries>
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
                 
             </iwxxm:phenomenonProperty>
         </iwxxm:MeteorologicalFeature>
