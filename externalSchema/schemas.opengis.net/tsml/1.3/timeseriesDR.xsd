@@ -1,5 +1,11 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tsml="http://www.opengis.net/timeseriesml/1.3/iwxxm" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" elementFormDefault="qualified" targetNamespace="http://www.opengis.net/timeseriesml/1.3/iwxxm" version="1.3.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tsml="http://www.opengis.net/timeseriesml/1.3/iwxxm" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:cis="http://www.opengis.net/cis/1.1/gml" elementFormDefault="qualified" targetNamespace="http://www.opengis.net/timeseriesml/1.3/iwxxm" version="1.3.0">
 	<xs:annotation>
+		<xs:documentation>
+			NOTE: this is an experimental, non-authoritative extraction from the OGC TMS 1.3 schemas.
+			The primary intention is the test TSML structures within the scope of IWXXM aerodrome forecast development.
+			
+			Ilkka Rinne / Spatineo 2024-03-14
+		</xs:documentation>
 		<xs:documentation>
 			OGC TimeseriesML is an OGC Standard.
 			Copyright (c) 2015, 2016, 2019, 2021 Open Geospatial Consortium.
@@ -7,7 +13,7 @@
 		</xs:documentation>
 	</xs:annotation>
 	<xs:include schemaLocation="timeseriesMetadata.xsd"/>
-	<xs:import namespace="http://www.opengis.net/gmlcov/1.0" schemaLocation="http://schemas.opengis.net/gmlcov/1.0/coverage.xsd"/>
+	<xs:import namespace="http://www.opengis.net/cis/1.1/gml" schemaLocation="http://schemas.opengis.net/cis/1.1/gml/coverage.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
 	<xs:annotation>
 		<xs:documentation>The Domain Range Encoding schema contains types suitable for encoding TimeSeries (both Measurement and Categorical) in a domain (times), range (values) block. This schema extends the OGC GMLCov schema.</xs:documentation>
@@ -60,14 +66,14 @@
 		</xs:sequence>
 		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
-	<xs:element name="AnnotationCoverage" type="tsml:AnnotationCoverageType" substitutionGroup="gmlcov:AbstractDiscreteCoverage">
+	<xs:element name="AnnotationCoverage" type="tsml:AnnotationCoverageType" substitutionGroup="cis:AbstractCoverage">
 		<xs:annotation>
 			<xs:documentation>An annotation coverage can be used to apply metadata to individual points in the timeseries.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="AnnotationCoverageType">
 		<xs:complexContent>
-			<xs:extension base="gmlcov:AbstractDiscreteCoverageType">
+			<xs:extension base="cis:AbstractCoverageType">
 				<xs:sequence/>
 			</xs:extension>
 		</xs:complexContent>
@@ -79,14 +85,14 @@
 		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
 		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
-	<xs:element name="TimeseriesDomainRange" type="tsml:TimeseriesDomainRangeType" substitutionGroup="gmlcov:AbstractDiscreteCoverage">
+	<xs:element name="TimeseriesDomainRange" type="tsml:TimeseriesDomainRangeType" substitutionGroup="cis:AbstractCoverage">
 		<xs:annotation>
 			<xs:documentation>The TimeseriesDomainRange element extends the OGC coverage model with metadata extensions for timeseries data. The metadata classes are the same as for the time, value pair encoding.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="TimeseriesDomainRangeType">
 		<xs:complexContent>
-			<xs:extension base="gmlcov:AbstractDiscreteCoverageType">
+			<xs:extension base="cis:AbstractCoverageType">
 				<xs:sequence>
 					<xs:element name="type" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
