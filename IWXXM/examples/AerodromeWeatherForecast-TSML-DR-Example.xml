@@ -3,7 +3,7 @@
     A sample file for Aerodrome Weather Forecast Objects
 
 -->
-<iwxxm:AerodromeWeatherForecast 
+<iwxxm:AviationWeatherForecast 
     xmlns:iwxxm="http://icao.int/iwxxm/sx"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:gml="http://www.opengis.net/gml/3.2"
@@ -23,7 +23,7 @@
     <iwxxm:boundingPeriod>
         <gml:TimePeriod gml:id="uuid.76096601-6d6c-41f8-ad23-a25b1a8f3658">
             <gml:beginPosition>2001-01-31T00:00:00Z</gml:beginPosition>
-            <gml:endPosition>2001-02-01T18:00:00Z</gml:endPosition>
+            <gml:endPosition>2001-01-31T06:00:00Z</gml:endPosition>
         </gml:TimePeriod>
     </iwxxm:boundingPeriod>
     
@@ -66,26 +66,180 @@
     
     <!-- phenomenonTime is the time when the collective is valid -->
     <iwxxm:phenomenonTime>
-        <gml:TimeInstant gml:id="uuid.26328dbd-c763-4fd4-9b3c-40a6400795f0">
-            <gml:timePosition>2001-01-31T00:00:00Z</gml:timePosition>
-        </gml:TimeInstant>
+        <gml:TimePeriod gml:id="uuid.26328dbd-c763-4fd4-9b3c-40a6400795f0">
+            <gml:beginPosition>2001-01-31T00:00:00Z</gml:beginPosition>
+            <gml:endPosition>2001-01-31T06:00:00Z</gml:endPosition>
+        </gml:TimePeriod>
     </iwxxm:phenomenonTime>
     
-    <!-- A Weather Phenomenon Tmeseries Object -->
+    <!-- A wind weather forecast object with a timeseries in two different regular interval parts -->
     <iwxxm:feature>
-        <iwxxm:MeteorologicalFeature gml:id="uuid.8c3d3467-e398-4627-ab23-f9e57c2215b5">
-            <gml:identifier codeSpace="http://wafs/sigwxobj">eb324455-236c-46f8-b80d-c6d42c3a634c</gml:identifier>
-            
-            <!-- What should we put here? -->
-            <iwxxm:phenomenon xlink:href="http://codes.wmo.int/49-2/MeteorologicalFeature/PHENOMENON"/>
-            
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="wxobj1">
+            <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
+            <iwxxm:phenomenon xlink:href="http://preferred.observable-property.registry/wind"/>
             <iwxxm:phenomenonGeometry>
-                <!-- Need for describing the surroundings of the aerodrome rather than just an ARP? -->
+                <gml:Polygon gml:id="area1">
+                    <gml:exterior>
+                        <gml:LinearRing>
+                            <gml:posList></gml:posList>
+                        </gml:LinearRing>
+                    </gml:exterior>
+                </gml:Polygon>
+            </iwxxm:phenomenonGeometry>
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesDR gml:id="windPart1">
+                    <iwxxm:values>
+                        <tsml-iwxxm:TimeseriesDomainRange gml:id="dr1">
+                            <cis:DomainSet>
+                                <cis:GeneralGrid srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
+                                    <!-- First part is a series of one hour at 10 minute intervals -->
+                                    <cis:RegularAxis lowerBound="2001-01-31T00:00:00Z" upperBound="2001-01-31T00:50:00Z" resolution="PT10M" uomLabel="dateTime" axisLabel="t" />
+                                </cis:GeneralGrid>
+                            </cis:DomainSet>
+                            <cis:RangeSet>
+                                <cis:DataBlock>
+                                    <cis:CV>
+                                        <cis:V>1.0</cis:V><cis:V>110</cis:V><cis:V>1.5</cis:V>
+                                    </cis:CV>
+                                    <cis:CV>
+                                        <cis:V>2.2</cis:V><cis:V>105</cis:V><cis:V>3.5</cis:V>
+                                    </cis:CV>
+                                    <cis:CV>
+                                        <cis:V>3.0</cis:V><cis:V>95.1</cis:V><cis:V>4.0</cis:V>
+                                    </cis:CV>
+                                    <cis:CV>
+                                        <cis:V>1.5</cis:V><cis:V>94.0</cis:V><cis:V>2.0</cis:V>
+                                    </cis:CV>
+                                    <cis:CV>
+                                        <cis:V>1.5</cis:V><cis:V>94.0</cis:V><cis:V>2.5</cis:V>
+                                    </cis:CV>
+                                    <cis:CV>
+                                        <cis:V>1.5</cis:V><cis:V>94.0</cis:V><cis:V>2.3</cis:V>
+                                    </cis:CV>
+                                </cis:DataBlock>
+                            </cis:RangeSet>
+                            <cis:RangeType>
+                                <swe:DataRecord>
+                                    <swe:field name="windSpeed">
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/windSpeed">
+                                            <swe:label>Wind speed</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
+                                        </swe:Quantity>
+                                    </swe:field>
+                                    <swe:field name="windDirection">
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/windDirection">
+                                            <swe:label>Wind direction</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
+                                        </swe:Quantity>
+                                    </swe:field>
+                                    <swe:field name="windGust">
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/windGust">
+                                            <swe:label>Wind gust</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
+                                        </swe:Quantity>
+                                    </swe:field>
+                                </swe:DataRecord>
+                            </cis:RangeType>
+                            <tsml-iwxxm:type xlink:href="http://www.opengis.net/def/timeseriesType/timeseriesML/1.3/Time/MeasurementTimeseriesDomainRange" />
+                            <tsml-iwxxm:metadata>
+                                <tsml-iwxxm:TimeseriesMetadataExtension>
+                                    <tsml-iwxxm:defaultPointMetadata>
+                                        <tsml-iwxxm:PointMetadata>
+                                            <tsml-iwxxm:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
+                                            <tsml-iwxxm:aggregationDuration>PT10M</tsml-iwxxm:aggregationDuration>
+                                        </tsml-iwxxm:PointMetadata>
+                                    </tsml-iwxxm:defaultPointMetadata>
+                                </tsml-iwxxm:TimeseriesMetadataExtension>
+                            </tsml-iwxxm:metadata>
+                        </tsml-iwxxm:TimeseriesDomainRange>
+                    </iwxxm:values>
+                    
+                    <!-- Navigation link to the next part: -->
+                    <iwxxm:next xlink:href="#wind2"/>
+                    
+                </iwxxm:WeatherPhenomenonTimeseriesDR>
+            </iwxxm:phenomenonProperty>
+            
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesDR gml:id="windPart2">
+                    <iwxxm:values>
+                        <tsml-iwxxm:TimeseriesDomainRange gml:id="dr2">
+                            <cis:DomainSet>
+                                <cis:GeneralGrid srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
+                                    <!-- Second part is a series of five hours at 1 hour intervals -->
+                                    <cis:RegularAxis lowerBound="2001-01-31T01:00:00Z" upperBound="2001-01-31T06:00:00Z" resolution="PT1H" uomLabel="dateTime" axisLabel="t" />
+                                </cis:GeneralGrid>
+                            </cis:DomainSet>
+                            <cis:RangeSet>
+                                <cis:DataBlock>
+                                    <cis:CV>
+                                        <cis:V>1.5</cis:V><cis:V>121</cis:V><cis:V>2.0</cis:V>
+                                    </cis:CV>
+                                    <cis:CV>
+                                        <cis:V>2.0</cis:V><cis:V>125</cis:V><cis:V>2.5</cis:V>
+                                    </cis:CV>
+                                    <cis:CV>
+                                        <cis:V>2.2</cis:V><cis:V>130</cis:V><cis:V>3.0</cis:V>
+                                    </cis:CV>
+                                    <cis:CV>
+                                        <cis:V>1.7</cis:V><cis:V>128</cis:V><cis:V>2.4</cis:V> 
+                                    </cis:CV>
+                                    <cis:CV>
+                                        <cis:V>1.7</cis:V><cis:V>128</cis:V><cis:V>2.0</cis:V> 
+                                    </cis:CV>
+                                    <cis:CV>
+                                        <cis:V>1.7</cis:V><cis:V>128</cis:V><cis:V>2.2</cis:V> 
+                                    </cis:CV>
+                                </cis:DataBlock>
+                            </cis:RangeSet>
+                            <cis:RangeType>
+                                <swe:DataRecord>
+                                    <swe:field name="windSpeed">
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/windSpeed">
+                                            <swe:label>Wind direction</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
+                                        </swe:Quantity>
+                                    </swe:field>
+                                    <swe:field name="windDirection">
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/windDirection">
+                                            <swe:label>Wind direction</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
+                                        </swe:Quantity>
+                                    </swe:field>
+                                    <swe:field name="windGust">
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/windGust">
+                                            <swe:label>Wind gust</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
+                                        </swe:Quantity>
+                                    </swe:field>
+                                </swe:DataRecord>
+                            </cis:RangeType>
+                            <tsml-iwxxm:type xlink:href="http://www.opengis.net/def/timeseriesType/timeseriesML/1.3/Time/MeasurementTimeseriesDomainRange" />
+                            <tsml-iwxxm:metadata>
+                                <tsml-iwxxm:TimeseriesMetadataExtension>
+                                    <tsml-iwxxm:defaultPointMetadata>
+                                        <tsml-iwxxm:PointMetadata>
+                                            <tsml-iwxxm:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
+                                            <tsml-iwxxm:aggregationDuration>PT10M</tsml-iwxxm:aggregationDuration>
+                                        </tsml-iwxxm:PointMetadata>
+                                    </tsml-iwxxm:defaultPointMetadata>
+                                </tsml-iwxxm:TimeseriesMetadataExtension>
+                            </tsml-iwxxm:metadata>
+                        </tsml-iwxxm:TimeseriesDomainRange>
+                    </iwxxm:values>
+                    
+                    <!-- Navigation link to the previous part: -->
+                    <iwxxm:previous xlink:href="#wind1"/>
+                    
+                </iwxxm:WeatherPhenomenonTimeseriesDR>
+            </iwxxm:phenomenonProperty>
+            <iwxxm:aerodrome>
                 <aixm:AirportHeliport gml:id="a1234">
                     <aixm:timeSlice>
                         <aixm:AirportHeliportTimeSlice gml:id="b45677">
                             <gml:validTime></gml:validTime>
                             <aixm:interpretation>SNAPSHOT</aixm:interpretation>
+                            <aixm:designator>DONLON</aixm:designator>
                             <aixm:ARP>
                                 <aixm:ElevatedPoint gml:id="uuid.4f5ce1f8-ae4c-4dea-99c7-6bc15ca6b004" srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
                                     <gml:pos>12.34 -12.34</gml:pos>
@@ -96,167 +250,24 @@
                         </aixm:AirportHeliportTimeSlice>
                     </aixm:timeSlice>
                 </aixm:AirportHeliport>
-            </iwxxm:phenomenonGeometry>
-            <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesDR gml:id="wind1">
-                    <iwxxm:observableProperty xlink:href="http://preferred.observable-property.registry/windSpeed"/>
-                    <iwxxm:observableProperty xlink:href="http://preferred.observable-property.registry/windDirection"/>
-                    <iwxxm:values>
-                        <tsml-iwxxm:TimeseriesDomainRange gml:id="dr1">
-                            <cis:DomainSet>
-                                <cis:GeneralGrid srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
-                                    <cis:IrregularAxis uomLabel="dateTime" axisLabel="t">
-                                        <cis:C>2001-01-31T00:00:00Z</cis:C>
-                                        <cis:C>2001-01-31T00:10:00Z</cis:C>
-                                        <cis:C>2001-01-31T00:20:00Z</cis:C>
-                                        <cis:C>2001-01-31T00:20:00Z</cis:C>
-                                    </cis:IrregularAxis>
-                                    <cis:GridLimits srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
-                                        <cis:IndexAxis lowerBound="2001-01-31T00:00:00Z" upperBound="2001-01-31T00:20:00Z" axisLabel="t"/>
-                                    </cis:GridLimits>
-                                </cis:GeneralGrid>
-                            </cis:DomainSet>
-                            <cis:RangeSet>
-                                <cis:DataBlock>
-                                    <cis:CV>
-                                        <cis:V>1.0</cis:V>
-                                        <cis:V>110</cis:V>
-                                    </cis:CV>
-                                    <cis:CV>
-                                        <cis:V>2.2</cis:V>
-                                        <cis:V>105</cis:V>
-                                    </cis:CV>
-                                    <cis:CV>
-                                        <cis:V>3.0</cis:V>
-                                        <cis:V>95.1</cis:V>
-                                    </cis:CV>
-                                    <cis:CV>
-                                        <cis:V>1.5</cis:V>
-                                        <cis:V>94.0</cis:V> 
-                                    </cis:CV>
-                                </cis:DataBlock>
-                            </cis:RangeSet>
-                            <cis:RangeType>
-                                <swe:DataRecord>
-                                    <swe:field name="wind_speed">
-                                        <swe:Quantity definition="http://preferred.observable-property.registry/windSpeed">
-                                            <swe:label>Wind speed</swe:label>
-                                            <swe:nilValues>
-                                                <swe:NilValues>
-                                                    <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/missing">-</swe:nilValue>
-                                                </swe:NilValues>
-                                            </swe:nilValues>
-                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
-                                        </swe:Quantity>
-                                    </swe:field>
-                                    <swe:field name="wind_direction">
-                                        <swe:Quantity definition="http://preferred.observable-property.registry/windDirection">
-                                            <swe:label>Wind direction</swe:label>
-                                            <swe:nilValues>
-                                                <swe:NilValues>
-                                                    <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/missing">-</swe:nilValue>
-                                                </swe:NilValues>
-                                            </swe:nilValues>
-                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
-                                        </swe:Quantity>
-                                    </swe:field>
-                                </swe:DataRecord>
-                            </cis:RangeType>
-                            <tsml-iwxxm:type xlink:href="http://www.opengis.net/def/timeseriesType/timeseriesML/1.3/Time/MeasurementTimeseriesDomainRange" />
-                        </tsml-iwxxm:TimeseriesDomainRange>
-                    </iwxxm:values>
-                    <iwxxm:next xlink:href="#wind2"/>
-                </iwxxm:WeatherPhenomenonTimeseriesDR>
-            </iwxxm:phenomenonProperty>
-            
-            <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesDR gml:id="wind2">
-                    <iwxxm:observableProperty xlink:href="http://preferred.observable-property.registry/windSpeed"/>
-                    <iwxxm:observableProperty xlink:href="http://preferred.observable-property.registry/windDirection"/>
-                    <iwxxm:values>
-                        <tsml-iwxxm:TimeseriesDomainRange gml:id="dr2">
-                            <cis:DomainSet>
-                                <cis:GeneralGrid srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
-                                    <cis:IrregularAxis uomLabel="dateTime" axisLabel="t">
-                                        <cis:C>2001-01-31T00:00:00Z</cis:C>
-                                        <cis:C>2001-01-31T00:10:00Z</cis:C>
-                                        <cis:C>2001-01-31T00:20:00Z</cis:C>
-                                        <cis:C>2001-01-31T00:20:00Z</cis:C>
-                                    </cis:IrregularAxis>
-                                    <cis:GridLimits srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
-                                        <cis:IndexAxis lowerBound="2001-01-31T00:00:00Z" upperBound="2001-01-31T00:20:00Z" axisLabel="t"/>
-                                    </cis:GridLimits>
-                                </cis:GeneralGrid>
-                            </cis:DomainSet>
-                            <cis:RangeSet>
-                                <cis:DataBlock>
-                                    <cis:CV>
-                                        <cis:V>1.5</cis:V>
-                                        <cis:V>121</cis:V>
-                                    </cis:CV>
-                                    <cis:CV>
-                                        <cis:V>-</cis:V>
-                                        <cis:V>-</cis:V>
-                                    </cis:CV>
-                                    <cis:CV>
-                                        <cis:V>2.2</cis:V>
-                                        <cis:V>130</cis:V>
-                                    </cis:CV>
-                                    <cis:CV>
-                                        <cis:V>1.7</cis:V>
-                                        <cis:V>128</cis:V> 
-                                    </cis:CV>
-                                </cis:DataBlock>
-                            </cis:RangeSet>
-                            <cis:RangeType>
-                                <swe:DataRecord>
-                                    <swe:field name="wind_speed">
-                                        <swe:Quantity definition="http://preferred.observable-property.registry/windSpeed">
-                                            <swe:label>Wind direction</swe:label>
-                                            <swe:nilValues>
-                                                <swe:NilValues>
-                                                    <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/missing">-</swe:nilValue>
-                                                </swe:NilValues>
-                                            </swe:nilValues>
-                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
-                                        </swe:Quantity>
-                                    </swe:field>
-                                    <swe:field name="wind_direction">
-                                        <swe:Quantity definition="http://preferred.observable-property.registry/windDirection">
-                                            <swe:label>Wind direction</swe:label>
-                                            <swe:nilValues>
-                                                <swe:NilValues>
-                                                    <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/missing">-</swe:nilValue>
-                                                </swe:NilValues>
-                                            </swe:nilValues>
-                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
-                                        </swe:Quantity>
-                                    </swe:field>
-                                </swe:DataRecord>
-                            </cis:RangeType>
-                            <tsml-iwxxm:type xlink:href="http://www.opengis.net/def/timeseriesType/timeseriesML/1.3/Time/MeasurementTimeseriesDomainRange" />
-                        </tsml-iwxxm:TimeseriesDomainRange>
-                    </iwxxm:values>
-                    <iwxxm:previous xlink:href="#wind1"/>
-                </iwxxm:WeatherPhenomenonTimeseriesDR>
-            </iwxxm:phenomenonProperty>
-            
+            </iwxxm:aerodrome>
+        </iwxxm:AerodromeWeatherPhenomenonForecast>
+    </iwxxm:feature>
+    
+    <!-- A significant weather forecast object with a timeseries in one part -->
+    <iwxxm:feature>
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="wxobj2">
+            <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj2</gml:identifier>
+            <iwxxm:phenomenon xlink:href="http://preferred.observable-property.registry/significantAviationWeather"/>
+            <iwxxm:phenomenonGeometry xlink:href="#a1234"/>
             <iwxxm:phenomenonProperty>
                 <iwxxm:WeatherPhenomenonTimeseriesDR gml:id="weather1">
-                    <iwxxm:observableProperty xlink:href="http://preferred.observable-property.registry/significantWeatherForAviation"/>
                     <iwxxm:values>
                         <tsml-iwxxm:TimeseriesDomainRange gml:id="dr3">
                             <cis:DomainSet>
                                 <cis:GeneralGrid srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
-                                    <cis:IrregularAxis uomLabel="dateTime" axisLabel="t">
-                                        <cis:C>2001-01-31T00:00:00Z</cis:C>
-                                        <cis:C>2001-01-31T01:10:00Z</cis:C>
-                                        <cis:C>2001-01-31T02:00:00Z</cis:C>
-                                        <cis:C>2001-01-31T03:00:00Z</cis:C>
-                                    </cis:IrregularAxis>
-                                    <cis:GridLimits srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
-                                        <cis:IndexAxis lowerBound="2001-01-31T00:00:00Z" upperBound="2001-01-31T03:20:00Z" axisLabel="t"/>
-                                    </cis:GridLimits>
+                                    <!-- A series of six hours at 1 hour intervals -->
+                                    <cis:RegularAxis lowerBound="2001-01-31T00:00:00Z" upperBound="2001-01-31T06:00:00Z" resolution="PT1H" uomLabel="dateTime" axisLabel="t" />                        
                                 </cis:GeneralGrid>
                             </cis:DomainSet>
                             <cis:RangeSet>
@@ -265,11 +276,13 @@
                                     <cis:V>TSSNGR</cis:V>
                                     <cis:V>TSSNRA</cis:V>
                                     <cis:V>-TSRA</cis:V>
+                                    <cis:V>-TSRA</cis:V>
+                                    <cis:V>-TSRA</cis:V>
                                 </cis:DataBlock>
                             </cis:RangeSet>
                             <cis:RangeType>
                                 <swe:DataRecord>
-                                    <swe:field name="significantWeather">
+                                    <swe:field name="significantWeatherCode">
                                         <swe:Category definition="https://codes.wmo.int/306/4678">
                                             <swe:description>Significant [recent], present and forecast weather - enumerating the set of meteorologically valid options defined in WMO No. 306 Vol 1 code-table 4678</swe:description>
                                         </swe:Category>
@@ -281,6 +294,8 @@
                     </iwxxm:values>
                 </iwxxm:WeatherPhenomenonTimeseriesDR>
             </iwxxm:phenomenonProperty>
-        </iwxxm:MeteorologicalFeature>
+            <iwxxm:aerodrome xlink:href="#a1234"/>
+        </iwxxm:AerodromeWeatherPhenomenonForecast>
     </iwxxm:feature>
-</iwxxm:AerodromeWeatherForecast>
+    
+</iwxxm:AviationWeatherForecast>

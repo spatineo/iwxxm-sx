@@ -8,12 +8,12 @@
 	<annotation>
 		<documentation>TBA</documentation>
 	</annotation>
-	<element name="AerodromeWeatherForecast" type="iwxxm:AerodromeWeatherForecastType" substitutionGroup="iwxxm:MeteorologicalFeatureCollection">
+	<element name="AviationWeatherForecast" type="iwxxm:AviationWeatherForecastType" substitutionGroup="iwxxm:MeteorologicalFeatureCollection">
 		<annotation>
 			<documentation>TBA</documentation>
 		</annotation>
 	</element>
-	<complexType name="AerodromeWeatherForecastType">
+	<complexType name="AviationWeatherForecastType">
 		<complexContent>
 			<extension base="iwxxm:MeteorologicalFeatureCollectionType">
 				<sequence>
@@ -26,9 +26,39 @@
 			</extension>
 		</complexContent>
 	</complexType>
-	<complexType name="AerodromeWeatherForecastPropertyType">
+	<complexType name="AviationWeatherForecastPropertyType">
 		<sequence minOccurs="0">
-			<element ref="iwxxm:AerodromeWeatherForecast"></element>
+			<element ref="iwxxm:AviationWeatherForecast"></element>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"></attributeGroup>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"></attributeGroup>
+	</complexType>
+	
+	<element name="AerodromeWeatherPhenomenonForecast" type="iwxxm:AerodromeWeatherPhenomenonForecastType" substitutionGroup="iwxxm:MeteorologicalFeature">
+		<annotation>
+			<documentation>TBA</documentation>
+		</annotation>
+	</element>
+	<complexType name="AerodromeWeatherPhenomenonForecastType">
+		<complexContent>
+			<extension base="iwxxm:MeteorologicalFeatureType">
+				<sequence>
+					<element name="aerodrome" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<sequence minOccurs="0">
+								<element ref="aixm:AirportHeliport"></element>
+							</sequence>
+							<attributeGroup ref="gml:AssociationAttributeGroup"></attributeGroup>
+							<attributeGroup ref="gml:OwnershipAttributeGroup"></attributeGroup>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AerodromeWeatherPhenomenonForecastPropertyType">
+		<sequence minOccurs="0">
+			<element ref="iwxxm:AerodromeWeatherPhenomenonForecast"></element>
 		</sequence>
 		<attributeGroup ref="gml:AssociationAttributeGroup"></attributeGroup>
 		<attributeGroup ref="gml:OwnershipAttributeGroup"></attributeGroup>
@@ -44,8 +74,7 @@
 	<complexType name="WeatherPhenomenonTimeseriesTVPType">
 		<complexContent>
 			<extension base="gml:AbstractGMLType">
-				<sequence>
-					<element name="observableProperty" type="gml:ReferenceType" minOccurs="1" maxOccurs="1"/>
+				<sequence>					
 					<element name="values" type="tsml-iwxxm:TimeseriesTVPPropertyType" minOccurs="1" maxOccurs="1"/>
 					<element name="next" type="gml:ReferenceType" minOccurs="0" maxOccurs="1"/>
 					<element name="previous" type="gml:ReferenceType" minOccurs="0" maxOccurs="1"/>
@@ -72,7 +101,6 @@
 		<complexContent>
 			<extension base="gml:AbstractGMLType">
 				<sequence>
-					<element name="observableProperty" type="gml:ReferenceType" minOccurs="1" maxOccurs="unbounded"/>
 					<element name="values" type="tsml-iwxxm:TimeseriesDomainRangePropertyType" minOccurs="1" maxOccurs="1"/>
 					<element name="next" type="gml:ReferenceType" minOccurs="0" maxOccurs="1"/>
 					<element name="previous" type="gml:ReferenceType" minOccurs="0" maxOccurs="1"/>
