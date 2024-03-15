@@ -105,7 +105,7 @@
                         <tsml-iwxxm:TimeseriesDomainRange gml:id="dr1">
                             <cis:DomainSet>
                                 <cis:GeneralGrid srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
-                                    <cis:IrregularAxis uomLabel="s" axisLabel="t">
+                                    <cis:IrregularAxis uomLabel="dateTime" axisLabel="t">
                                         <cis:C>2001-01-31T00:00:00Z</cis:C>
                                         <cis:C>2001-01-31T00:10:00Z</cis:C>
                                         <cis:C>2001-01-31T00:20:00Z</cis:C>
@@ -177,7 +177,7 @@
                         <tsml-iwxxm:TimeseriesDomainRange gml:id="dr2">
                             <cis:DomainSet>
                                 <cis:GeneralGrid srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
-                                    <cis:IrregularAxis uomLabel="s" axisLabel="t">
+                                    <cis:IrregularAxis uomLabel="dateTime" axisLabel="t">
                                         <cis:C>2001-01-31T00:00:00Z</cis:C>
                                         <cis:C>2001-01-31T00:10:00Z</cis:C>
                                         <cis:C>2001-01-31T00:20:00Z</cis:C>
@@ -248,7 +248,7 @@
                         <tsml-iwxxm:TimeseriesDomainRange gml:id="dr3">
                             <cis:DomainSet>
                                 <cis:GeneralGrid srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
-                                    <cis:IrregularAxis uomLabel="s" axisLabel="t">
+                                    <cis:IrregularAxis uomLabel="dateTime" axisLabel="t">
                                         <cis:C>2001-01-31T00:00:00Z</cis:C>
                                         <cis:C>2001-01-31T01:10:00Z</cis:C>
                                         <cis:C>2001-01-31T02:00:00Z</cis:C>
