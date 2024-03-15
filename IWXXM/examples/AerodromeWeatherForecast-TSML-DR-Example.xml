@@ -140,11 +140,23 @@
                                 <swe:DataRecord>
                                     <swe:field name="wind_speed">
                                         <swe:Quantity definition="http://preferred.observable-property.registry/windSpeed">
+                                            <swe:label>Wind speed</swe:label>
+                                            <swe:nilValues>
+                                                <swe:NilValues>
+                                                    <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/missing">-</swe:nilValue>
+                                                </swe:NilValues>
+                                            </swe:nilValues>
                                             <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
                                         </swe:Quantity>
                                     </swe:field>
                                     <swe:field name="wind_direction">
                                         <swe:Quantity definition="http://preferred.observable-property.registry/windDirection">
+                                            <swe:label>Wind direction</swe:label>
+                                            <swe:nilValues>
+                                                <swe:NilValues>
+                                                    <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/missing">-</swe:nilValue>
+                                                </swe:NilValues>
+                                            </swe:nilValues>
                                             <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
                                         </swe:Quantity>
                                     </swe:field>
@@ -183,8 +195,8 @@
                                         <cis:V>121</cis:V>
                                     </cis:CV>
                                     <cis:CV>
-                                        <cis:V>missing</cis:V>
-                                        <cis:V>missing</cis:V>
+                                        <cis:V>-</cis:V>
+                                        <cis:V>-</cis:V>
                                     </cis:CV>
                                     <cis:CV>
                                         <cis:V>2.2</cis:V>
@@ -200,11 +212,23 @@
                                 <swe:DataRecord>
                                     <swe:field name="wind_speed">
                                         <swe:Quantity definition="http://preferred.observable-property.registry/windSpeed">
+                                            <swe:label>Wind direction</swe:label>
+                                            <swe:nilValues>
+                                                <swe:NilValues>
+                                                    <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/missing">-</swe:nilValue>
+                                                </swe:NilValues>
+                                            </swe:nilValues>
                                             <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
                                         </swe:Quantity>
                                     </swe:field>
                                     <swe:field name="wind_direction">
                                         <swe:Quantity definition="http://preferred.observable-property.registry/windDirection">
+                                            <swe:label>Wind direction</swe:label>
+                                            <swe:nilValues>
+                                                <swe:NilValues>
+                                                    <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/missing">-</swe:nilValue>
+                                                </swe:NilValues>
+                                            </swe:nilValues>
                                             <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
                                         </swe:Quantity>
                                     </swe:field>
