@@ -91,9 +91,13 @@
                     <iwxxm:values>
                         <tsml-iwxxm:TimeseriesDomainRange gml:id="dr1">
                             <cis:DomainSet>
-                                <cis:GeneralGrid srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
+                                <!-- Cannot use timestamps here as they as a notation of a calendar, not a proper CRS -->
+                                <!-- UnixTime is a well-defined TemporalCRS that you can do aritmethics with, but it's not very readable -->
+                                <cis:GeneralGrid srsName="http://www.opengis.net/def/crs/OGC/0/UnixTime" axisLabels="t">
                                     <!-- First part is a series of one hour at 10 minute intervals -->
-                                    <cis:RegularAxis lowerBound="2001-01-31T00:00:00Z" upperBound="2001-01-31T00:50:00Z" resolution="PT10M" uomLabel="dateTime" axisLabel="t" />
+                                    <!-- lower: 2001-01-31T00:00:00Z -->
+                                    <!-- upper: 2001-01-31T00:50:00Z -->
+                                    <cis:RegularAxis lowerBound="980899200" upperBound="980902200" resolution="600" uomLabel="s" axisLabel="t" />
                                 </cis:GeneralGrid>
                             </cis:DomainSet>
                             <cis:RangeSet>
@@ -165,9 +169,13 @@
                     <iwxxm:values>
                         <tsml-iwxxm:TimeseriesDomainRange gml:id="dr2">
                             <cis:DomainSet>
-                                <cis:GeneralGrid srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
-                                    <!-- Second part is a series of five hours at 1 hour intervals -->
-                                    <cis:RegularAxis lowerBound="2001-01-31T01:00:00Z" upperBound="2001-01-31T06:00:00Z" resolution="PT1H" uomLabel="dateTime" axisLabel="t" />
+                                <!-- Cannot use timestamps here as they as a notation of a calendar, not a proper CRS -->
+                                <!-- UnixTime is a well-defined TemporalCRS that you can do aritmethics with, but it's not very readable -->
+                                <cis:GeneralGrid srsName="http://www.opengis.net/def/crs/OGC/0/UnixTime" axisLabels="t">
+                                    <!-- First part is a series of one hour at 10 minute intervals -->
+                                    <!-- lower: 2001-01-31T01:00:00Z -->
+                                    <!-- upper: 2001-01-31T06:00:00Z -->
+                                    <cis:RegularAxis lowerBound="980902800" upperBound="980920800" resolution="3600" uomLabel="s" axisLabel="t" />
                                 </cis:GeneralGrid>
                             </cis:DomainSet>
                             <cis:RangeSet>
@@ -265,9 +273,13 @@
                     <iwxxm:values>
                         <tsml-iwxxm:TimeseriesDomainRange gml:id="dr3">
                             <cis:DomainSet>
-                                <cis:GeneralGrid srsName="http://www.opengis.net/def/trs/ISO-8601/0" axisLabels="t">
-                                    <!-- A series of six hours at 1 hour intervals -->
-                                    <cis:RegularAxis lowerBound="2001-01-31T00:00:00Z" upperBound="2001-01-31T06:00:00Z" resolution="PT1H" uomLabel="dateTime" axisLabel="t" />                        
+                                <!-- Cannot use timestamps here as they as a notation of a calendar, not a proper CRS -->
+                                <!-- UnixTime is a well-defined TemporalCRS that you can do aritmethics with, but it's not very readable -->
+                                <cis:GeneralGrid srsName="http://www.opengis.net/def/crs/OGC/0/UnixTime" axisLabels="t">
+                                    <!-- First part is a series of one hour at 10 minute intervals -->
+                                    <!-- lower: 2001-01-31T00:00:00Z -->
+                                    <!-- upper: 2001-01-31T06:00:00Z -->
+                                    <cis:RegularAxis lowerBound="980899200" upperBound="980920800" resolution="3600" uomLabel="s" axisLabel="t" />  
                                 </cis:GeneralGrid>
                             </cis:DomainSet>
                             <cis:RangeSet>
