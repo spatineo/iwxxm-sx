@@ -9,3 +9,4 @@ http://codes.wmo.int/49-2/MeteorologicalFeature
 http://codes.wmo.int/49-2/SpaceWxLocation
 http://codes.wmo.int/iwxxm/VolcanicAshConcentrations
 http://online-resource-of-features
+http://preferred.observable-property.registry/wind
