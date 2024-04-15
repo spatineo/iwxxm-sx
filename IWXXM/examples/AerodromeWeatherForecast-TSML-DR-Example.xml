@@ -159,7 +159,7 @@
                     </iwxxm:values>
                     
                     <!-- Navigation link to the next part: -->
-                    <iwxxm:next xlink:href="#wind2"/>
+                    <iwxxm:next xlink:href="#windPart2"/>
                     
                 </iwxxm:WeatherPhenomenonTimeseriesDR>
             </iwxxm:phenomenonProperty>
@@ -237,7 +237,7 @@
                     </iwxxm:values>
                     
                     <!-- Navigation link to the previous part: -->
-                    <iwxxm:previous xlink:href="#wind1"/>
+                    <iwxxm:previous xlink:href="#windPart1"/>
                     
                 </iwxxm:WeatherPhenomenonTimeseriesDR>
             </iwxxm:phenomenonProperty>
