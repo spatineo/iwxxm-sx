@@ -1,10 +1,15 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tsml-iwxxm="http://www.opengis.net/timeseriesml/1.3/iwxxm" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" elementFormDefault="qualified" targetNamespace="http://www.opengis.net/timeseriesml/1.3/iwxxm" version="1.3.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:tsml="http://www.opengis.net/timeseriesml/1.3/iwxxm"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:swe="http://www.opengis.net/swe/2.0"
+  xmlns:gco="http://www.isotc211.org/2005/gco"
+  elementFormDefault="qualified" targetNamespace="http://www.opengis.net/timeseriesml/1.3/iwxxm" version="1.3.0">
   <xs:annotation>
     <xs:documentation>
       NOTE: this is an experimental, non-authoritative extraction from the OGC TMS 1.3 schemas.
       The primary intention is the test TSML structures within the scope of IWXXM aerodrome forecast development.
       
-      Ilkka Rinne / Spatineo 2024-03-14
+      Ilkka Rinne / Spatineo 2024-04-16
     </xs:documentation>
     <xs:documentation>
       OGC TimeseriesML is an OGC Standard.
@@ -19,14 +24,14 @@
     <xs:documentation>The Time Value Pair (TVP) Encoding schema contains types suitable for encoding TimeSeries (both Measurement and Categorical) in a sequence of time, value pairs.
 Note that this time, value pair encoding of timeseries encoding takes the name 'Timeseries'. The domain range encoding equivalent takes the name TimeseriesDomainRange. </xs:documentation>
   </xs:annotation>
-  <xs:element name="CategoricalTVP" type="tsml-iwxxm:CategoricalTVPType" substitutionGroup="tsml-iwxxm:TimeValuePair">
+  <xs:element name="CategoricalTVP" type="tsml:CategoricalTVPType" substitutionGroup="iwxxm:TimeValuePair">
     <xs:annotation>
       <xs:documentation>CategoricalTVP is the encoding for time,value pairs where the value is a category.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="CategoricalTVPType">
     <xs:complexContent>
-      <xs:extension base="tsml-iwxxm:TimeValuePairType">
+      <xs:extension base="tsml:TimeValuePairType">
         <xs:sequence>
           <xs:element name="value" type="swe:CategoryPropertyType" nillable="true">
             <xs:annotation>
@@ -39,21 +44,21 @@ Note that this time, value pair encoding of timeseries encoding takes the name '
   </xs:complexType>
   <xs:complexType name="CategoricalTVPPropertyType">
     <xs:sequence minOccurs="0">
-      <xs:element ref="tsml-iwxxm:CategoricalTVP"/>
+      <xs:element ref="tsml:CategoricalTVP"/>
     </xs:sequence>
     <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     <xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </xs:complexType>
-  <xs:element name="MeasurementTVP" type="tsml-iwxxm:MeasurementTVPType" substitutionGroup="tsml-iwxxm:TimeValuePair">
+  <xs:element name="MeasurementTVP" type="tsml:MeasurementTVPType" substitutionGroup="tsml:TimeValuePair">
     <xs:annotation>
       <xs:documentation>MeasurementTVP is the encoding for time,value pairs where the value is a measure.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="MeasurementTVPType">
     <xs:complexContent>
-      <xs:extension base="tsml-iwxxm:TimeValuePairType">
+      <xs:extension base="tsml:TimeValuePairType">
         <xs:sequence>
-          <xs:element name="value" type="tsml-iwxxm:MeasureType" nillable="true">
+          <xs:element name="value" type="tsml:MeasureType" nillable="true">
             <xs:annotation>
               <xs:documentation>The measurement value for this data point (e.g. 5.3m)</xs:documentation>
             </xs:annotation>
@@ -64,12 +69,73 @@ Note that this time, value pair encoding of timeseries encoding takes the name '
   </xs:complexType>
   <xs:complexType name="MeasurementTVPPropertyType">
     <xs:sequence minOccurs="0">
-      <xs:element ref="tsml-iwxxm:MeasurementTVP"/>
+      <xs:element ref="tsml:MeasurementTVP"/>
     </xs:sequence>
     <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     <xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </xs:complexType>
-  <xs:element name="TimeseriesTVP" type="tsml-iwxxm:TimeseriesTVPType" substitutionGroup="gml:AbstractGML">
+
+  <!-- Added a new type RecordTVP / Ilkka Rinne 2024-04-16 -->
+  <xs:element name="RecordTVP" type="tsml:RecordTVPType" substitutionGroup="tsml:TimeValuePair">
+    <xs:annotation>
+      <xs:documentation>MeasurementTVP is the encoding for time,value pairs where the value is a measure.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="RecordTVPType">
+    <xs:complexContent>
+      <xs:extension base="tsml:TimeValuePairType">
+        <xs:sequence>
+          <xs:element name="value" type="xs:anySimpleType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The structured value value for this data point</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RecordTVPPropertyType">
+    <xs:sequence minOccurs="0">
+      <xs:element ref="tsml:RecordTVP"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </xs:complexType>
+
+
+  <!-- Added a new type RangeTVP / Ilkka Rinne 2024-04-16 -->
+  <xs:element name="RangeTVP" type="tsml:RangeTVPType" substitutionGroup="tsml:TimeValuePair">
+    <xs:annotation>
+      <xs:documentation>MeasurementTVP is the encoding for time,value pairs where the value is a measure.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="RangeTVPType">
+    <xs:complexContent>
+      <xs:extension base="tsml:TimeValuePairType">
+        <xs:sequence>
+          <xs:element name="minValue" minOccurs="0" maxOccurs="1">
+            <xs:simpleType>
+              <xs:list itemType="xs:anySimpleType"/>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="maxValue" minOccurs="0" maxOccurs="1">
+            <xs:simpleType>
+              <xs:list itemType="xs:anySimpleType"/>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RangeTVPPropertyType">
+    <xs:sequence minOccurs="0">
+      <xs:element ref="tsml:RangeTVP"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </xs:complexType>
+  
+  <xs:element name="TimeseriesTVP" type="tsml:TimeseriesTVPType" substitutionGroup="gml:AbstractGML">
     <xs:annotation>
       <xs:documentation>The core class for the timeseries time, value pair encoding.</xs:documentation>
     </xs:annotation>
@@ -78,7 +144,7 @@ Note that this time, value pair encoding of timeseries encoding takes the name '
     <xs:complexContent>
       <xs:extension base="gml:AbstractGMLType">
         <xs:sequence>
-          <xs:element name="metadata" type="tsml-iwxxm:TimeseriesMetadataPropertyType" minOccurs="0" maxOccurs="1">
+          <xs:element name="metadata" type="tsml:TimeseriesMetadataPropertyType" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation>Metadata about the timeseries</xs:documentation>
             </xs:annotation>
@@ -91,13 +157,14 @@ Note that this time, value pair encoding of timeseries encoding takes the name '
               <xs:complexContent>
                 <xs:extension base="gml:AbstractMemberType">
                   <xs:sequence>
-                    <xs:element ref="tsml-iwxxm:PointMetadata"/>
+                    <!-- Laxed multiplicity from 1 to 1..n to allow for separate default point metadata for each of the record fields / Ilkka Rinne 2024-04-16 -->
+                    <xs:element ref="tsml:PointMetadata" maxOccurs="unbounded"/>
                   </xs:sequence>
                 </xs:extension>
               </xs:complexContent>
             </xs:complexType>
           </xs:element>
-          <xs:element name="point" type="tsml-iwxxm:TimeValuePairPropertyType" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="point" type="tsml:TimeValuePairPropertyType" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>Data points (time, value pairs) for the timeseries.</xs:documentation>
             </xs:annotation>
@@ -108,22 +175,32 @@ Note that this time, value pair encoding of timeseries encoding takes the name '
   </xs:complexType>
   <xs:complexType name="TimeseriesTVPPropertyType">
     <xs:sequence minOccurs="0">
-      <xs:element ref="tsml-iwxxm:TimeseriesTVP"/>
+      <xs:element ref="tsml:TimeseriesTVP"/>
     </xs:sequence>
     <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     <xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </xs:complexType>
-  <xs:element name="TimeValuePair" type="tsml-iwxxm:TimeValuePairType" substitutionGroup="gml:AbstractObject" abstract="true">
+  <xs:element name="TimeValuePair" type="tsml:TimeValuePairType" substitutionGroup="gml:AbstractObject" abstract="true">
     <xs:annotation>
       <xs:documentation>A base class for different time, value pair implementations.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="TimeValuePairType" abstract="true">
     <xs:sequence>
-      <xs:element name="metadata" type="tsml-iwxxm:PointMetadataPropertyType" minOccurs="0" maxOccurs="1">
+      <xs:element name="metadata" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>Point metadata for this point (over-rides any default point metadata for the timeseries).</xs:documentation>
         </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="gml:AbstractMemberType">
+              <xs:sequence>
+                <!-- Laxed multiplicity from 1 to 1..n to allow for separate default point metadata for each of the record fields / Ilkka Rinne 2024-04-16 -->
+                <xs:element ref="tsml:PointMetadata" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
       </xs:element>
       <xs:element name="time" type="gml:TimePositionType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
@@ -134,7 +211,7 @@ Note that this time, value pair encoding of timeseries encoding takes the name '
   </xs:complexType>
   <xs:complexType name="TimeValuePairPropertyType">
     <xs:sequence>
-      <xs:element ref="tsml-iwxxm:TimeValuePair"/>
+      <xs:element ref="tsml:TimeValuePair"/>
     </xs:sequence>
     <xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </xs:complexType>

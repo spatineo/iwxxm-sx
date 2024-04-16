@@ -6,6 +6,7 @@
 	<include schemaLocation="vona.xsd"></include>
 	<include schemaLocation="qvaci.xsd"></include>
 	<include schemaLocation="WAFSSigWxFC.xsd"></include>
+	<include schemaLocation="timeseries.xsd"></include>
 	<include schemaLocation="aerodromeForecast.xsd"></include>
 	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"></import>
 	<annotation>

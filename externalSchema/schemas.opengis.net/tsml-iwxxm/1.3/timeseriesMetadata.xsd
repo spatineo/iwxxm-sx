@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tsml-iwxxm="http://www.opengis.net/timeseriesml/1.3/iwxxm" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:om="http://www.opengis.net/om/2.0" targetNamespace="http://www.opengis.net/timeseriesml/1.3/iwxxm" elementFormDefault="qualified" version="1.3.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:tsml="http://www.opengis.net/timeseriesml/1.3/iwxxm"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:swe="http://www.opengis.net/swe/2.0"
+	targetNamespace="http://www.opengis.net/timeseriesml/1.3/iwxxm"
+	elementFormDefault="qualified"
+	version="1.3.0">
 	<xs:annotation>
 		<xs:documentation>
 			NOTE: this is an experimental, non-authoritative extraction from the OGC TMS 1.3 schemas.
 			The primary intention is the test TSML structures within the scope of IWXXM aerodrome forecast development.
 			
-			Ilkka Rinne / Spatineo 2024-03-14
+			Ilkka Rinne / Spatineo 2024-04-16
 		</xs:documentation>
 		<xs:documentation>
 			OGC TimeseriesML is an OGC Standard.
@@ -16,7 +22,7 @@
 	<!-- xs:import namespace="http://www.opengis.net/om/2.0" schemaLocation="http://schemas.opengis.net/om/2.0/observation.xsd"/-->
 	<xs:import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
-	<xs:element name="CommentBlock" type="tsml-iwxxm:CommentBlockType" substitutionGroup="gml:AbstractObject">
+	<xs:element name="CommentBlock" type="tsml:CommentBlockType" substitutionGroup="gml:AbstractObject">
 		<xs:annotation>
 			<xs:documentation>Comment blocks may be used to make comment about the timeseries. Each comment applies to a specified period of the timeseries (it could apply to the whole timeseries).</xs:documentation>
 		</xs:annotation>
@@ -37,11 +43,12 @@
 	</xs:complexType>
 	<xs:complexType name="CommentBlockPropertyType">
 		<xs:sequence>
-			<xs:element ref="tsml-iwxxm:CommentBlock"/>
+			<xs:element ref="tsml:CommentBlock"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
-	<xs:element name="PointMetadata" type="tsml-iwxxm:PointMetadataType" substitutionGroup="gml:AbstractObject">
+	
+	<xs:element name="PointMetadata" type="tsml:PointMetadataType" substitutionGroup="gml:AbstractObject">
 		<xs:annotation>
 			<xs:documentation>Metadata relating to individual data points (can be set to a default for the whole timeseries).</xs:documentation>
 		</xs:annotation>
@@ -114,11 +121,32 @@ The interpolation type is defined per point within the time series as it is poss
 	</xs:complexType>
 	<xs:complexType name="PointMetadataPropertyType">
 		<xs:sequence>
-			<xs:element ref="tsml-iwxxm:PointMetadata"/>
+			<xs:element ref="tsml:PointMetadata"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
-	<xs:element name="TimeseriesMetadata" type="tsml-iwxxm:TimeseriesMetadataType" substitutionGroup="gml:AbstractObject">
+	
+	<!-- Added FieldSpecificPointMetadata to introduce possibility for providing point metadata for each field in a record type TVP / Ilkka Rinne 2024-04-16 -->
+	<xs:element name="FieldSpecificPointMetadata" type="tsml:FieldSpecificPointMetadataType" substitutionGroup="tsml:PointMetadata">
+		<xs:annotation>
+			<xs:documentation>Metadata relating to individual data points (can be set to a default for the whole timeseries).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="FieldSpecificPointMetadataType">
+		<xs:complexContent>
+			<xs:extension base="tsml:PointMetadataType">
+				<xs:attribute name="field" type="xs:NCName" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FieldSpecificPointMetadataPropertyType">
+		<xs:sequence>
+			<xs:element ref="tsml:FieldSpecificPointMetadata"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	
+	<xs:element name="TimeseriesMetadata" type="tsml:TimeseriesMetadataType" substitutionGroup="gml:AbstractObject">
 		<xs:annotation>
 			<xs:documentation>Metadata applicable to the whole timeseries or individual regularly spaced segments of an irregularly spaced whole timeseries.</xs:documentation>
 		</xs:annotation>
@@ -140,7 +168,7 @@ The interpolation type is defined per point within the time series as it is poss
 					<xs:documentation>The time between points in a regularly spaced timeseries.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="commentBlock" type="tsml-iwxxm:CommentBlockPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="commentBlock" type="tsml:CommentBlockPropertyType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="intendedObservationSpacing" type="gml:TimePeriodPropertyType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Defines the expected spacing between observations e.g. daily.</xs:documentation>
@@ -186,13 +214,13 @@ The interpolation type is defined per point within the time series as it is poss
 					<xs:documentation>When any analysis is run over a timeseries it is important to know if it is possible to interpolate between any two adjoining points. If the join period between two adjoining points is greater than the maxGapPeriod then the series should not be interpolated between these adjoining points. </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-                        <xs:element name="numberTimeSteps" type="xs:int" minOccurs="0" maxOccurs="1">
-                                <xs:annotation>
-                                        <xs:documentation>The number of time steps in a timeseries, or each homogenous (regularly spaced) segment of an irregularly spaced whole timeseries.</xs:documentation>
-                                </xs:annotation>
-                        </xs:element>
-			<!-- Changed the type from om:NamedValuePropertyType to tsml-iwxxm:NamedValuePropertyType / Ilkka Rinne 2024-03-14 -->
-			<xs:element name="parameter" type="tsml-iwxxm:NamedValuePropertyType" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="numberTimeSteps" type="xs:int" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                            <xs:documentation>The number of time steps in a timeseries, or each homogenous (regularly spaced) segment of an irregularly spaced whole timeseries.</xs:documentation>
+                    </xs:annotation>
+            </xs:element>
+			<!-- Changed the type from om:NamedValuePropertyType to tsml:NamedValuePropertyType / Ilkka Rinne 2024-03-14 -->
+			<xs:element name="parameter" type="tsml:NamedValuePropertyType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>This is a named value extension point that allows extra metadata to be added at the timeseries level. The parameters here are soft-typed (i.e. this standard does not define the properties semantics). Commonly used parameters here would be future candidates for definition within later versions or community extensions.  </xs:documentation>
 				</xs:annotation>
@@ -201,7 +229,7 @@ The interpolation type is defined per point within the time series as it is poss
 	</xs:complexType>
 	<xs:complexType name="TimeseriesMetadataPropertyType">
 		<xs:sequence>
-			<xs:element ref="tsml-iwxxm:TimeseriesMetadata"/>
+			<xs:element ref="tsml:TimeseriesMetadata"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
@@ -227,7 +255,7 @@ The interpolation type is defined per point within the time series as it is poss
 		</xs:sequence>
 	</xs:complexType>
 	<!--  .........................  -->
-	<xs:element name="NamedValue" type="tsml-iwxxm:NamedValueType">
+	<xs:element name="NamedValue" type="tsml:NamedValueType">
 		<xs:annotation>
 			<xs:documentation> The class 'NamedValue' provides for a generic soft-typed parameter value. NamedValue shall support two attributes. </xs:documentation>
 		</xs:annotation>
@@ -238,7 +266,7 @@ The interpolation type is defined per point within the time series as it is poss
 			<xs:documentation> The class 'NamedValue' provides for a generic soft-typed parameter value. NamedValue shall support two attributes. </xs:documentation>
 		</xs:annotation>
 		<xs:sequence minOccurs="0">
-			<xs:element ref="tsml-iwxxm:NamedValue"/>
+			<xs:element ref="tsml:NamedValue"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
 	</xs:complexType>

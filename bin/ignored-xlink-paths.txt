@@ -3,7 +3,6 @@
 # failing validation during development until they can be made operationally available
 
 # Permanent exclusions
-http://www.opengis.net/def/timeseriesType/timeseriesML/1.3/Time/MeasurementTimeseriesDomainRange
 
 # Temporary exclusions (to be re-enabled once available, ideally before the release is issued)
 http://codes.wmo.int/49-2/MeteorologicalFeature
@@ -12,3 +11,4 @@ http://codes.wmo.int/iwxxm/VolcanicAshConcentrations
 http://online-resource-of-features
 http://preferred.observable-property.registry/wind
 http://preferred.observable-property.registry/surfaceTemperature
+http://preferred.observable-property.registry/significantAviationWeather
