@@ -75,10 +75,10 @@
     
     <!-- A wind weather forecast object with a timeseries of probability distribution percetiles of quantity values falling between given ranges -->
     <iwxxm:feature>
-        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="wxobj1">
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.33353a53-d592-462d-ad05-a2a75c06864a">
             <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
             <iwxxm:phenomenonTime>
-                <gml:TimePeriod gml:id="tp0">
+                <gml:TimePeriod gml:id="uuid.e03c94c5-3195-442b-bd82-51a1902fd642">
                     <gml:beginPosition>2001-01-31T00:00:00Z</gml:beginPosition>
                     <gml:endPosition>2001-01-31T00:50:00Z</gml:endPosition>
                 </gml:TimePeriod>
@@ -87,7 +87,7 @@
             <iwxxm:phenomenon xlink:href="http://preferred.observable-property.registry/wind"/>
             
             <iwxxm:phenomenonGeometry>
-                <gml:Polygon gml:id="area1">
+                <gml:Polygon gml:id="uuid.81e693c5-bb3f-4c7a-bf2b-2d28b95b637f">
                     <gml:exterior>
                         <gml:LinearRing>
                             <gml:posList></gml:posList>
@@ -97,7 +97,7 @@
             </iwxxm:phenomenonGeometry>
             
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="wp3">
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.4d7a9b34-6368-467c-9a59-5264c04faf34">
                     
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>

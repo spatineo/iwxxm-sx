@@ -75,10 +75,10 @@
     
     <!-- A wind weather forecast object with a timeseries in two different regular interval parts (10 min & 1h intervals) -->
     <iwxxm:feature>
-        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="wxobj1">
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.a25fed27-8ec2-4675-a7f5-f4493a75f20e">
             <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
             <iwxxm:phenomenonTime>
-                <gml:TimePeriod gml:id="tp0">
+                <gml:TimePeriod gml:id="uuid.73674cc8-965c-4b2d-9110-add02784f8a7">
                     <gml:beginPosition>2001-01-31T00:00:00Z</gml:beginPosition>
                     <gml:endPosition>2001-01-31T06:00:00Z</gml:endPosition>
                 </gml:TimePeriod>
@@ -87,7 +87,7 @@
             <iwxxm:phenomenon xlink:href="http://preferred.observable-property.registry/wind"/>
             
             <iwxxm:phenomenonGeometry>
-                <gml:Polygon gml:id="area1">
+                <gml:Polygon gml:id="uuid.43981f16-7a96-45ed-bf9c-716583ab6e11">
                     <gml:exterior>
                         <gml:LinearRing>
                             <gml:posList></gml:posList>
@@ -97,7 +97,7 @@
             </iwxxm:phenomenonGeometry>
             
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="wp1">
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.1a8e2921-1ffc-41bf-83fb-dabca8be0062">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>6</tsml:numberTimeSteps>
@@ -183,13 +183,13 @@
                         </swe:DataRecord>
                     </iwxxm:pointRecord>
                     
-                    <iwxxm:nextPart xlink:href="#wp2" />
+                    <iwxxm:nextPart xlink:href="#uuid.d3681490-1791-47cc-b76c-283a58cc76d0" />
                     
                 </iwxxm:WeatherPhenomenonTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="wp2">
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.d3681490-1791-47cc-b76c-283a58cc76d0">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>6</tsml:numberTimeSteps>
@@ -275,7 +275,7 @@
                         </swe:DataRecord>
                     </iwxxm:pointRecord>
                     
-                    <iwxxm:previousPart xlink:href="#wp2" />
+                    <iwxxm:previousPart xlink:href="#uuid.1a8e2921-1ffc-41bf-83fb-dabca8be0062" />
                     
                 </iwxxm:WeatherPhenomenonTimeseriesTVP>
             </iwxxm:phenomenonProperty>
