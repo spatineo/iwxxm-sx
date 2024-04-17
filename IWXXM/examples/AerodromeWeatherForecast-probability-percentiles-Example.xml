@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    A sample file for Aerodrome Weather Forecast Objects
+
+-->
+<iwxxm:MeteorologicalFeatureCollection 
+    xmlns:iwxxm="http://icao.int/iwxxm/sx"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:aixm="http://www.aixm.aero/schema/5.1.1"
+    xmlns:tsml="http://www.opengis.net/timeseriesml/1.3/iwxxm"
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:cis="http://www.opengis.net/cis/1.1/gml"
+    xmlns:gco="http://www.isotc211.org/2005/gco"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.aixm.aero/schema/5.1.1 http://www.aixm.aero/schema/5.1.1/AIXM_Features.xsd
+    http://icao.int/iwxxm/sx ../iwxxm.xsd"
+    gml:id="uuid.ce3b61b9-d360-4da1-83b9-67e668406869" reportStatus="NORMAL" permissibleUsage="OPERATIONAL">
+
+    <!-- Unique identifier of the collective -->
+    <gml:identifier codeSpace="http://wafs/sigwxfc">3ae2138f-12d8-4392-b4d7-7a2d2e2e55d8</gml:identifier>
+    
+    <!-- A temporal bounding box containing the phenomenonTime of all objects -->
+    <iwxxm:boundingPeriod>
+        <gml:TimePeriod gml:id="uuid.76096601-6d6c-41f8-ad23-a25b1a8f3658">
+            <gml:beginPosition>2001-01-31T00:00:00Z</gml:beginPosition>
+            <gml:endPosition>2001-01-31T00:50:00Z</gml:endPosition>
+        </gml:TimePeriod>
+    </iwxxm:boundingPeriod>
+    
+    <!-- A spatial bounding box containing the phenomenonGeometry of all objects -->
+    <iwxxm:boundingVolume>
+        <iwxxm:ElevatedEnvelope>
+            <gml:lowerCorner srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">-90 -180</gml:lowerCorner>
+            <gml:upperCorner srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">90 180</gml:upperCorner>
+            <iwxxm:upperElevation uom="FL">600</iwxxm:upperElevation>
+            <iwxxm:upperVerticalReference>STD</iwxxm:upperVerticalReference>
+            <iwxxm:lowerElevation uom="FL">100</iwxxm:lowerElevation>
+            <iwxxm:lowerVerticalReference>STD</iwxxm:lowerVerticalReference>
+        </iwxxm:ElevatedEnvelope>
+    </iwxxm:boundingVolume>
+    
+    <!-- A list of all phenomena of all objects -->
+    <iwxxm:phenomenaList xlink:href="http://codes.wmo.int/49-2/MeteorologicalFeature/PHENOMENON"/>
+    
+    <!-- Issue time of the collective -->
+    <iwxxm:issueTime>
+        <gml:TimeInstant gml:id="uuid.4b5156bd-32e1-4fc9-a8f0-8f6b6c96e544">
+            <gml:timePosition>2001-01-30T21:00:00Z</gml:timePosition>
+        </gml:TimeInstant>
+    </iwxxm:issueTime>
+    
+    <!-- Originating centre of the collective -->
+    <iwxxm:originatingCentre>
+        <iwxxm:WorldAreaForecastCentre>London</iwxxm:WorldAreaForecastCentre>
+    </iwxxm:originatingCentre>
+    
+    <!-- Category of objects, either weatherObservations or weatherForecasts -->
+    <iwxxm:phenomenonCategory>weatherForecasts</iwxxm:phenomenonCategory>
+    
+    <!-- If the category is weatherForecasts the forecast base time (if available) -->
+    <iwxxm:phenomenonBaseTime>
+        <gml:TimeInstant gml:id="uuid.825a0f0f-0b48-4a0b-9270-7f1075fed151">
+            <gml:timePosition>2001-01-30T18:00:00Z</gml:timePosition>
+        </gml:TimeInstant>
+    </iwxxm:phenomenonBaseTime>
+    
+    <!-- phenomenonTime is the time when the collective is valid -->
+    <iwxxm:phenomenonTime>
+        <gml:TimePeriod gml:id="uuid.26328dbd-c763-4fd4-9b3c-40a6400795f0">
+            <gml:beginPosition>2001-01-31T00:00:00Z</gml:beginPosition>
+            <gml:endPosition>2001-01-31T00:50:00Z</gml:endPosition>
+        </gml:TimePeriod>
+    </iwxxm:phenomenonTime>
+    
+    <!-- A wind weather forecast object with a timeseries of probability distribution percetiles of quantity values falling between given ranges -->
+    <iwxxm:feature>
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.33353a53-d592-462d-ad05-a2a75c06864a">
+            <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
+            <iwxxm:phenomenonTime>
+                <gml:TimePeriod gml:id="uuid.e03c94c5-3195-442b-bd82-51a1902fd642">
+                    <gml:beginPosition>2001-01-31T00:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2001-01-31T00:50:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </iwxxm:phenomenonTime>
+            
+            <iwxxm:phenomenon xlink:href="http://preferred.observable-property.registry/wind"/>
+            
+            <iwxxm:phenomenonGeometry>
+                <gml:Polygon gml:id="uuid.81e693c5-bb3f-4c7a-bf2b-2d28b95b637f">
+                    <gml:exterior>
+                        <gml:LinearRing>
+                            <gml:posList></gml:posList>
+                        </gml:LinearRing>
+                    </gml:exterior>
+                </gml:Polygon>
+            </iwxxm:phenomenonGeometry>
+            
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.4d7a9b34-6368-467c-9a59-5264c04faf34">
+                    
+                    <tsml:metadata>
+                        <tsml:TimeseriesMetadata>
+                            <tsml:numberTimeSteps>6</tsml:numberTimeSteps>
+                        </tsml:TimeseriesMetadata>
+                    </tsml:metadata>
+                    
+                    <tsml:defaultPointMetadata>
+                        
+                        <tsml:FieldSpecificPointMetadata field="windSpeed">
+                            <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
+                            <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        <tsml:FieldSpecificPointMetadata field="windDirection">
+                            <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
+                            <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        <tsml:FieldSpecificPointMetadata field="windGust">
+                            <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/MaxPrec"/>
+                            <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                    </tsml:defaultPointMetadata>
+                    
+                    <tsml:point>
+                        <tsml:RangeTVP>
+                            <tsml:time>2001-01-31T00:00:00Z</tsml:time>
+                            <tsml:minValue>1.0 90 1.2</tsml:minValue>
+                            <tsml:maxValue>1.2 115 1.7</tsml:maxValue>
+                        </tsml:RangeTVP>
+                    </tsml:point>
+                    <tsml:point>
+                        <tsml:RangeTVP>
+                            <tsml:time>2001-01-31T00:10:00Z</tsml:time>
+                            <tsml:minValue>2.2 105 3.5</tsml:minValue>
+                            <tsml:maxValue>1.2 115 1.7</tsml:maxValue>
+                        </tsml:RangeTVP>
+                    </tsml:point>
+                    <tsml:point>
+                        <tsml:RangeTVP>
+                            <tsml:time>2001-01-31T00:20:00Z</tsml:time>
+                            <tsml:minValue>3.0 95.1 4.0</tsml:minValue>
+                            <tsml:maxValue>1.2 115 1.7</tsml:maxValue>
+                        </tsml:RangeTVP>
+                    </tsml:point>
+                    <tsml:point>
+                        <tsml:RangeTVP>
+                            <tsml:time>2001-01-31T00:30:00Z</tsml:time>
+                            <tsml:minValue>1.5 94.0 2.0</tsml:minValue>
+                            <tsml:maxValue>1.2 115 1.7</tsml:maxValue>
+                        </tsml:RangeTVP>
+                    </tsml:point>
+                    <tsml:point>
+                        <tsml:RangeTVP>
+                            <tsml:time>2001-01-31T00:40:00Z</tsml:time>
+                            <tsml:minValue>1.5 94.0 2.5</tsml:minValue>
+                            <tsml:maxValue>1.2 115 1.7</tsml:maxValue>
+                        </tsml:RangeTVP>
+                    </tsml:point>
+                    <tsml:point>
+                        <tsml:RangeTVP>
+                            <tsml:time>2001-01-31T00:50:00Z</tsml:time>
+                            <tsml:minValue>1.5 94.0 2.3</tsml:minValue>
+                            <tsml:maxValue>1.2 115 1.7</tsml:maxValue>
+                        </tsml:RangeTVP>
+                    </tsml:point>
+                    <iwxxm:pointRecord>
+                        <swe:DataRecord>
+                            <swe:field name="windSpeed">
+                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windSpeed">
+                                    <swe:label>Wind speed</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
+                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
+                                    <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
+                                </iwxxm:QuantityProbabilityDistributionPercentile>
+                            </swe:field>
+                            <swe:field name="windDirection">
+                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windDirection">
+                                    <swe:label>Wind direction</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
+                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
+                                    <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
+                                </iwxxm:QuantityProbabilityDistributionPercentile>
+                            </swe:field>
+                            <swe:field name="windGust">
+                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windGust">
+                                    <swe:label>Wind gust</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
+                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
+                                    <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
+                                </iwxxm:QuantityProbabilityDistributionPercentile>
+                            </swe:field>
+                        </swe:DataRecord>
+                    </iwxxm:pointRecord>
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+            </iwxxm:phenomenonProperty>
+            <iwxxm:aerodrome>
+                <aixm:AirportHeliport gml:id="uuid.522db66a-3bfb-4206-8292-cd453bc77aba">
+                    <aixm:timeSlice>
+                        <aixm:AirportHeliportTimeSlice gml:id="uuid.bec75672-e08b-49aa-a662-ffc8bab9e39b">
+                            <gml:validTime></gml:validTime>
+                            <aixm:interpretation>SNAPSHOT</aixm:interpretation>
+                            <aixm:ARP>
+                                <aixm:ElevatedPoint gml:id="uuid.d7498f1a-8a1e-4130-9781-4febd3588a75" srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                                    <gml:pos>12.34 -12.34</gml:pos>
+                                    <aixm:elevation uom="M">12</aixm:elevation>
+                                    <aixm:verticalDatum>EGM_96</aixm:verticalDatum>
+                                </aixm:ElevatedPoint>
+                            </aixm:ARP>
+                        </aixm:AirportHeliportTimeSlice>
+                    </aixm:timeSlice>
+                </aixm:AirportHeliport>
+            </iwxxm:aerodrome>
+        </iwxxm:AerodromeWeatherPhenomenonForecast>
+    </iwxxm:feature>
+</iwxxm:MeteorologicalFeatureCollection>
