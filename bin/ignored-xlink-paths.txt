@@ -12,3 +12,4 @@ http://online-resource-of-features
 http://preferred.observable-property.registry/wind
 http://preferred.observable-property.registry/surfaceTemperature
 http://preferred.observable-property.registry/significantAviationWeather
+http://uncertml.org/distributions/normal
