@@ -279,7 +279,23 @@
                     
                 </iwxxm:WeatherPhenomenonTimeseriesTVP>
             </iwxxm:phenomenonProperty>
-            
+            <iwxxm:aerodrome>
+                <aixm:AirportHeliport gml:id="uuid.522db66a-3bfb-4206-8292-cd453bc77aba">
+                    <aixm:timeSlice>
+                        <aixm:AirportHeliportTimeSlice gml:id="uuid.bec75672-e08b-49aa-a662-ffc8bab9e39b">
+                            <gml:validTime></gml:validTime>
+                            <aixm:interpretation>SNAPSHOT</aixm:interpretation>
+                            <aixm:ARP>
+                                <aixm:ElevatedPoint gml:id="uuid.d7498f1a-8a1e-4130-9781-4febd3588a75" srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                                    <gml:pos>12.34 -12.34</gml:pos>
+                                    <aixm:elevation uom="M">12</aixm:elevation>
+                                    <aixm:verticalDatum>EGM_96</aixm:verticalDatum>
+                                </aixm:ElevatedPoint>
+                            </aixm:ARP>
+                        </aixm:AirportHeliportTimeSlice>
+                    </aixm:timeSlice>
+                </aixm:AirportHeliport>
+            </iwxxm:aerodrome>
         </iwxxm:AerodromeWeatherPhenomenonForecast>
     </iwxxm:feature>
 </iwxxm:MeteorologicalFeatureCollection>
