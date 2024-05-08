@@ -107,17 +107,32 @@
                     
                     <tsml:defaultPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windSpeed">
+                        <tsml:FieldSpecificPointMetadata field="windSpeed-p.95">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
                         </tsml:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windDirection">
+                        <tsml:FieldSpecificPointMetadata field="windDirection-p.95">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
                         </tsml:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windGust">
+                        <tsml:FieldSpecificPointMetadata field="windGust-p.95">
+                            <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/MaxPrec"/>
+                            <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        <tsml:FieldSpecificPointMetadata field="windSpeed-p.90">
+                            <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
+                            <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        <tsml:FieldSpecificPointMetadata field="windDirection-p.90">
+                            <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
+                            <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        <tsml:FieldSpecificPointMetadata field="windGust-p.90">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/MaxPrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
                         </tsml:FieldSpecificPointMetadata>
@@ -127,48 +142,48 @@
                     <tsml:point>
                         <tsml:RangeTVP>
                             <tsml:time>2001-01-31T00:00:00Z</tsml:time>
-                            <tsml:minValue>1.0 90 1.2</tsml:minValue>
-                            <tsml:maxValue>1.2 115 1.7</tsml:maxValue>
+                            <tsml:minValue>1.0 90 1.2 0.9 87 1.0</tsml:minValue>
+                            <tsml:maxValue>1.2 115 1.7 1.5 116 1.9</tsml:maxValue>
                         </tsml:RangeTVP>
                     </tsml:point>
                     <tsml:point>
                         <tsml:RangeTVP>
                             <tsml:time>2001-01-31T00:10:00Z</tsml:time>
-                            <tsml:minValue>2.2 105 3.5</tsml:minValue>
-                            <tsml:maxValue>2.5 113 4.5</tsml:maxValue>
+                            <tsml:minValue>2.2 105 3.5 2.1 100 3.2</tsml:minValue>
+                            <tsml:maxValue>2.5 113 4.5 2.6 117 4.8</tsml:maxValue>
                         </tsml:RangeTVP>
                     </tsml:point>
                     <tsml:point>
                         <tsml:RangeTVP>
                             <tsml:time>2001-01-31T00:20:00Z</tsml:time>
-                            <tsml:minValue>3.0 95.1 4.0</tsml:minValue>
-                            <tsml:maxValue>3.2 115 2.5</tsml:maxValue>
+                            <tsml:minValue>3.0 95.1 4.0 2.8 93.1 3.9</tsml:minValue>
+                            <tsml:maxValue>3.2 115 2.5 3.3 118 4.2</tsml:maxValue>
                         </tsml:RangeTVP>
                     </tsml:point>
                     <tsml:point>
                         <tsml:RangeTVP>
                             <tsml:time>2001-01-31T00:30:00Z</tsml:time>
-                            <tsml:minValue>1.5 94.0 2.0</tsml:minValue>
-                            <tsml:maxValue>1.7 117 2.7</tsml:maxValue>
+                            <tsml:minValue>1.5 94.0 2.0 1.3 93.5 1.9</tsml:minValue>
+                            <tsml:maxValue>1.7 117 2.7 2.1 118 2.8</tsml:maxValue>
                         </tsml:RangeTVP>
                     </tsml:point>
                     <tsml:point>
                         <tsml:RangeTVP>
                             <tsml:time>2001-01-31T00:40:00Z</tsml:time>
-                            <tsml:minValue>1.5 94.0 2.5</tsml:minValue>
-                            <tsml:maxValue>1.8 114 3.1</tsml:maxValue>
+                            <tsml:minValue>1.5 94.0 2.5 1.4 92.0 2.3</tsml:minValue>
+                            <tsml:maxValue>1.8 114 3.1 3.2 115 3.2</tsml:maxValue>
                         </tsml:RangeTVP>
                     </tsml:point>
                     <tsml:point>
                         <tsml:RangeTVP>
                             <tsml:time>2001-01-31T00:50:00Z</tsml:time>
-                            <tsml:minValue>1.5 94.0 2.3</tsml:minValue>
-                            <tsml:maxValue>1.7 116 3.0</tsml:maxValue>
+                            <tsml:minValue>1.5 94.0 2.3 1.4 92.0 2.1</tsml:minValue>
+                            <tsml:maxValue>1.7 116 3.0 2.5 118 3.2</tsml:maxValue>
                         </tsml:RangeTVP>
                     </tsml:point>
                     <iwxxm:pointRecord>
                         <swe:DataRecord>
-                            <swe:field name="windSpeed">
+                            <swe:field name="windSpeed-p.95">
                                 <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windSpeed">
                                     <swe:label>Wind speed</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
@@ -176,7 +191,7 @@
                                     <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
                                 </iwxxm:QuantityProbabilityDistributionPercentile>
                             </swe:field>
-                            <swe:field name="windDirection">
+                            <swe:field name="windDirection-p.95">
                                 <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windDirection">
                                     <swe:label>Wind direction</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
@@ -184,12 +199,36 @@
                                     <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
                                 </iwxxm:QuantityProbabilityDistributionPercentile>
                             </swe:field>
-                            <swe:field name="windGust">
+                            <swe:field name="windGust-p.95">
                                 <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windGust">
                                     <swe:label>Wind gust</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
                                     <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
                                     <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
+                                </iwxxm:QuantityProbabilityDistributionPercentile>
+                            </swe:field>
+                            <swe:field name="windSpeed-p.90">
+                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windSpeed">
+                                    <swe:label>Wind speed</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
+                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
+                                    <iwxxm:nthPercentile>0.90</iwxxm:nthPercentile>
+                                </iwxxm:QuantityProbabilityDistributionPercentile>
+                            </swe:field>
+                            <swe:field name="windDirection-p.90">
+                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windDirection">
+                                    <swe:label>Wind direction</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
+                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
+                                    <iwxxm:nthPercentile>0.90</iwxxm:nthPercentile>
+                                </iwxxm:QuantityProbabilityDistributionPercentile>
+                            </swe:field>
+                            <swe:field name="windGust-p.90">
+                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windGust">
+                                    <swe:label>Wind gust</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
+                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
+                                    <iwxxm:nthPercentile>0.90</iwxxm:nthPercentile>
                                 </iwxxm:QuantityProbabilityDistributionPercentile>
                             </swe:field>
                         </swe:DataRecord>
