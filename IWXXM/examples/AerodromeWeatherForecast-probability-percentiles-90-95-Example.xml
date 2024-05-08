@@ -110,31 +110,80 @@
                         <tsml:FieldSpecificPointMetadata field="windSpeed-p.95">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+
+                            <tsml:qualifier>
+                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windSpeed">
+                                    <swe:label>Wind speed</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
+                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
+                                    <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
+                                </iwxxm:QuantityProbabilityDistributionPercentile>
+                            </tsml:qualifier>
                         </tsml:FieldSpecificPointMetadata>
                         
                         <tsml:FieldSpecificPointMetadata field="windDirection-p.95">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                            <tsml:qualifier>
+                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windDirection">
+                                    <swe:label>Wind direction</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
+                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
+                                    <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
+                                </iwxxm:QuantityProbabilityDistributionPercentile>
+                            </tsml:qualifier>
                         </tsml:FieldSpecificPointMetadata>
                         
                         <tsml:FieldSpecificPointMetadata field="windGust-p.95">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/MaxPrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                            <tsml:qualifier>
+                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windGust">
+                                    <swe:label>Wind gust</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
+                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
+                                    <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
+                                </iwxxm:QuantityProbabilityDistributionPercentile>
+                            </tsml:qualifier>
                         </tsml:FieldSpecificPointMetadata>
                         
                         <tsml:FieldSpecificPointMetadata field="windSpeed-p.90">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                            <tsml:qualifier>
+                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windSpeed">
+                                    <swe:label>Wind speed</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
+                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
+                                    <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
+                                </iwxxm:QuantityProbabilityDistributionPercentile>
+                            </tsml:qualifier>
                         </tsml:FieldSpecificPointMetadata>
                         
                         <tsml:FieldSpecificPointMetadata field="windDirection-p.90">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                            <tsml:qualifier>
+                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windDirection">
+                                    <swe:label>Wind direction</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
+                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
+                                    <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
+                                </iwxxm:QuantityProbabilityDistributionPercentile>
+                            </tsml:qualifier>
                         </tsml:FieldSpecificPointMetadata>
                         
                         <tsml:FieldSpecificPointMetadata field="windGust-p.90">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/MaxPrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                            <tsml:qualifier>
+                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windGust">
+                                    <swe:label>Wind gust</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
+                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
+                                    <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
+                                </iwxxm:QuantityProbabilityDistributionPercentile>
+                            </tsml:qualifier>
                         </tsml:FieldSpecificPointMetadata>
                         
                     </tsml:defaultPointMetadata>
@@ -181,58 +230,6 @@
                             <tsml:maxValue>1.7 116 3.0 2.5 118 3.2</tsml:maxValue>
                         </tsml:RangeTVP>
                     </tsml:point>
-                    <iwxxm:pointRecord>
-                        <swe:DataRecord>
-                            <swe:field name="windSpeed-p.95">
-                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windSpeed">
-                                    <swe:label>Wind speed</swe:label>
-                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
-                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
-                                    <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
-                                </iwxxm:QuantityProbabilityDistributionPercentile>
-                            </swe:field>
-                            <swe:field name="windDirection-p.95">
-                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windDirection">
-                                    <swe:label>Wind direction</swe:label>
-                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
-                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
-                                    <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
-                                </iwxxm:QuantityProbabilityDistributionPercentile>
-                            </swe:field>
-                            <swe:field name="windGust-p.95">
-                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windGust">
-                                    <swe:label>Wind gust</swe:label>
-                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
-                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
-                                    <iwxxm:nthPercentile>0.95</iwxxm:nthPercentile>
-                                </iwxxm:QuantityProbabilityDistributionPercentile>
-                            </swe:field>
-                            <swe:field name="windSpeed-p.90">
-                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windSpeed">
-                                    <swe:label>Wind speed</swe:label>
-                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
-                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
-                                    <iwxxm:nthPercentile>0.90</iwxxm:nthPercentile>
-                                </iwxxm:QuantityProbabilityDistributionPercentile>
-                            </swe:field>
-                            <swe:field name="windDirection-p.90">
-                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windDirection">
-                                    <swe:label>Wind direction</swe:label>
-                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
-                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
-                                    <iwxxm:nthPercentile>0.90</iwxxm:nthPercentile>
-                                </iwxxm:QuantityProbabilityDistributionPercentile>
-                            </swe:field>
-                            <swe:field name="windGust-p.90">
-                                <iwxxm:QuantityProbabilityDistributionPercentile definition="http://preferred.observable-property.registry/windGust">
-                                    <swe:label>Wind gust</swe:label>
-                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
-                                    <iwxxm:distribution xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
-                                    <iwxxm:nthPercentile>0.90</iwxxm:nthPercentile>
-                                </iwxxm:QuantityProbabilityDistributionPercentile>
-                            </swe:field>
-                        </swe:DataRecord>
-                    </iwxxm:pointRecord>
                 </iwxxm:WeatherPhenomenonTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             <iwxxm:aerodrome>

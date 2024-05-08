@@ -102,7 +102,8 @@ The interpolation type is defined per point within the time series as it is poss
 					<xs:documentation>Specifies the time period over which the values have been aggregated. E.g. 15 minutely. </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="qualifier" type="swe:QuantityPropertyType" minOccurs="0" maxOccurs="unbounded">
+			<!-- Changed from swe:QuantityPropertyType to swe:AbstractSimpleComponentPropertyType to accomodate QuantityRanges / Ilkka Rinne 2024-05-08 -->
+			<xs:element name="qualifier" type="swe:AbstractSimpleComponentPropertyType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A more loosely-typed qualifier that allows assertions using the SWE Common union (quality, categories etc.)</xs:documentation>
 				</xs:annotation>
@@ -136,6 +137,7 @@ The interpolation type is defined per point within the time series as it is poss
 		<xs:complexContent>
 			<xs:extension base="tsml:PointMetadataType">
 				<xs:attribute name="field" type="xs:NCName" use="required" />
+				<xs:attribute name="position" type="xs:int" use="optional" />
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

@@ -105,6 +105,74 @@
                         </tsml:TimeseriesMetadata>
                     </tsml:metadata>
                     
+                    <tsml:defaultPointMetadata>
+                        <tsml:FieldSpecificPointMetadata field="windSpeed" position="1">
+                            <tsml:qualifier>
+                                <iwxxm:QuantityValueExceedenceProbability>
+                                    <swe:label>Probability of 10 min average wind speed exceeding 15.0 m/s</swe:label>
+                                    <swe:uom xlink:href="https://qudt.org/vocab/unit/UNITLESS" />
+                                    <iwxxm:limit>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/windSpeed">
+                                            <swe:label>Wind speed</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
+                                            <swe:value>15.0</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:limit>
+                                    <iwxxm:limitQuantityMetadata>
+                                        <tsml:PointMetadata>
+                                            <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
+                                            <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                                        </tsml:PointMetadata>
+                                    </iwxxm:limitQuantityMetadata>
+                                </iwxxm:QuantityValueExceedenceProbability>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        <tsml:FieldSpecificPointMetadata field="windDirectionProbability" position="2">
+                            <tsml:qualifier>
+                                <iwxxm:QuantityValueBetweenProbability>
+                                    <swe:label>Probability of 10 min average wind direction falling between 90 and 110 degrees</swe:label>
+                                    <swe:uom xlink:href="https://qudt.org/vocab/unit/UNITLESS" />
+                                    <iwxxm:range>
+                                        <swe:QuantityRange>
+                                            <swe:label>Wind direction</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
+                                            <swe:value>90 110</swe:value>
+                                        </swe:QuantityRange>
+                                    </iwxxm:range>
+                                    <iwxxm:rangeQuantityMetadata>
+                                        <tsml:PointMetadata>
+                                            <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
+                                            <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                                        </tsml:PointMetadata>
+                                    </iwxxm:rangeQuantityMetadata>
+                                </iwxxm:QuantityValueBetweenProbability>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        <tsml:FieldSpecificPointMetadata field="windGustExceedenceProbability" position="3">
+                            <tsml:qualifier>
+                                <iwxxm:QuantityValueExceedenceProbability>
+                                    <swe:label>Probability of 10 min maximun wind gust exceeding 20.0 m/s</swe:label>
+                                    <swe:uom xlink:href="https://qudt.org/vocab/unit/UNITLESS" />
+                                    <iwxxm:limit>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/windGust">
+                                            <swe:label>Wind gust</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
+                                            <swe:value>20.0</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:limit>
+                                    <iwxxm:limitQuantityMetadata>
+                                        <tsml:PointMetadata>
+                                            <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/MaxPrec"/>
+                                            <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                                        </tsml:PointMetadata>
+                                    </iwxxm:limitQuantityMetadata>
+                                </iwxxm:QuantityValueExceedenceProbability>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                    </tsml:defaultPointMetadata>
                     <tsml:point>
                         <tsml:RecordTVP>
                             <tsml:time>2001-01-31T00:00:00Z</tsml:time>
@@ -141,71 +209,7 @@
                             <tsml:value>0.90 0.96 0.98</tsml:value>
                         </tsml:RecordTVP>
                     </tsml:point>
-                    <iwxxm:pointRecord>
-                        <swe:DataRecord>
-                            
-                            <swe:field name="windSpeedExceedenceProbability">
-                                <iwxxm:QuantityValueExceedenceProbability>
-                                    <swe:label>Probability of 10 min average wind speed exceeding 15.0 m/s</swe:label>
-                                    <swe:uom xlink:href="https://qudt.org/vocab/unit/UNITLESS" />
-                                    <iwxxm:limit>
-                                        <swe:Quantity definition="http://preferred.observable-property.registry/windSpeed">
-                                            <swe:label>Wind speed</swe:label>
-                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
-                                            <swe:value>15.0</swe:value>
-                                        </swe:Quantity>
-                                    </iwxxm:limit>
-                                    <iwxxm:limitQuantityMetadata>
-                                        <tsml:PointMetadata>
-                                            <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
-                                            <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
-                                        </tsml:PointMetadata>
-                                    </iwxxm:limitQuantityMetadata>
-                                </iwxxm:QuantityValueExceedenceProbability>
-                            </swe:field>
-                            
-                            <swe:field name="windDirectionProbability">
-                                <iwxxm:QuantityValueBetweenProbability>
-                                    <swe:label>Probability of 10 min average wind direction falling between 90 and 110 degrees</swe:label>
-                                    <swe:uom xlink:href="https://qudt.org/vocab/unit/UNITLESS" />
-                                    <iwxxm:range>
-                                        <swe:QuantityRange>
-                                            <swe:label>Wind direction</swe:label>
-                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
-                                            <swe:value>90 110</swe:value>
-                                        </swe:QuantityRange>
-                                    </iwxxm:range>
-                                    <iwxxm:rangeQuantityMetadata>
-                                        <tsml:PointMetadata>
-                                            <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
-                                            <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
-                                        </tsml:PointMetadata>
-                                    </iwxxm:rangeQuantityMetadata>
-                                </iwxxm:QuantityValueBetweenProbability>
-                            </swe:field>
-                            
-                            <swe:field name="windGustExceedenceProbability">
-                                <iwxxm:QuantityValueExceedenceProbability>
-                                    <swe:label>Probability of 10 min maximun wind gust exceeding 20.0 m/s</swe:label>
-                                    <swe:uom xlink:href="https://qudt.org/vocab/unit/UNITLESS" />
-                                    <iwxxm:limit>
-                                        <swe:Quantity definition="http://preferred.observable-property.registry/windGust">
-                                            <swe:label>Wind gust</swe:label>
-                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
-                                            <swe:value>20.0</swe:value>
-                                        </swe:Quantity>
-                                    </iwxxm:limit>
-                                    <iwxxm:limitQuantityMetadata>
-                                        <tsml:PointMetadata>
-                                            <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/MaxPrec"/>
-                                            <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
-                                        </tsml:PointMetadata>
-                                    </iwxxm:limitQuantityMetadata>
-                                </iwxxm:QuantityValueExceedenceProbability>
-                            </swe:field>
-                            
-                        </swe:DataRecord>
-                    </iwxxm:pointRecord>
+                  
                 </iwxxm:WeatherPhenomenonTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             <iwxxm:aerodrome>

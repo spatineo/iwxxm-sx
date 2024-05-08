@@ -106,19 +106,38 @@
                     
                     <tsml:defaultPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windSpeed">
+                        <tsml:FieldSpecificPointMetadata field="windSpeed" position="1">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/windSpeed">
+                                    <swe:label>Wind speed</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                            
                         </tsml:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windDirection">
+                        <tsml:FieldSpecificPointMetadata field="windDirection" position="2">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/windDirection">
+                                    <swe:label>Wind direction</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
+                                </swe:Quantity>
+                            </tsml:qualifier>
                         </tsml:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windGust">
+                        <tsml:FieldSpecificPointMetadata field="windGust" position="3">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/MaxPrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/windGust">
+                                    <swe:label>Wind gust</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
+                                </swe:Quantity>
+                            </tsml:qualifier>
                         </tsml:FieldSpecificPointMetadata>
                         
                     </tsml:defaultPointMetadata>
@@ -160,29 +179,6 @@
                         </tsml:RecordTVP>
                     </tsml:point>
                     
-                    <iwxxm:pointRecord>
-                        <swe:DataRecord>
-                            <swe:field name="windSpeed">
-                                <swe:Quantity definition="http://preferred.observable-property.registry/windSpeed">
-                                    <swe:label>Wind speed</swe:label>
-                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
-                                </swe:Quantity>
-                            </swe:field>
-                            <swe:field name="windDirection">
-                                <swe:Quantity definition="http://preferred.observable-property.registry/windDirection">
-                                    <swe:label>Wind direction</swe:label>
-                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
-                                </swe:Quantity>
-                            </swe:field>
-                            <swe:field name="windGust">
-                                <swe:Quantity definition="http://preferred.observable-property.registry/windGust">
-                                    <swe:label>Wind gust</swe:label>
-                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
-                                </swe:Quantity>
-                            </swe:field>
-                        </swe:DataRecord>
-                    </iwxxm:pointRecord>
-                    
                     <iwxxm:nextPart xlink:href="#uuid.d3681490-1791-47cc-b76c-283a58cc76d0" />
                     
                 </iwxxm:WeatherPhenomenonTimeseriesTVP>
@@ -198,19 +194,37 @@
                     
                     <tsml:defaultPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windSpeed">
+                        <tsml:FieldSpecificPointMetadata field="windSpeed" position="1">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT1H</tsml:aggregationDuration>
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/windSpeed">
+                                    <swe:label>Wind speed</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
+                                </swe:Quantity>
+                            </tsml:qualifier>
                         </tsml:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windDirection">
+                        <tsml:FieldSpecificPointMetadata field="windDirection" position="2">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT1H</tsml:aggregationDuration>
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/windDirection">
+                                    <swe:label>Wind direction</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
+                                </swe:Quantity>
+                            </tsml:qualifier>
                         </tsml:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windGust">
+                        <tsml:FieldSpecificPointMetadata field="windGust" position="3">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/MaxPrec"/>
                             <tsml:aggregationDuration>PT1H</tsml:aggregationDuration>
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/windGust">
+                                    <swe:label>Wind gust</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
+                                </swe:Quantity>
+                            </tsml:qualifier>
                         </tsml:FieldSpecificPointMetadata>
                         
                     </tsml:defaultPointMetadata>
@@ -220,6 +234,7 @@
                             <tsml:time>2001-01-31T01:00:00Z</tsml:time>
                             <tsml:value>1.0 110 1.5</tsml:value>
                         </tsml:RecordTVP>
+                        
                     </tsml:point>
                     <tsml:point>
                         <tsml:RecordTVP>
@@ -251,29 +266,6 @@
                             <tsml:value>1.5 94.0 2.3</tsml:value>
                         </tsml:RecordTVP>
                     </tsml:point>
-                    
-                    <iwxxm:pointRecord>
-                        <swe:DataRecord>
-                            <swe:field name="windSpeed">
-                                <swe:Quantity definition="http://preferred.observable-property.registry/windSpeed">
-                                    <swe:label>Wind speed</swe:label>
-                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
-                                </swe:Quantity>
-                            </swe:field>
-                            <swe:field name="windDirection">
-                                <swe:Quantity definition="http://preferred.observable-property.registry/windDirection">
-                                    <swe:label>Wind direction</swe:label>
-                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
-                                </swe:Quantity>
-                            </swe:field>
-                            <swe:field name="windGust">
-                                <swe:Quantity definition="http://preferred.observable-property.registry/windGust">
-                                    <swe:label>Wind gust</swe:label>
-                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
-                                </swe:Quantity>
-                            </swe:field>
-                        </swe:DataRecord>
-                    </iwxxm:pointRecord>
                     
                     <iwxxm:previousPart xlink:href="#uuid.1a8e2921-1ffc-41bf-83fb-dabca8be0062" />
                     

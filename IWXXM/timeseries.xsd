@@ -24,7 +24,6 @@
         <complexContent>
             <extension base="tsml:TimeseriesTVPType">
                 <sequence>
-                    <element name="pointRecord" type="swe:DataRecordPropertyType" minOccurs="0" maxOccurs="1"/>
                     <element name="nextPart" type="gml:ReferenceType" minOccurs="0" maxOccurs="1"/>
                     <element name="previousPart" type="gml:ReferenceType" minOccurs="0" maxOccurs="1"/>
                 </sequence>
