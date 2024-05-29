@@ -1,0 +1,1664 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    A sample file for Aerodrome Weather Forecast Objects
+
+-->
+<iwxxm:MeteorologicalFeatureCollection xmlns:iwxxm="http://icao.int/iwxxm/sx" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:aixm="http://www.aixm.aero/schema/5.1.1" xmlns:tsml="http://www.opengis.net/timeseriesml/1.3/iwxxm" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aixm.aero/schema/5.1.1 http://www.aixm.aero/schema/5.1.1/AIXM_Features.xsd     http://icao.int/iwxxm/sx ../iwxxm.xsd" gml:id="uuid.ce3b61b9-d360-4da1-83b9-67e668406869" reportStatus="NORMAL" permissibleUsage="OPERATIONAL">
+
+    <!-- Unique identifier of the collective -->
+    <gml:identifier codeSpace="http://wafs/sigwxfc">3ae2138f-12d8-4392-b4d7-7a2d2e2e55d8</gml:identifier>
+    
+    <!-- A temporal bounding box containing the phenomenonTime of all objects -->
+    <iwxxm:boundingPeriod>
+        <gml:TimePeriod gml:id="uuid.75d02a1b-ce2d-497f-9252-878a7e8f3782">
+            <gml:beginPosition>2023-05-31T03:00:00Z</gml:beginPosition>
+            <gml:endPosition>2023-06-01T14:00:00Z</gml:endPosition>
+        </gml:TimePeriod>
+    </iwxxm:boundingPeriod>
+    
+    <!-- A spatial bounding box containing the phenomenonGeometry of all objects -->
+    <iwxxm:boundingVolume>
+        <iwxxm:ElevatedEnvelope>
+            <gml:lowerCorner srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">60.31722 24.96333</gml:lowerCorner>
+            <gml:upperCorner srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">60.31722 24.96333</gml:upperCorner>
+            <iwxxm:upperElevation uom="FT">20000</iwxxm:upperElevation>
+            <iwxxm:upperVerticalReference>STD</iwxxm:upperVerticalReference>
+            <iwxxm:lowerElevation uom="M">0</iwxxm:lowerElevation>
+            <iwxxm:lowerVerticalReference>SFC</iwxxm:lowerVerticalReference>
+        </iwxxm:ElevatedEnvelope>
+    </iwxxm:boundingVolume>
+    
+    <!-- A list of all phenomena of all objects, commented out the ones I could not find 
+        a match under https://codes.wmo.int/49-2/MeteorologicalFeature, else the validation fails -->
+    
+    <!-- iwxxm:phenomenaList xlink:href="http://preferred.observable-property.registry/wind" /-->
+    <!-- iwxxm:phenomenaList xlink:href="http://preferred.observable-property.registry/windShear" /-->
+    <iwxxm:phenomenaList xlink:href="http://codes.wmo.int/49-2/MeteorologicalFeature/TURBULENCE" />
+    <iwxxm:phenomenaList xlink:href="http://codes.wmo.int/49-2/MeteorologicalFeature/AIRFRAME_ICING" />
+    <iwxxm:phenomenaList xlink:href="http://codes.wmo.int/49-2/MeteorologicalFeature/CLOUD" />
+    <!-- iwxxm:phenomenaList xlink:href="http://preferred.observable-property.registry/visibility" /-->
+    <!-- iwxxm:phenomenaList xlink:href="http://preferred.observable-property.registry/weather" /-->
+    
+    <!-- Issue time of the collective -->
+    <iwxxm:issueTime>
+        <gml:TimeInstant gml:id="uuid.4b5156bd-32e1-4fc9-a8f0-8f6b6c96e544">
+            <gml:timePosition>2023-06-01T14:00:00Z</gml:timePosition>
+        </gml:TimeInstant>
+    </iwxxm:issueTime>
+    
+    <!-- Originating centre of the collective -->
+    <iwxxm:originatingCentre />
+    
+    <!-- Category of objects, either weatherObservations or weatherForecasts -->
+    <iwxxm:phenomenonCategory>weatherForecasts</iwxxm:phenomenonCategory>
+    
+    <!-- If the category is weatherForecasts the forecast base time (if available) -->
+    <iwxxm:phenomenonBaseTime>
+        <gml:TimeInstant gml:id="uuid.825a0f0f-0b48-4a0b-9270-7f1075fed151">
+            <gml:timePosition>2023-05-31T03:00:00Z</gml:timePosition>
+        </gml:TimeInstant>
+    </iwxxm:phenomenonBaseTime>
+    
+    <!-- phenomenonTime is the time when the collective is valid -->
+    <iwxxm:phenomenonTime>
+        <gml:TimePeriod gml:id="uuid.26328dbd-c763-4fd4-9b3c-40a6400795f0">
+            <gml:beginPosition>2023-05-31T03:00:00Z</gml:beginPosition>
+            <gml:endPosition>2023-06-01T14:00:00Z</gml:endPosition>
+        </gml:TimePeriod>
+    </iwxxm:phenomenonTime>
+    
+    <!-- A ground wind weather forecast object with a timeseries at regular 1h interval -->
+    <iwxxm:feature>
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.6a9bb975-4b1b-4694-bea7-c5ede1365936">
+            <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
+            <iwxxm:phenomenonTime>
+                <gml:TimePeriod gml:id="uuid.7440b498-5e34-42fb-bb8f-f8b106376d81">
+                    <gml:beginPosition>2023-05-31T03:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2023-06-01T14:00:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </iwxxm:phenomenonTime>
+            
+            <iwxxm:phenomenon xlink:href="http://preferred.observable-property.registry/wind" />
+            
+            <iwxxm:phenomenonGeometry>
+                <!-- Airport area on the ground level -->
+                <aixm:Surface srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2" axisLabels="Lat Long" gml:id="uuid.2abb06a6-d42e-4b75-81da-55489a9f7aa0">
+                    <gml:patches>
+                        <gml:PolygonPatch>
+                            <gml:exterior>
+                                <gml:LinearRing>
+                                    <gml:posList />
+                                </gml:LinearRing>
+                            </gml:exterior>
+                        </gml:PolygonPatch>
+                    </gml:patches>
+                </aixm:Surface>
+            </iwxxm:phenomenonGeometry>
+            
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.0d2d6f16-cbd0-4859-ad43-7c1a22bac8dd">
+                    <tsml:metadata>
+                        <tsml:TimeseriesMetadata>
+                            <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
+                        </tsml:TimeseriesMetadata>
+                    </tsml:metadata>
+                    
+                    <tsml:defaultPointMetadata>
+
+                        
+                        <tsml:FieldSpecificPointMetadata field="ws" position="1">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/wind/10mWindSpeed">
+                                    <swe:label>10 m wind speed</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/unknown">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="wd" position="2">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/wind/10mWindDirection">
+                                    <swe:label>10 m wind direction</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/unknown">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="wg" position="3">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/wind/10mWindGust">
+                                    <swe:label>10m wind gust</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/unknown">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                  
+                    </tsml:defaultPointMetadata>
+                    
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T03:00:00Z</tsml:time><tsml:value>11 200 16</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T04:00:00Z</tsml:time><tsml:value>11 210 17</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T05:00:00Z</tsml:time><tsml:value>12 220 19</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T06:00:00Z</tsml:time><tsml:value>12 230 20</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T07:00:00Z</tsml:time><tsml:value>12 240 20</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T08:00:00Z</tsml:time><tsml:value>13 250 19</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T09:00:00Z</tsml:time><tsml:value>13 270 18</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T10:00:00Z</tsml:time><tsml:value>12 270 21</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T11:00:00Z</tsml:time><tsml:value>13 270 23</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T12:00:00Z</tsml:time><tsml:value>14 280 23</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T13:00:00Z</tsml:time><tsml:value>14 290 23</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T14:00:00Z</tsml:time><tsml:value>14 290 23</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T15:00:00Z</tsml:time><tsml:value>13 290 21</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T16:00:00Z</tsml:time><tsml:value>11 300 20</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T17:00:00Z</tsml:time><tsml:value>11 290 19</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T18:00:00Z</tsml:time><tsml:value>11 290 18</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T19:00:00Z</tsml:time><tsml:value>11 290 17</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T20:00:00Z</tsml:time><tsml:value>10 290 15</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T21:00:00Z</tsml:time><tsml:value>10 280 15</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T22:00:00Z</tsml:time><tsml:value>10 280 15</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T23:00:00Z</tsml:time><tsml:value>11 280 15</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T00:00:00Z</tsml:time><tsml:value>10 280 16</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T01:00:00Z</tsml:time><tsml:value>10 280 15</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T02:00:00Z</tsml:time><tsml:value>10 280 16</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T03:00:00Z</tsml:time><tsml:value>11 280 17</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T04:00:00Z</tsml:time><tsml:value>11 290 18</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T05:00:00Z</tsml:time><tsml:value>11 290 18</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T06:00:00Z</tsml:time><tsml:value>10 290 17</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T07:00:00Z</tsml:time><tsml:value>11 290 19</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T08:00:00Z</tsml:time><tsml:value>12 290 20</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T09:00:00Z</tsml:time><tsml:value>12 300 22</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T10:00:00Z</tsml:time><tsml:value>15 290 24</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T11:00:00Z</tsml:time><tsml:value>13 300 24</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><tsml:value>12 300 24</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><tsml:value>13 300 25</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><tsml:value>14 300 24</tsml:value></tsml:RecordTVP></tsml:point>
+                                    
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+            </iwxxm:phenomenonProperty>
+            
+            <iwxxm:aerodrome>
+                <aixm:AirportHeliport gml:id="uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587">
+                    <aixm:timeSlice>
+                        <aixm:AirportHeliportTimeSlice gml:id="uuid.f3a89cd3-a9db-4efe-af67-4c39d6f5ed43">
+                            <gml:validTime>
+                                <gml:TimePeriod gml:id="uuid.5c2201e5-62a8-4dbc-8673-c35f18b41675">
+                                    <gml:beginPosition>2001-01-31</gml:beginPosition>
+                                    <gml:endPosition indeterminatePosition="unknown" />
+                                </gml:TimePeriod>
+                            </gml:validTime>
+                            <aixm:interpretation>SNAPSHOT</aixm:interpretation>
+                            <aixm:designator>HEL</aixm:designator>
+                            <aixm:name>HELSINKI-VANTAA</aixm:name>
+                            <aixm:ARP>
+                                <aixm:ElevatedPoint srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" gml:id="uuid.ea3b4582-63f3-404b-b721-58cfe65fdc09">
+                                    <gml:pos>60.31722 24.96333</gml:pos>
+                                    <aixm:elevation uom="M">55</aixm:elevation>
+                                    <aixm:verticalDatum>EGM_96</aixm:verticalDatum>
+                                </aixm:ElevatedPoint>
+                            </aixm:ARP>
+                        </aixm:AirportHeliportTimeSlice>
+                    </aixm:timeSlice>
+                </aixm:AirportHeliport>
+            </iwxxm:aerodrome>
+        </iwxxm:AerodromeWeatherPhenomenonForecast>
+    </iwxxm:feature>
+    
+    <!-- A wind shear weather forecast object with a timeseries at regular 1h interval  -->
+    <iwxxm:feature>
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.342ff67d-da07-4c29-bd34-9eaf8008c9a9">
+            <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
+            <iwxxm:phenomenonTime>
+                <gml:TimePeriod gml:id="uuid.52f450ae-77a4-4cad-b3e5-ad7d8db3004d">
+                    <gml:beginPosition>2023-05-31T03:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2023-06-01T14:00:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </iwxxm:phenomenonTime>
+            
+            <iwxxm:phenomenon xlink:href="http://preferred.observable-property.registry/windShear" />
+            
+            <iwxxm:phenomenonGeometry>
+                <!-- Airport area on the ground level -->
+                <!-- This may be a bit strange as the feature containing geometry, as the wind shear phenomena occurs at various heights in the atmosphere, not on the ground. In principle we should us a Solid (3D) 
+                    geometry which would contain the possible low and high turbulence flight levels in the vivinity of the airport, but this would be complicated to express and interpret -->
+                <aixm:Surface srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2" axisLabels="Lat Long" gml:id="uuid.ec1a30b3-04a9-404c-9ec4-d73ec63f6774">
+                    <gml:patches>
+                        <gml:PolygonPatch>
+                            <gml:exterior>
+                                <gml:LinearRing>
+                                    <gml:posList />
+                                </gml:LinearRing>
+                            </gml:exterior>
+                        </gml:PolygonPatch>
+                    </gml:patches>
+                </aixm:Surface>
+            </iwxxm:phenomenonGeometry>
+            
+            <!-- First property: wind shear intensity (single value, Quantity) -->
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.f1fce2cf-07be-4956-888e-57ac752994f9">
+                    <tsml:metadata>
+                        <tsml:TimeseriesMetadata>
+                            <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
+                        </tsml:TimeseriesMetadata>
+                    </tsml:metadata>
+                    
+                    <tsml:defaultPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="shearintensity" position="1">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/windShear/intensity">
+                                    <swe:label>Intensity of wind shear</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                       
+                    </tsml:defaultPointMetadata>
+                    
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T03:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T04:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T05:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T06:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T07:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T08:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T09:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T10:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T11:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T12:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T13:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T14:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T15:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T16:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T17:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T18:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T19:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T20:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T21:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T22:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T23:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T00:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T01:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T02:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T03:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T04:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T05:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T06:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T07:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T08:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T09:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T10:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T11:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                                       
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+            </iwxxm:phenomenonProperty>
+            
+            <!-- Second property: wind shear base & top (a range value, QuantityRange) -->
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.34f77b9b-14e6-4880-964b-c6322458322c">
+                    <tsml:metadata>
+                        <tsml:TimeseriesMetadata>
+                            <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
+                        </tsml:TimeseriesMetadata>
+                    </tsml:metadata>
+                    
+                    <tsml:defaultPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="shearlowhigh" position="1">
+                            <tsml:qualifier>
+                                <swe:QuantityRange definition="http://preferred.observable-property.registry/windshear/height">
+                                    <swe:label>Wind shear occurrence height (base-top)</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom code="FL" />
+                                    
+                                </swe:QuantityRange>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                    </tsml:defaultPointMetadata>
+                    
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T03:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T04:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T05:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T06:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T07:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T08:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T09:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T10:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T11:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T12:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T13:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T14:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T15:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T16:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T17:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T18:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T19:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T20:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T21:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T22:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T23:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T00:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T01:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T02:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T03:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T04:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T05:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T06:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T07:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T08:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T09:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T10:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T11:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point> 
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+            </iwxxm:phenomenonProperty>
+            
+            <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
+
+        </iwxxm:AerodromeWeatherPhenomenonForecast>
+    </iwxxm:feature>
+    
+    <!-- A turbulence forecast object with a timeseries at regular 1h interval -->
+    <iwxxm:feature>
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.d857b7a7-6f02-4e85-ab11-1309bd2bfd02">
+            <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
+            <iwxxm:phenomenonTime>
+                <gml:TimePeriod gml:id="uuid.f953a56c-7588-4b52-b4ac-4aeccf6e5391">
+                    <gml:beginPosition>2023-05-31T03:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2023-06-01T14:00:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </iwxxm:phenomenonTime>
+            
+            <iwxxm:phenomenon xlink:href="http://codes.wmo.int/49-2/MeteorologicalFeature/TURBULENCE" />
+            
+            <iwxxm:phenomenonGeometry>
+                
+                <!-- Airport area on the ground level -->
+                <!-- This may be a bit strange as the feature containing geometry, as the trubulence phenomena occurs at various heights in the atmosphere, not on the ground. In principle we should us a Solid (3D) 
+                    geometry which would contain the possible low and high turbulence flight levels in the vicinity of the airport, but this would be complicated to express and interpret -->
+                
+                <aixm:Surface srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2" axisLabels="Lat Long" gml:id="uuid.9f96175a-2d2d-417a-b798-ff462ec705b7">
+                    <gml:patches>
+                        <gml:PolygonPatch>
+                            <gml:exterior>
+                                <gml:LinearRing>
+                                    <gml:posList />
+                                </gml:LinearRing>
+                            </gml:exterior>
+                        </gml:PolygonPatch>
+                    </gml:patches>
+                </aixm:Surface>
+            </iwxxm:phenomenonGeometry>
+            
+            <!-- First property: turbulence intensity (single value, Quantity) -->
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.b979dbd4-0043-46ea-b590-c1b0addeea82">
+                    <tsml:metadata>
+                        <tsml:TimeseriesMetadata>
+                            <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
+                        </tsml:TimeseriesMetadata>
+                    </tsml:metadata>
+                    
+                    <tsml:defaultPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="shearintensity" position="1">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/turbulence/intensity">
+                                    <swe:label>Intensity of turbulence</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                    </tsml:defaultPointMetadata>
+                    
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T03:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T04:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T05:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T06:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T07:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T08:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T09:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T10:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T11:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T12:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T13:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T14:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T15:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T16:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T17:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T18:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T19:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T20:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T21:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T22:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T23:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T00:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T01:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T02:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T03:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T04:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T05:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T06:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T07:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T08:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T09:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T10:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T11:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+            </iwxxm:phenomenonProperty>
+            
+            <!-- Second property: turbulence base & top (a range value, QuantityRange) -->
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.99ca89a4-f226-446f-9a70-e3c8d5deab8d">
+                    <tsml:metadata>
+                        <tsml:TimeseriesMetadata>
+                            <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
+                        </tsml:TimeseriesMetadata>
+                    </tsml:metadata>
+                    
+                    <tsml:defaultPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="shearlowhigh" position="1">
+                            <tsml:qualifier>
+                                <swe:QuantityRange definition="http://preferred.observable-property.registry/turbulence/height">
+                                    <swe:label>Turbulence occurrence height (base-top)</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom code="FL" />
+                                    
+                                </swe:QuantityRange>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                    </tsml:defaultPointMetadata>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T03:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T04:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T05:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T06:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T07:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T08:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T09:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T10:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T11:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T12:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T13:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T14:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T15:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T16:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T17:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T18:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T19:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T20:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T21:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T22:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T23:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T00:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T01:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T02:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T03:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T04:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T05:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T06:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T07:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T08:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T09:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T10:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T11:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+            </iwxxm:phenomenonProperty>
+            
+            <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
+            
+        </iwxxm:AerodromeWeatherPhenomenonForecast>
+    </iwxxm:feature>
+            
+    <!-- Icing forecast object with a timeseries at regular 1h interval -->
+    <iwxxm:feature>
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.1d490686-befc-4795-bcce-7a49f5a18918">
+            <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
+            <iwxxm:phenomenonTime>
+                <gml:TimePeriod gml:id="uuid.16a892ad-e779-4eef-a3c1-1ab95272cb26">
+                    <gml:beginPosition>2023-05-31T03:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2023-06-01T14:00:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </iwxxm:phenomenonTime>
+            
+            <iwxxm:phenomenon xlink:href="http://codes.wmo.int/49-2/MeteorologicalFeature/AIRFRAME_ICING" />
+            
+            <iwxxm:phenomenonGeometry>
+                <!-- Airport area on the ground level -->
+                <!-- This may be a bit strange as the feature containing geometry, as the icing phenomena occurs at various heights in the atmosphere, not on the ground. In principle we should us a Solid (3D) 
+            geometry which would contain the possible low and high icing flight levels in the vicinity of the airport, but this would be complicated to express and interpret -->
+                
+                
+                <aixm:Surface srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2" axisLabels="Lat Long" gml:id="uuid.cfc6cb15-23e8-4c48-91c6-966f57b13741">
+                    <gml:patches>
+                        <gml:PolygonPatch>
+                            <gml:exterior>
+                                <gml:LinearRing>
+                                    <gml:posList />
+                                </gml:LinearRing>
+                            </gml:exterior>
+                        </gml:PolygonPatch>
+                    </gml:patches>
+                </aixm:Surface>
+            </iwxxm:phenomenonGeometry>
+            
+            <!-- First property: icing intensity (single value, Quantity) -->
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.033fcff6-ad1a-4cd9-8d62-440ebf0d0475">
+                    <tsml:metadata>
+                        <tsml:TimeseriesMetadata>
+                            <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
+                        </tsml:TimeseriesMetadata>
+                    </tsml:metadata>
+                    
+                    <tsml:defaultPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="iceintensity" position="1">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/icing/intensity">
+                                    <swe:label>Intensity of icing</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                    </tsml:defaultPointMetadata>
+                    
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T03:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T04:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T05:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T06:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T07:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T08:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T09:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T10:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T11:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T12:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T13:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T14:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T15:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T16:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T17:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T18:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T19:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T20:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T21:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T22:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T23:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T00:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T01:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T02:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T03:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T04:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T05:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T06:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T07:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T08:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T09:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T10:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T11:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><tsml:value>-</tsml:value></tsml:RecordTVP></tsml:point>
+                    
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+            </iwxxm:phenomenonProperty>
+            
+            <!-- Second property: icing base & top (a range value, QuantityRange) -->
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.4a547f8a-c7ff-48e2-8ab5-9f23a382923a">
+                    <tsml:metadata>
+                        <tsml:TimeseriesMetadata>
+                            <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
+                        </tsml:TimeseriesMetadata>
+                    </tsml:metadata>
+                    
+                    <tsml:defaultPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="icelowhigh" position="1">
+                            <tsml:qualifier>
+                                <swe:QuantityRange definition="http://preferred.observable-property.registry/icing/height">
+                                    <swe:label>Icing occurrence height (base-top)</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom code="FL" />
+                                    
+                                </swe:QuantityRange>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                    </tsml:defaultPointMetadata>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T03:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T04:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T05:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T06:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T07:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T08:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T09:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T10:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T11:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T12:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T13:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T14:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T15:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T16:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T17:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T18:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T19:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T20:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T21:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T22:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-05-31T23:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T00:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T01:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T02:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T03:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T04:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T05:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T06:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T07:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T08:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T09:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T10:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T11:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                    <tsml:point><tsml:RangeTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><tsml:minValue>-</tsml:minValue><tsml:maxValue>-</tsml:maxValue></tsml:RangeTVP></tsml:point>
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+            </iwxxm:phenomenonProperty>
+            
+            <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
+            
+        </iwxxm:AerodromeWeatherPhenomenonForecast>
+    </iwxxm:feature>
+    
+    <!-- A cloud (CB probability, CB base & cloud ceiling) forecast object with a timeseries at regular 1h interval  -->
+    <iwxxm:feature>
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.f0d2ef63-0a17-4faf-92e0-2f3f9d61414f">
+            <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
+            <iwxxm:phenomenonTime>
+                <gml:TimePeriod gml:id="uuid.c9aa6ac0-17d5-4f86-8f13-618000ab3d7f">
+                    <gml:beginPosition>2023-05-31T03:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2023-06-01T14:00:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </iwxxm:phenomenonTime>
+            
+            <iwxxm:phenomenon xlink:href="http://codes.wmo.int/49-2/MeteorologicalFeature/CLOUD" />
+            
+            <iwxxm:phenomenonGeometry>
+                
+                <aixm:Surface srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2" axisLabels="Lat Long" gml:id="uuid.a00c8ec3-f1fd-4a28-8730-4cc6f484aa80">
+                    <gml:patches>
+                        <gml:PolygonPatch>
+                            <gml:exterior>
+                                <gml:LinearRing>
+                                    <gml:posList />
+                                </gml:LinearRing>
+                            </gml:exterior>
+                        </gml:PolygonPatch>
+                    </gml:patches>
+                </aixm:Surface>
+            </iwxxm:phenomenonGeometry>
+            
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.8673e7c1-5e92-4ac6-9950-58af662f7385">
+                    <tsml:metadata>
+                        <tsml:TimeseriesMetadata>
+                            <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
+                        </tsml:TimeseriesMetadata>
+                    </tsml:metadata>
+                    
+                    <tsml:defaultPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="cbprob" position="1">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/cloud/cbprob">
+                                    <swe:label>Probability of CB cloud formation (0-1)</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://qudt.org/vocab/unit/UNITLESS" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="cbbase" position="2">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/cloud/cbbase">
+                                    <swe:label>Height of Cumulonimbus (CB) cloud base</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="cloudceiling" position="3">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/cloud/ceiling">
+                                    <swe:label>Height of the cloud ceiling</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/unknown">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+
+                    </tsml:defaultPointMetadata>
+                    
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T03:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T04:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T05:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T06:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T07:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T08:00:00Z</tsml:time><tsml:value>10 4000 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T09:00:00Z</tsml:time><tsml:value>20 4000 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T10:00:00Z</tsml:time><tsml:value>10 4000 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T11:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T12:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T13:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T14:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T15:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T16:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T17:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T18:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T19:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T20:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T21:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T22:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T23:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T00:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T01:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T02:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T03:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T04:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T05:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T06:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T07:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T08:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T09:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T10:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T11:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><tsml:value>0 - 9900</tsml:value></tsml:RecordTVP></tsml:point>                 
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+            </iwxxm:phenomenonProperty>
+            
+            <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
+            
+        </iwxxm:AerodromeWeatherPhenomenonForecast>
+    </iwxxm:feature>
+    
+    <!-- A visibility (vis, LVP probability) forecast object with a timeseries at regular 1h interval -->
+    <iwxxm:feature>
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.b755c4cd-f9b5-43d6-acec-eb9db303bbf8">
+            <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
+            <iwxxm:phenomenonTime>
+                <gml:TimePeriod gml:id="uuid.c3747ef5-39b3-4dec-b042-1ac4fdcdd1ee">
+                    <gml:beginPosition>2023-05-31T03:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2023-06-01T14:00:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </iwxxm:phenomenonTime>
+            
+            <iwxxm:phenomenon xlink:href="http://preferred.observable-property.registry/visibility" />
+            
+            <iwxxm:phenomenonGeometry>
+                
+                <aixm:Surface srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2" axisLabels="Lat Long" gml:id="uuid.a3013c6e-19d1-4f9b-91bf-588d51f17101">
+                    <gml:patches>
+                        <gml:PolygonPatch>
+                            <gml:exterior>
+                                <gml:LinearRing>
+                                    <gml:posList />
+                                </gml:LinearRing>
+                            </gml:exterior>
+                        </gml:PolygonPatch>
+                    </gml:patches>
+                </aixm:Surface>
+            </iwxxm:phenomenonGeometry>
+            
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.21e3172c-2f87-4043-93ab-413b4e7f7a86">
+                    <tsml:metadata>
+                        <tsml:TimeseriesMetadata>
+                            <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
+                        </tsml:TimeseriesMetadata>
+                    </tsml:metadata>
+                    
+                    <tsml:defaultPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="vis" position="1">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/visibility/vis">
+                                    <swe:label>Visibility</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/unknown">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="lvpprob" position="2">
+                            <tsml:qualifier>
+                                <iwxxm:QuantityValueBetweenProbability definition="http://preferred.observable-property.registry/visibility/lvp">
+                                    <swe:label>Probability of need to start low visibility procedures (LVP)</swe:label>
+                                    <swe:description>Probability of visibility under 500ft or cloud base below 500ft</swe:description>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://qudt.org/vocab/unit/UNITLESS" />
+                                    <iwxxm:range>
+                                        <swe:DataChoice>
+                                            <swe:item name="visibilityComponent">
+                                                <swe:QuantityRange definition="http://preferred.observable-property.registry/visibility/vis">
+                                                    <swe:label>Visibility</swe:label>
+                                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                                    <swe:value>0 500</swe:value>
+                                                </swe:QuantityRange>
+                                            </swe:item>
+                                            <swe:item name="cloudBaseComponent">
+                                                <swe:QuantityRange definition="http://preferred.observable-property.registry/cloud/ceiling">
+                                                    <swe:label>Height cloud ceiling</swe:label>
+                                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                                    <swe:value>0 500</swe:value>
+                                                </swe:QuantityRange>
+                                            </swe:item>
+                                        </swe:DataChoice>
+                                    </iwxxm:range>
+                                   
+                                </iwxxm:QuantityValueBetweenProbability>
+                               
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                    </tsml:defaultPointMetadata>
+                    
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T03:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T04:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T05:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T06:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T07:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T08:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T09:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T10:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T11:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T12:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T13:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T14:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T15:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T16:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T17:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T18:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T19:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T20:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T21:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T22:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T23:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T00:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T01:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T02:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T03:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T04:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T05:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T06:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T07:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T08:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T09:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T10:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T11:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><tsml:value>9900 0</tsml:value></tsml:RecordTVP></tsml:point>
+                                
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+            </iwxxm:phenomenonProperty>
+            
+            <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
+            
+        </iwxxm:AerodromeWeatherPhenomenonForecast>
+    </iwxxm:feature>
+    
+    <!-- A weather (ww, tsprob, rain, snow) forecast object with a timeseries at regular 1h interval -->
+    <iwxxm:feature>
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.c0914c3c-eb01-4677-8940-9e0f2c9e9637">
+            <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
+            <iwxxm:phenomenonTime>
+                <gml:TimePeriod gml:id="uuid.33eeea74-91fd-499a-a26d-6337b4d050ff">
+                    <gml:beginPosition>2023-05-31T03:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2023-06-01T14:00:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </iwxxm:phenomenonTime>
+            
+            <iwxxm:phenomenon xlink:href="http://preferred.observable-property.registry/weather" />
+            
+            <iwxxm:phenomenonGeometry>
+                
+                <aixm:Surface srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2" axisLabels="Lat Long" gml:id="uuid.391346e4-b6c9-4394-8880-009932e90ca7">
+                    <gml:patches>
+                        <gml:PolygonPatch>
+                            <gml:exterior>
+                                <gml:LinearRing>
+                                    <gml:posList />
+                                </gml:LinearRing>
+                            </gml:exterior>
+                        </gml:PolygonPatch>
+                    </gml:patches>
+                </aixm:Surface>
+            </iwxxm:phenomenonGeometry>
+            
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.0a0c90af-ac47-439e-aed5-dd2e6a154371">
+                    <tsml:metadata>
+                        <tsml:TimeseriesMetadata>
+                            <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
+                        </tsml:TimeseriesMetadata>
+                    </tsml:metadata>
+                    
+                    <tsml:defaultPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="ww" position="1">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/weather/ww">
+                                    <swe:label>Visibility</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="tsprob" position="2">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/weather/thunderstormProbability">
+                                    <swe:label>Probability of thunderstorms occurring (0-1)</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://qudt.org/vocab/unit/UNITLESS" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="rain" position="3">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/weather/rainFallAmount">
+                                    <swe:label>Rain</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/unknown">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#mm_h" code="mm/h" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="snow" position="4">
+                            <tsml:qualifier>
+                                <swe:Quantity definition="http://preferred.observable-property.registry/weather/snowFallAmount">
+                                    <swe:label>Rain</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/unknown">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#mm_h" code="mm/h" />
+                                </swe:Quantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                    </tsml:defaultPointMetadata>
+                    
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T03:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T04:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T05:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T06:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T07:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T08:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T09:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T10:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T11:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T12:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T13:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T14:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T15:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T16:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T17:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T18:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T19:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T20:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T21:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T22:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T23:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T00:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T01:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T02:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T03:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T04:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T05:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T06:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T07:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T08:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T09:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T10:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T11:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><tsml:value>- 0 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+            </iwxxm:phenomenonProperty>
+            
+            <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
+            
+        </iwxxm:AerodromeWeatherPhenomenonForecast>
+    </iwxxm:feature>
+    
+    <!-- A 500ft,1000ft,2000ft,FL050 FL100 wind forecast object with a timeseries at regular 1h interval -->
+    <iwxxm:feature>
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.5804121c-9acf-494f-bd74-31046df85ebe">
+            <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
+            <iwxxm:phenomenonTime>
+                <gml:TimePeriod gml:id="uuid.87867010-cfa7-4fcf-8d0d-2d6f0b4d251b">
+                    <gml:beginPosition>2023-05-31T03:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2023-06-01T14:00:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </iwxxm:phenomenonTime>
+            
+            <iwxxm:phenomenon xlink:href="http://preferred.observable-property.registry/wind" />
+
+            <iwxxm:phenomenonGeometry>
+                <gml:GeometricComplex gml:id="uuid.9ae2b4a7-d24b-4995-b2c4-38db3ba635eb">
+                    <gml:element>
+                        <aixm:ElevatedSurface srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2" axisLabels="Lat Long" gml:id="uuid.d14bc4c2-c9da-4233-a2d4-9772b50b39da">
+                            <gml:patches>
+                                <gml:PolygonPatch>
+                                    <gml:exterior>
+                                        <gml:LinearRing>
+                                            <gml:posList />
+                                        </gml:LinearRing>
+                                    </gml:exterior>
+                                </gml:PolygonPatch>
+                            </gml:patches>
+                            <aixm:elevation uom="FT">500</aixm:elevation>
+                            <aixm:verticalDatum>EGM_96</aixm:verticalDatum>
+                        </aixm:ElevatedSurface>
+                    </gml:element>
+                    
+                    <gml:element>
+                        <aixm:ElevatedSurface srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2" axisLabels="Lat Long" gml:id="uuid.93ae29a9-b8e1-44de-89b1-d78525c6483e">
+                            <gml:patches>
+                                <gml:PolygonPatch>
+                                    <gml:exterior>
+                                        <gml:LinearRing>
+                                            <gml:posList />
+                                        </gml:LinearRing>
+                                    </gml:exterior>
+                                </gml:PolygonPatch>
+                            </gml:patches>
+                            <aixm:elevation uom="FT">1000</aixm:elevation>
+                            <aixm:verticalDatum>EGM_96</aixm:verticalDatum>
+                        </aixm:ElevatedSurface>
+                    </gml:element>
+                    
+                    <gml:element>
+                        <aixm:ElevatedSurface srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2" axisLabels="Lat Long" gml:id="uuid.12baac94-b8f7-4cf6-b917-21c84a9ac0fb">
+                            <gml:patches>
+                                <gml:PolygonPatch>
+                                    <gml:exterior>
+                                        <gml:LinearRing>
+                                            <gml:posList />
+                                        </gml:LinearRing>
+                                    </gml:exterior>
+                                </gml:PolygonPatch>
+                            </gml:patches>
+                            <aixm:elevation uom="FT">2000</aixm:elevation>
+                            <aixm:verticalDatum>EGM_96</aixm:verticalDatum>
+                        </aixm:ElevatedSurface>
+                    </gml:element>
+                    
+                    <gml:element>
+                        <aixm:ElevatedSurface srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2" axisLabels="Lat Long" gml:id="uuid.effb348a-1a43-4999-b7e0-d0ea83e262ff">
+                            <gml:patches>
+                                <gml:PolygonPatch>
+                                    <gml:exterior>
+                                        <gml:LinearRing>
+                                            <gml:posList />
+                                        </gml:LinearRing>
+                                    </gml:exterior>
+                                </gml:PolygonPatch>
+                            </gml:patches>
+                            <aixm:elevation uom="FL">050</aixm:elevation>
+                            <aixm:verticalDatum>EGM_96</aixm:verticalDatum>
+                        </aixm:ElevatedSurface>
+                    </gml:element>
+                    
+                    <gml:element>
+                        <aixm:ElevatedSurface srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2" axisLabels="Lat Long" gml:id="uuid.0a447b90-31f2-4cce-9802-a1ada6120053">
+                            <gml:patches>
+                                <gml:PolygonPatch>
+                                    <gml:exterior>
+                                        <gml:LinearRing>
+                                            <gml:posList />
+                                        </gml:LinearRing>
+                                    </gml:exterior>
+                                </gml:PolygonPatch>
+                            </gml:patches>
+                            <aixm:elevation uom="FL">100</aixm:elevation>
+                            <aixm:verticalDatum>EGM_96</aixm:verticalDatum>
+                        </aixm:ElevatedSurface>
+                    </gml:element>
+                </gml:GeometricComplex>
+               
+            </iwxxm:phenomenonGeometry>
+            
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.1081f9ab-5739-4f95-b0d7-60f60f7bf9b7">
+                    <tsml:metadata>
+                        <tsml:TimeseriesMetadata>
+                            <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
+                        </tsml:TimeseriesMetadata>
+                    </tsml:metadata>
+                    
+                    <tsml:defaultPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="ws500f" position="1">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/500ftWindSpeed">
+                                    <swe:label>Wind speed at the height of 500ft</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/height">
+                                            <swe:label>Height</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                            <swe:value>500</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="wd500f" position="2">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/500ftWindDirection">
+                                    <swe:label>Wind direction at the height of 500ft</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/height">
+                                            <swe:label>Height</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                            <swe:value>500</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="ws1000" position="3">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/10000ftWindSpeed">
+                                    <swe:label>Wind speed at the height of 1000ft</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/height">
+                                            <swe:label>Height</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                            <swe:value>1000</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="wd1000" position="4">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/1000ftWindDirection">
+                                    <swe:label>Wind direction at the height of 1000ft</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/height">
+                                            <swe:label>Height</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                            <swe:value>1000</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="ws2000" position="5">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/2000ftWindSpeed">
+                                    <swe:label>Wind speed at the height of 2000ft</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/height">
+                                            <swe:label>Height</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                            <swe:value>2000</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="wd2000" position="6">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/2000ftWindDirection">
+                                    <swe:label>Wind direction at the height of 2000ft</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/height">
+                                            <swe:label>Height</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                            <swe:value>2000</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="ws050" position="7">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/050flWindSpeed">
+                                    <swe:label>Wind speed at light level 50</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/flightLevel">
+                                            <swe:label>Flight level</swe:label>
+                                            <swe:uom xlink:href="https://qudt.org/vocab/unit/UNITLESS" />
+                                            <swe:value>50</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="wd050" position="8">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/050flWindDirection">
+                                    <swe:label>Wind direction at light level 50</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/flightLevel">
+                                            <swe:label>Flight level</swe:label>
+                                            <swe:uom xlink:href="https://qudt.org/vocab/unit/UNITLESS" />
+                                            <swe:value>50</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="ws100" position="9">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/100flWindSpeed">
+                                    <swe:label>Wind speed at light level 100</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/flightLevel">
+                                            <swe:label>Flight level</swe:label>
+                                            <swe:uom xlink:href="https://qudt.org/vocab/unit/UNITLESS" />
+                                            <swe:value>100</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="wd100" position="10">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/100flWindDirection">
+                                    <swe:label>Wind direction at light level 100</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/flightLevel">
+                                            <swe:label>Flight level</swe:label>
+                                            <swe:uom xlink:href="https://qudt.org/vocab/unit/UNITLESS" />
+                                            <swe:value>100</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                    </tsml:defaultPointMetadata>
+                    
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T03:00:00Z</tsml:time><tsml:value>20 220 30 240 30 260 25 270 35 300</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T04:00:00Z</tsml:time><tsml:value>15 220 25 230 35 260 25 270 35 280</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T05:00:00Z</tsml:time><tsml:value>20 230 25 230 40 260 30 260 35 280</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T06:00:00Z</tsml:time><tsml:value>15 240 20 240 30 270 35 260 35 280</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T07:00:00Z</tsml:time><tsml:value>15 250 15 250 20 260 35 260 40 280</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T08:00:00Z</tsml:time><tsml:value>15 270 15 270 15 270 30 270 40 270</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T09:00:00Z</tsml:time><tsml:value>15 290 15 290 15 300 30 280 40 280</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T10:00:00Z</tsml:time><tsml:value>10 270 10 270 15 290 30 290 35 280</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T11:00:00Z</tsml:time><tsml:value>15 270 15 280 20 290 25 290 40 300</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T12:00:00Z</tsml:time><tsml:value>15 280 20 290 20 300 20 300 40 310</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T13:00:00Z</tsml:time><tsml:value>15 290 15 290 20 300 20 300 40 310</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T14:00:00Z</tsml:time><tsml:value>15 290 15 290 15 300 15 310 35 320</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T15:00:00Z</tsml:time><tsml:value>15 280 15 280 20 300 15 300 35 320</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T16:00:00Z</tsml:time><tsml:value>15 290 15 290 20 300 15 300 30 310</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T17:00:00Z</tsml:time><tsml:value>15 290 15 290 20 300 15 300 25 310</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T18:00:00Z</tsml:time><tsml:value>15 280 20 290 20 300 10 300 25 310</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T19:00:00Z</tsml:time><tsml:value>15 290 20 290 20 300 10 310 20 310</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T20:00:00Z</tsml:time><tsml:value>15 290 20 290 25 310 10 320 20 310</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T21:00:00Z</tsml:time><tsml:value>20 290 25 300 25 310 10 310 20 300</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T22:00:00Z</tsml:time><tsml:value>20 290 25 300 25 320 10 310 25 300</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T23:00:00Z</tsml:time><tsml:value>20 290 25 300 25 320 15 300 25 300</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T00:00:00Z</tsml:time><tsml:value>20 280 25 300 25 310 20 310 25 290</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T01:00:00Z</tsml:time><tsml:value>20 280 25 300 25 310 20 320 25 290</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T02:00:00Z</tsml:time><tsml:value>20 280 25 300 20 330 20 320 25 290</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T03:00:00Z</tsml:time><tsml:value>20 280 25 300 20 340 20 310 30 290</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T04:00:00Z</tsml:time><tsml:value>15 290 20 290 25 340 25 310 30 290</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T05:00:00Z</tsml:time><tsml:value>15 300 15 300 20 320 20 310 30 290</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T06:00:00Z</tsml:time><tsml:value>15 300 15 300 15 320 15 300 30 300</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T07:00:00Z</tsml:time><tsml:value>15 300 15 300 15 310 15 310 30 290</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T08:00:00Z</tsml:time><tsml:value>15 300 15 300 15 310 15 300 30 290</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T09:00:00Z</tsml:time><tsml:value>15 310 15 310 15 310 15 300 30 290</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T10:00:00Z</tsml:time><tsml:value>15 290 20 290 15 300 15 310 25 290</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T11:00:00Z</tsml:time><tsml:value>15 300 15 300 15 310 15 310 25 280</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><tsml:value>15 300 15 300 15 310 15 310 25 290</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><tsml:value>15 300 15 300 15 310 15 310 25 290</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><tsml:value>15 300 20 300 20 310 20 310 25 290</tsml:value></tsml:RecordTVP></tsml:point>
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+            </iwxxm:phenomenonProperty>
+            
+            <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
+            
+        </iwxxm:AerodromeWeatherPhenomenonForecast>
+    </iwxxm:feature>
+    
+    <!-- A cross wind at surface and tail winds at surface, 500ft and 1000ft for runway 04L with a timeseries at regular 1h interval -->
+    <iwxxm:feature>
+        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.634aba97-a35b-40ed-a88c-3a456e007aa1">
+            <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
+            <iwxxm:phenomenonTime>
+                <gml:TimePeriod gml:id="uuid.bd166d98-b6aa-4af4-a50c-e90bfd7c6dae">
+                    <gml:beginPosition>2023-05-31T03:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2023-06-01T14:00:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </iwxxm:phenomenonTime>
+            
+            <iwxxm:phenomenon xlink:href="http://preferred.observable-property.registry/wind" />
+
+            <iwxxm:phenomenonGeometry>
+                <gml:GeometricComplex gml:id="uuid.5cb8fbcc-b7c7-4f6d-9694-0bcae702e1d0">
+                    <gml:element>
+                        <aixm:ElevatedPoint srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" gml:id="uuid.308f5083-ae43-422c-a7ab-37f7e484b141">
+                            <gml:name>RWY 04L touchdown zone</gml:name>
+                            <gml:pos>60.31503 24.9086</gml:pos>
+                            <aixm:elevation uom="M">55</aixm:elevation>
+                            <aixm:verticalDatum>EGM_96</aixm:verticalDatum>
+                        </aixm:ElevatedPoint>
+                    </gml:element>
+                    <gml:element>
+                        <aixm:ElevatedPoint srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" gml:id="uuid.cb526b49-fff2-4daf-882a-2effb048abde">
+                            <gml:name>500ft above RWY 04L touchdown zone</gml:name>
+                            <gml:pos>60.31503 24.9086</gml:pos>
+                            <aixm:elevation uom="FT">500</aixm:elevation>
+                            <aixm:verticalDatum>EGM_96</aixm:verticalDatum>
+                        </aixm:ElevatedPoint>
+                    </gml:element>
+                    <gml:element>
+                        <aixm:ElevatedPoint srsDimension="2" axisLabels="Lat Long" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" gml:id="uuid.d6d194ca-3c1f-4634-8928-25bb337849a1">
+                            <gml:name>1000ft above RWY 04L touchdown zone</gml:name>
+                            <gml:pos>60.31503 24.9086</gml:pos>
+                            <aixm:elevation uom="FT">1000</aixm:elevation>
+                            <aixm:verticalDatum>EGM_96</aixm:verticalDatum>
+                        </aixm:ElevatedPoint>
+                    </gml:element>
+                </gml:GeometricComplex>
+               
+            </iwxxm:phenomenonGeometry>
+            
+            <iwxxm:phenomenonProperty>
+                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.7ea99ea4-f435-4e3b-9227-9bc10b4d586a">
+                    <tsml:metadata>
+                        <tsml:TimeseriesMetadata>
+                            <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
+                        </tsml:TimeseriesMetadata>
+                    </tsml:metadata>
+                    
+                    <tsml:defaultPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="crosswind10" position="1">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/10mCrossWind">
+                                    <swe:label>Cross wind for runway 04L at 10m</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/unknown">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/trueBearing">
+                                            <swe:label>Direction (true bearing)</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                            <swe:value>47.423</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="tailwind10" position="2">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/10mTailWind">
+                                    <swe:label>Tail wind for runway 04L at 10m</swe:label>
+                                    <swe:nilValues>
+                                        <swe:NilValues>
+                                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/unknown">-</swe:nilValue>
+                                        </swe:NilValues>
+                                    </swe:nilValues>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/trueBearing">
+                                            <swe:label>Direction (true bearing)</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                            <swe:value>47.423</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="tailwind500f" position="3">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/500ftTailWind">
+                                    <swe:label>Tailwind for runway 04L at the height of 500ft</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/height">
+                                            <swe:label>Height</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                            <swe:value>500</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/trueBearing">
+                                            <swe:label>Direction (true bearing)</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                            <swe:value>47.423</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                        
+                        <tsml:FieldSpecificPointMetadata field="tailwind1000f" position="4">
+                            <tsml:qualifier>
+                                <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/1000ftTailWind">
+                                    <swe:label>Tailwind for runway 04L at the height of 1000ft</swe:label>
+                                    <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/height">
+                                            <swe:label>Height</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#ft_i" code="ft" />
+                                            <swe:value>1000</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                    <iwxxm:qualifier>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/trueBearing">
+                                            <swe:label>Direction (true bearing)</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                            <swe:value>47.423</swe:value>
+                                        </swe:Quantity>
+                                    </iwxxm:qualifier>
+                                </iwxxm:QualifiedQuantity>
+                            </tsml:qualifier>
+                        </tsml:FieldSpecificPointMetadata>
+                        
+                    </tsml:defaultPointMetadata>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T03:00:00Z</tsml:time><tsml:value>3 10 20 28</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T04:00:00Z</tsml:time><tsml:value>2 11 15 24</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T05:00:00Z</tsml:time><tsml:value>0 12 20 24</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T06:00:00Z</tsml:time><tsml:value>2 12 14 19</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T07:00:00Z</tsml:time><tsml:value>4 11 13 13</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T08:00:00Z</tsml:time><tsml:value>7 11 9 9</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T09:00:00Z</tsml:time><tsml:value>10 8 5 5</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T10:00:00Z</tsml:time><tsml:value>9 7 6 6</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T11:00:00Z</tsml:time><tsml:value>10 8 9 7</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T12:00:00Z</tsml:time><tsml:value>12 7 7 6</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T13:00:00Z</tsml:time><tsml:value>13 4 5 5</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T14:00:00Z</tsml:time><tsml:value>13 4 5 5</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T15:00:00Z</tsml:time><tsml:value>12 4 7 7</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T16:00:00Z</tsml:time><tsml:value>11 2 5 5</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T17:00:00Z</tsml:time><tsml:value>10 3 5 5</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T18:00:00Z</tsml:time><tsml:value>10 3 7 6</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T19:00:00Z</tsml:time><tsml:value>10 3 5 6</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T20:00:00Z</tsml:time><tsml:value>10 3 5 6</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T21:00:00Z</tsml:time><tsml:value>9 5 6 3</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T22:00:00Z</tsml:time><tsml:value>9 5 6 3</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-05-31T23:00:00Z</tsml:time><tsml:value>10 5 6 3</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T00:00:00Z</tsml:time><tsml:value>9 5 9 3</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T01:00:00Z</tsml:time><tsml:value>9 5 9 3</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T02:00:00Z</tsml:time><tsml:value>9 5 9 3</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T03:00:00Z</tsml:time><tsml:value>10 5 9 3</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T04:00:00Z</tsml:time><tsml:value>10 3 5 6</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T05:00:00Z</tsml:time><tsml:value>10 3 2 2</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T06:00:00Z</tsml:time><tsml:value>10 3 2 2</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T07:00:00Z</tsml:time><tsml:value>10 3 2 2</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T08:00:00Z</tsml:time><tsml:value>11 4 2 2</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T09:00:00Z</tsml:time><tsml:value>12 2 0 0</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T10:00:00Z</tsml:time><tsml:value>14 5 5 6</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T11:00:00Z</tsml:time><tsml:value>13 2 2 2</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><tsml:value>12 2 2 2</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><tsml:value>13 2 2 2</tsml:value></tsml:RecordTVP></tsml:point>
+                    <tsml:point><tsml:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><tsml:value>14 2 2 3</tsml:value></tsml:RecordTVP></tsml:point>
+                
+                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+            </iwxxm:phenomenonProperty>
+            
+            <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
+            
+        </iwxxm:AerodromeWeatherPhenomenonForecast>
+    </iwxxm:feature>
+
+    
+    
+</iwxxm:MeteorologicalFeatureCollection>

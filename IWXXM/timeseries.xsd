@@ -75,7 +75,7 @@
         <complexContent>
             <extension base="swe:QuantityType">
                 <sequence>
-                    <element name="range" type="swe:QuantityRangePropertyType" />
+                    <element name="range" type="swe:AbstractDataComponentPropertyType" />
                     <element name="rangeQuantityMetadata" type="tsml:PointMetadataPropertyType" minOccurs="0"/>
                 </sequence>
             </extension>
@@ -100,7 +100,7 @@
         <complexContent>
             <extension base="swe:QuantityType">
                 <sequence>
-                    <element name="limit" type="swe:AbstractSimpleComponentPropertyType" />
+                    <element name="limit" type="swe:AbstractDataComponentPropertyType" />
                     <element name="limitQuantityMetadata" type="tsml:PointMetadataPropertyType" minOccurs="0"/>
                 </sequence>
             </extension>
@@ -109,6 +109,31 @@
     <complexType name="QuantityValueExceedenceProbabilityPropertyType">
         <sequence minOccurs="0">
             <element ref="iwxxm:QuantityValueExceedenceProbability" />
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup" />
+        <attributeGroup ref="gml:OwnershipAttributeGroup" />
+    </complexType>
+    
+    <element name="QualifiedQuantity" type="iwxxm:QualifiedQuantityType" substitutionGroup="swe:Quantity">
+        <annotation>
+            <documentation>
+                
+            </documentation>
+        </annotation>
+    </element>
+    <complexType name="QualifiedQuantityType">
+        <complexContent>
+            <extension base="swe:QuantityType">
+                <sequence>
+                    <element name="qualifier" type="swe:AbstractSimpleComponentPropertyType" maxOccurs="unbounded"/>
+                    <element name="qualifierQuantityMetadata" type="tsml:PointMetadataPropertyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="QualifiedQuantityPropertyType">
+        <sequence minOccurs="0">
+            <element ref="iwxxm:QualifiedQuantity" />
         </sequence>
         <attributeGroup ref="gml:AssociationAttributeGroup" />
         <attributeGroup ref="gml:OwnershipAttributeGroup" />
