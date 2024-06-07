@@ -11,7 +11,6 @@
 	<include schemaLocation="metFeature.xsd"></include>
 	<import namespace="http://www.aixm.aero/schema/5.1.1" schemaLocation="http://www.aixm.aero/schema/5.1.1/AIXM_Features.xsd"></import>
 	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"></import>
-	<import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"></import>
 	
 	<annotation>
 		<documentation>TBA</documentation>

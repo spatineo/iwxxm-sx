@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema 
+    targetNamespace="http://icao.int/iwxxm/sx"
+    version="1.1.1RC1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:iwxxm="http://icao.int/iwxxm/sx"
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified">
+    
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"></import>
+    <import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"></import>
+    
+    <element name="QuantityProbabilityDistribution" type="iwxxm:QuantityProbabilityDistributionType" substitutionGroup="swe:AbstractSimpleComponent">
+        <annotation>
+            <documentation>
+                
+            </documentation>
+        </annotation>
+    </element>
+    <complexType name="QuantityProbabilityDistributionType">
+        <complexContent>
+            <extension base="swe:AbstractSimpleComponentType">
+                <sequence>
+                    <element name="quantity" type="swe:AbstractSimpleComponentPropertyType"/>
+                    <element name="constraint" type="swe:AllowedValuesPropertyType" minOccurs="0" />
+                    <element name="distributionType" type="gml:ReferenceType" minOccurs="0"/>
+                    <element name="descriptiveStatistics" type="iwxxm:DescriptiveStatisticsPropertyType" minOccurs="0"/>
+                    <!-- PDF & CDF elements here? -->
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="QuantityProbabilityDistributionPropertyType">
+        <sequence minOccurs="0">
+            <element ref="iwxxm:QuantityProbabilityDistribution" />
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup" />
+        <attributeGroup ref="gml:OwnershipAttributeGroup" />
+    </complexType>
+    
+    <element name="AggregatedQuantity" type="iwxxm:AggregatedQuantityType" substitutionGroup="swe:Quantity">
+        <annotation>
+            <documentation>
+                
+            </documentation>
+        </annotation>
+    </element>
+    <complexType name="AggregatedQuantityType">
+        <complexContent>
+            <extension base="iwxxm:DerivedQuantityType">
+                <sequence>
+                    <element name="aggregationFunction" type="gml:ReferenceType" minOccurs="0"/>
+                    <element name="aggregationPeriod" type="xs:duration" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="AggregatedQuantityPropertyType">
+        <sequence minOccurs="0">
+            <element ref="iwxxm:AggregatedQuantity" />
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup" />
+        <attributeGroup ref="gml:OwnershipAttributeGroup" />
+    </complexType>
+    
+    <element name="QuantityValueInRangeProbability" type="iwxxm:QuantityValueInRangeProbabilityType" substitutionGroup="swe:Quantity">
+        <annotation>
+            <documentation>
+                
+            </documentation>
+        </annotation>
+    </element>
+    <complexType name="QuantityValueInRangeProbabilityType">
+        <complexContent>
+            <extension base="swe:QuantityType">
+                <sequence>
+                    <element name="quantity" type="swe:QuantityPropertyType"/>
+                    <element name="lowerLimit" type="xs:anySimpleType" minOccurs="0"/>
+                    <element name="upperLimit" type="xs:anySimpleType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="QuantityValueInRangeProbabilityPropertyType">
+        <sequence minOccurs="0">
+            <element ref="iwxxm:QuantityValueInRangeProbability" />
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup" />
+        <attributeGroup ref="gml:OwnershipAttributeGroup" />
+    </complexType>
+    
+    <element name="DerivedQuantity" type="iwxxm:DerivedQuantityType" substitutionGroup="swe:Quantity">
+        <annotation>
+            <documentation>
+                
+            </documentation>
+        </annotation>
+    </element>
+    <complexType name="DerivedQuantityType">
+        <complexContent>
+            <extension base="swe:QuantityType">
+                <sequence>
+                    <element name="baseQuantity" type="swe:AbstractSimpleComponentPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="DerivedQuantityPropertyType">
+        <sequence minOccurs="0">
+            <element ref="iwxxm:DerivedQuantity" />
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup" />
+        <attributeGroup ref="gml:OwnershipAttributeGroup" />
+    </complexType>
+    
+    <element name="DerivedQuantityRange" type="iwxxm:DerivedQuantityRangeType" substitutionGroup="swe:QuantityRange">
+        <annotation>
+            <documentation>
+                
+            </documentation>
+        </annotation>
+    </element>
+    <complexType name="DerivedQuantityRangeType">
+        <complexContent>
+            <extension base="swe:QuantityRangeType">
+                <sequence>
+                    <element name="baseQuantity" type="swe:AbstractSimpleComponentPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="DerivedQuantityRangePropertyType">
+        <sequence minOccurs="0">
+            <element ref="iwxxm:DerivedQuantityRange" />
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup" />
+        <attributeGroup ref="gml:OwnershipAttributeGroup" />
+    </complexType>
+    
+    <element name="QualifiedQuantity" type="iwxxm:QualifiedQuantityType" substitutionGroup="swe:Quantity">
+        <annotation>
+            <documentation>
+                
+            </documentation>
+        </annotation>
+    </element>
+    <complexType name="QualifiedQuantityType">
+        <complexContent>
+            <extension base="swe:QuantityType">
+                <sequence>
+                    <element name="qualifier" type="swe:AbstractDataComponentPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="QualifiedQuantityPropertyType">
+        <sequence minOccurs="0">
+            <element ref="iwxxm:DerivedQuantity" />
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup" />
+        <attributeGroup ref="gml:OwnershipAttributeGroup" />
+    </complexType>
+    
+    <group name="DesciptiveStatisticsMeasures">
+        <sequence>
+            
+        </sequence>    
+    </group>
+    
+    <element name="DescriptiveStatistics" type="iwxxm:DescriptiveStatisticsType">
+        <annotation>
+            <documentation>
+                
+            </documentation>
+        </annotation>
+    </element>
+    <complexType name="DescriptiveStatisticsType">
+        <sequence>
+            <element name="mean" type="double" minOccurs="0"/>
+            <element name="median" type="anySimpleType" minOccurs="0"/>
+            <element name="mode" type="anySimpleType" minOccurs="0"/>
+            <element name="variance" type="double" minOccurs="0"/>
+            <element name="standardDeviation" type="double" minOccurs="0"/>
+            <element name="count" type="integer" minOccurs="0"/>
+            <element name="minimum" type="anySimpleType" minOccurs="0"/>
+            <element name="maximum" type="anySimpleType" minOccurs="0"/>
+            <element name="predIntervalConfLevel95" minOccurs="0">
+                <annotation>
+                    <documentation>Prediction interval at confidence level 95%</documentation>
+                </annotation>
+                <simpleType>
+                    <restriction>
+                        <simpleType>
+                            <list itemType="double"/>
+                        </simpleType>
+                        <length value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="predIntervalConfLevel90" minOccurs="0">
+                <annotation>
+                    <documentation>Prediction interval at confidence level 90%</documentation>
+                </annotation>
+                <simpleType>
+                    <restriction>
+                        <simpleType>
+                            <list itemType="double"/>
+                        </simpleType>
+                        <length value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="DescriptiveStatisticsPropertyType">
+        <sequence minOccurs="0">
+            <element ref="iwxxm:DescriptiveStatistics" />
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup" />
+        <attributeGroup ref="gml:OwnershipAttributeGroup" />
+    </complexType>
+   
+</schema>
