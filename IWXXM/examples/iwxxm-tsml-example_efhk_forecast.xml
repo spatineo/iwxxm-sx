@@ -69,7 +69,7 @@
     
     <!-- A ground wind weather forecast object with a timeseries at regular 1h interval -->
     <iwxxm:feature>
-        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.6a9bb975-4b1b-4694-bea7-c5ede1365936">
+        <iwxxm:AerodromeWeatherPhenomenon gml:id="uuid.6a9bb975-4b1b-4694-bea7-c5ede1365936">
             <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
             <iwxxm:phenomenonTime>
                 <gml:TimePeriod gml:id="uuid.7440b498-5e34-42fb-bb8f-f8b106376d81">
@@ -96,7 +96,7 @@
             </iwxxm:phenomenonGeometry>
             
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.0d2d6f16-cbd0-4859-ad43-7c1a22bac8dd">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.0d2d6f16-cbd0-4859-ad43-7c1a22bac8dd">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
@@ -189,7 +189,7 @@
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><iwxxm:value>13 300 25</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><iwxxm:value>14 300 24</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                                     
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <iwxxm:aerodrome>
@@ -216,12 +216,12 @@
                     </aixm:timeSlice>
                 </aixm:AirportHeliport>
             </iwxxm:aerodrome>
-        </iwxxm:AerodromeWeatherPhenomenonForecast>
+        </iwxxm:AerodromeWeatherPhenomenon>
     </iwxxm:feature>
     
     <!-- A wind shear weather forecast object with a timeseries at regular 1h interval  -->
     <iwxxm:feature>
-        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.342ff67d-da07-4c29-bd34-9eaf8008c9a9">
+        <iwxxm:AerodromeWeatherPhenomenon gml:id="uuid.342ff67d-da07-4c29-bd34-9eaf8008c9a9">
             <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
             <iwxxm:phenomenonTime>
                 <gml:TimePeriod gml:id="uuid.52f450ae-77a4-4cad-b3e5-ad7d8db3004d">
@@ -251,7 +251,7 @@
             
             <!-- First property: wind shear intensity (single value, Quantity) -->
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.f1fce2cf-07be-4956-888e-57ac752994f9">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.f1fce2cf-07be-4956-888e-57ac752994f9">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
@@ -314,12 +314,12 @@
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><iwxxm:value>-</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><iwxxm:value>-</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                                        
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <!-- Second property: wind shear base & top (a range value, QuantityRange) -->
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.34f77b9b-14e6-4880-964b-c6322458322c">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.34f77b9b-14e6-4880-964b-c6322458322c">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
@@ -382,17 +382,17 @@
                     <tsml:point><iwxxm:RangeRecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><iwxxm:minimum>-</iwxxm:minimum><iwxxm:maximum>-</iwxxm:maximum></iwxxm:RangeRecordTVP></tsml:point>
                     <tsml:point><iwxxm:RangeRecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><iwxxm:minimum>-</iwxxm:minimum><iwxxm:maximum>-</iwxxm:maximum></iwxxm:RangeRecordTVP></tsml:point>
                     <tsml:point><iwxxm:RangeRecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><iwxxm:minimum>-</iwxxm:minimum><iwxxm:maximum>-</iwxxm:maximum></iwxxm:RangeRecordTVP></tsml:point> 
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
 
-        </iwxxm:AerodromeWeatherPhenomenonForecast>
+        </iwxxm:AerodromeWeatherPhenomenon>
     </iwxxm:feature>
     
     <!-- A turbulence forecast object with a timeseries at regular 1h interval -->
     <iwxxm:feature>
-        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.d857b7a7-6f02-4e85-ab11-1309bd2bfd02">
+        <iwxxm:AerodromeWeatherPhenomenon gml:id="uuid.d857b7a7-6f02-4e85-ab11-1309bd2bfd02">
             <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
             <iwxxm:phenomenonTime>
                 <gml:TimePeriod gml:id="uuid.f953a56c-7588-4b52-b4ac-4aeccf6e5391">
@@ -424,7 +424,7 @@
             
             <!-- First property: turbulence intensity (single value, Quantity) -->
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.b979dbd4-0043-46ea-b590-c1b0addeea82">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.b979dbd4-0043-46ea-b590-c1b0addeea82">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
@@ -487,12 +487,12 @@
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><iwxxm:value>-</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><iwxxm:value>-</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <!-- Second property: turbulence base & top (a range value, QuantityRange) -->
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.99ca89a4-f226-446f-9a70-e3c8d5deab8d">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.99ca89a4-f226-446f-9a70-e3c8d5deab8d">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
@@ -554,17 +554,17 @@
                     <tsml:point><iwxxm:RangeRecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><iwxxm:minimum>-</iwxxm:minimum><iwxxm:maximum>-</iwxxm:maximum></iwxxm:RangeRecordTVP></tsml:point>
                     <tsml:point><iwxxm:RangeRecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><iwxxm:minimum>-</iwxxm:minimum><iwxxm:maximum>-</iwxxm:maximum></iwxxm:RangeRecordTVP></tsml:point>
                     <tsml:point><iwxxm:RangeRecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><iwxxm:minimum>-</iwxxm:minimum><iwxxm:maximum>-</iwxxm:maximum></iwxxm:RangeRecordTVP></tsml:point>
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
             
-        </iwxxm:AerodromeWeatherPhenomenonForecast>
+        </iwxxm:AerodromeWeatherPhenomenon>
     </iwxxm:feature>
             
     <!-- Icing forecast object with a timeseries at regular 1h interval -->
     <iwxxm:feature>
-        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.1d490686-befc-4795-bcce-7a49f5a18918">
+        <iwxxm:AerodromeWeatherPhenomenon gml:id="uuid.1d490686-befc-4795-bcce-7a49f5a18918">
             <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
             <iwxxm:phenomenonTime>
                 <gml:TimePeriod gml:id="uuid.16a892ad-e779-4eef-a3c1-1ab95272cb26">
@@ -596,7 +596,7 @@
             
             <!-- First property: icing intensity (single value, Quantity) -->
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.033fcff6-ad1a-4cd9-8d62-440ebf0d0475">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.033fcff6-ad1a-4cd9-8d62-440ebf0d0475">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
@@ -660,12 +660,12 @@
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><iwxxm:value>-</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><iwxxm:value>-</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <!-- Second property: icing base & top (a range value, QuantityRange) -->
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.4a547f8a-c7ff-48e2-8ab5-9f23a382923a">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.4a547f8a-c7ff-48e2-8ab5-9f23a382923a">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
@@ -727,17 +727,17 @@
                     <tsml:point><iwxxm:RangeRecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><iwxxm:minimum>-</iwxxm:minimum><iwxxm:maximum>-</iwxxm:maximum></iwxxm:RangeRecordTVP></tsml:point>
                     <tsml:point><iwxxm:RangeRecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><iwxxm:minimum>-</iwxxm:minimum><iwxxm:maximum>-</iwxxm:maximum></iwxxm:RangeRecordTVP></tsml:point>
                     <tsml:point><iwxxm:RangeRecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><iwxxm:minimum>-</iwxxm:minimum><iwxxm:maximum>-</iwxxm:maximum></iwxxm:RangeRecordTVP></tsml:point>
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
             
-        </iwxxm:AerodromeWeatherPhenomenonForecast>
+        </iwxxm:AerodromeWeatherPhenomenon>
     </iwxxm:feature>
     
     <!-- A cloud (CB probability, CB base & cloud ceiling) forecast object with a timeseries at regular 1h interval  -->
     <iwxxm:feature>
-        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.f0d2ef63-0a17-4faf-92e0-2f3f9d61414f">
+        <iwxxm:AerodromeWeatherPhenomenon gml:id="uuid.f0d2ef63-0a17-4faf-92e0-2f3f9d61414f">
             <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
             <iwxxm:phenomenonTime>
                 <gml:TimePeriod gml:id="uuid.c9aa6ac0-17d5-4f86-8f13-618000ab3d7f">
@@ -764,7 +764,7 @@
             </iwxxm:phenomenonGeometry>
             
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.8673e7c1-5e92-4ac6-9950-58af662f7385">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.8673e7c1-5e92-4ac6-9950-58af662f7385">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
@@ -856,17 +856,17 @@
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><iwxxm:value>0 - 9900</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><iwxxm:value>0 - 9900</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><iwxxm:value>0 - 9900</iwxxm:value></iwxxm:RecordTVP></tsml:point>                 
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
             
-        </iwxxm:AerodromeWeatherPhenomenonForecast>
+        </iwxxm:AerodromeWeatherPhenomenon>
     </iwxxm:feature>
     
     <!-- A visibility (vis, LVP probability) forecast object with a timeseries at regular 1h interval -->
     <iwxxm:feature>
-        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.b755c4cd-f9b5-43d6-acec-eb9db303bbf8">
+        <iwxxm:AerodromeWeatherPhenomenon gml:id="uuid.b755c4cd-f9b5-43d6-acec-eb9db303bbf8">
             <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
             <iwxxm:phenomenonTime>
                 <gml:TimePeriod gml:id="uuid.c3747ef5-39b3-4dec-b042-1ac4fdcdd1ee">
@@ -893,7 +893,7 @@
             </iwxxm:phenomenonGeometry>
             
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.21e3172c-2f87-4043-93ab-413b4e7f7a86">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.21e3172c-2f87-4043-93ab-413b4e7f7a86">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
@@ -971,17 +971,17 @@
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><iwxxm:value>9900 0</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><iwxxm:value>9900 0</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                                 
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
             
-        </iwxxm:AerodromeWeatherPhenomenonForecast>
+        </iwxxm:AerodromeWeatherPhenomenon>
     </iwxxm:feature>
     
     <!-- A weather (ww, tsprob, rain, snow) forecast object with a timeseries at regular 1h interval -->
     <iwxxm:feature>
-        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.c0914c3c-eb01-4677-8940-9e0f2c9e9637">
+        <iwxxm:AerodromeWeatherPhenomenon gml:id="uuid.c0914c3c-eb01-4677-8940-9e0f2c9e9637">
             <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
             <iwxxm:phenomenonTime>
                 <gml:TimePeriod gml:id="uuid.33eeea74-91fd-499a-a26d-6337b4d050ff">
@@ -1008,7 +1008,7 @@
             </iwxxm:phenomenonGeometry>
             
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.0a0c90af-ac47-439e-aed5-dd2e6a154371">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.0a0c90af-ac47-439e-aed5-dd2e6a154371">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
@@ -1115,17 +1115,17 @@
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><iwxxm:value>- 0 0 0</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><iwxxm:value>- 0 0 0</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><iwxxm:value>- 0 0 0</iwxxm:value></iwxxm:RecordTVP></tsml:point>
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
             
-        </iwxxm:AerodromeWeatherPhenomenonForecast>
+        </iwxxm:AerodromeWeatherPhenomenon>
     </iwxxm:feature>
     
     <!-- A 500ft,1000ft,2000ft,FL050 FL100 wind forecast object with a timeseries at regular 1h interval -->
     <iwxxm:feature>
-        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.5804121c-9acf-494f-bd74-31046df85ebe">
+        <iwxxm:AerodromeWeatherPhenomenon gml:id="uuid.5804121c-9acf-494f-bd74-31046df85ebe">
             <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
             <iwxxm:phenomenonTime>
                 <gml:TimePeriod gml:id="uuid.87867010-cfa7-4fcf-8d0d-2d6f0b4d251b">
@@ -1222,7 +1222,7 @@
             </iwxxm:phenomenonGeometry>
             
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.1081f9ab-5739-4f95-b0d7-60f60f7bf9b7">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.1081f9ab-5739-4f95-b0d7-60f60f7bf9b7">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
@@ -1439,17 +1439,17 @@
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T12:00:00Z</tsml:time><iwxxm:value>15 300 15 300 15 310 15 310 25 290</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><iwxxm:value>15 300 15 300 15 310 15 310 25 290</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><iwxxm:value>15 300 20 300 20 310 20 310 25 290</iwxxm:value></iwxxm:RecordTVP></tsml:point>
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
             
-        </iwxxm:AerodromeWeatherPhenomenonForecast>
+        </iwxxm:AerodromeWeatherPhenomenon>
     </iwxxm:feature>
     
     <!-- A cross wind at surface and tail winds at surface, 500ft and 1000ft for runway 04L with a timeseries at regular 1h interval -->
     <iwxxm:feature>
-        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.634aba97-a35b-40ed-a88c-3a456e007aa1">
+        <iwxxm:AerodromeWeatherPhenomenon gml:id="uuid.634aba97-a35b-40ed-a88c-3a456e007aa1">
             <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
             <iwxxm:phenomenonTime>
                 <gml:TimePeriod gml:id="uuid.bd166d98-b6aa-4af4-a50c-e90bfd7c6dae">
@@ -1491,7 +1491,7 @@
             </iwxxm:phenomenonGeometry>
             
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.7ea99ea4-f435-4e3b-9227-9bc10b4d586a">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.7ea99ea4-f435-4e3b-9227-9bc10b4d586a">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>36</tsml:numberTimeSteps>
@@ -1631,12 +1631,12 @@
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T13:00:00Z</tsml:time><iwxxm:value>13 2 2 2</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                     <tsml:point><iwxxm:RecordTVP><tsml:time>2023-06-01T14:00:00Z</tsml:time><iwxxm:value>14 2 2 3</iwxxm:value></iwxxm:RecordTVP></tsml:point>
                 
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <iwxxm:aerodrome xlink:href="#uuid.30ac6630-1117-4fa9-a6dc-2bff4c953587" />
             
-        </iwxxm:AerodromeWeatherPhenomenonForecast>
+        </iwxxm:AerodromeWeatherPhenomenon>
     </iwxxm:feature>
 
     

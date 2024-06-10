@@ -75,7 +75,7 @@
     
     <!-- A wind weather forecast object with a timeseries in two different regular interval parts (10 min & 1h intervals) -->
     <iwxxm:feature>
-        <iwxxm:AerodromeWeatherPhenomenonForecast gml:id="uuid.a25fed27-8ec2-4675-a7f5-f4493a75f20e">
+        <iwxxm:AerodromeWeatherPhenomenon gml:id="uuid.a25fed27-8ec2-4675-a7f5-f4493a75f20e">
             <gml:identifier codeSpace="http://wafs/sigwxobj">wxobj1</gml:identifier>
             <iwxxm:phenomenonTime>
                 <gml:TimePeriod gml:id="uuid.73674cc8-965c-4b2d-9110-add02784f8a7">
@@ -97,7 +97,7 @@
             </iwxxm:phenomenonGeometry>
             
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.1a8e2921-1ffc-41bf-83fb-dabca8be0062">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.1a8e2921-1ffc-41bf-83fb-dabca8be0062">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>6</tsml:numberTimeSteps>
@@ -181,11 +181,11 @@
                     
                     <iwxxm:nextPart xlink:href="#uuid.d3681490-1791-47cc-b76c-283a58cc76d0" />
                     
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             
             <iwxxm:phenomenonProperty>
-                <iwxxm:WeatherPhenomenonTimeseriesTVP gml:id="uuid.d3681490-1791-47cc-b76c-283a58cc76d0">
+                <iwxxm:LinkedTimeseriesTVP gml:id="uuid.d3681490-1791-47cc-b76c-283a58cc76d0">
                     <tsml:metadata>
                         <tsml:TimeseriesMetadata>
                             <tsml:numberTimeSteps>6</tsml:numberTimeSteps>
@@ -269,7 +269,7 @@
                     
                     <iwxxm:previousPart xlink:href="#uuid.1a8e2921-1ffc-41bf-83fb-dabca8be0062" />
                     
-                </iwxxm:WeatherPhenomenonTimeseriesTVP>
+                </iwxxm:LinkedTimeseriesTVP>
             </iwxxm:phenomenonProperty>
             <iwxxm:aerodrome>
                 <aixm:AirportHeliport gml:id="uuid.522db66a-3bfb-4206-8292-cd453bc77aba">
@@ -288,6 +288,6 @@
                     </aixm:timeSlice>
                 </aixm:AirportHeliport>
             </iwxxm:aerodrome>
-        </iwxxm:AerodromeWeatherPhenomenonForecast>
+        </iwxxm:AerodromeWeatherPhenomenon>
     </iwxxm:feature>
 </iwxxm:MeteorologicalFeatureCollection>
