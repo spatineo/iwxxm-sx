@@ -40,7 +40,7 @@
     
     <xs:element name="RecordTVP" type="iwxxm:RecordTVPType" substitutionGroup="tsml:TimeValuePair">
         <xs:annotation>
-            <xs:documentation>MeasurementTVP is the encoding for time,value pairs where the value is a measure.</xs:documentation>
+            <xs:documentation>RecordTVP is the encoding for time,value pairs where the value is a record of simple values.</xs:documentation>
         </xs:annotation>
     </xs:element>
     <xs:complexType name="RecordTVPType">
@@ -65,12 +65,12 @@
     </xs:complexType>
     
     
-    <xs:element name="RangeTVP" type="iwxxm:RangeTVPType" substitutionGroup="tsml:TimeValuePair">
+    <xs:element name="RangeRecordTVP" type="iwxxm:RangeRecordTVPType" substitutionGroup="tsml:TimeValuePair">
         <xs:annotation>
-            <xs:documentation>RangeTVP is the encoding for time,value pairs where the value is a range of simple values</xs:documentation>
+            <xs:documentation>RangeRecordTVP is the encoding for time,value pairs where the value is a recor of ranges (min-max) of simple values</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:complexType name="RangeTVPType">
+    <xs:complexType name="RangeRecordTVPType">
         <xs:complexContent>
             <xs:extension base="tsml:TimeValuePairType">
                 <xs:sequence>
@@ -88,20 +88,20 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <xs:complexType name="RangeTVPPropertyType">
+    <xs:complexType name="RangeRecordTVPPropertyType">
         <xs:sequence minOccurs="0">
-            <xs:element ref="iwxxm:RangeTVP"/>
+            <xs:element ref="iwxxm:RangeRecordTVP"/>
         </xs:sequence>
         <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
         <xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
     </xs:complexType>
     
-    <xs:element name="DistributionTVP" type="iwxxm:DistributionTVPType" substitutionGroup="tsml:TimeValuePair">
+    <xs:element name="DistributionRecordTVP" type="iwxxm:DistributionRecordTVPType" substitutionGroup="tsml:TimeValuePair">
         <xs:annotation>
-            <xs:documentation>DistributionTVP is the encoding for time,value pairs where the value is a set of descriptive statistics of a population</xs:documentation>
+            <xs:documentation>DistributionRecordTVP is the encoding for time,value pairs where the value is record of a sets of descriptive statistics of a population.</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:complexType name="DistributionTVPType">
+    <xs:complexType name="DistributionRecordTVPType">
         <xs:complexContent>
             <xs:extension base="tsml:TimeValuePairType">
                 <xs:sequence>
@@ -181,9 +181,9 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <xs:complexType name="DistributionTVPPropertyType">
+    <xs:complexType name="DistributionRecordTVPPropertyType">
         <xs:sequence minOccurs="0">
-            <xs:element ref="iwxxm:DistributionTVP"/>
+            <xs:element ref="iwxxm:DistributionRecordTVP"/>
         </xs:sequence>
         <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
         <xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
