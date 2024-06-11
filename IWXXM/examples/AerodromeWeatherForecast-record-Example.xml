@@ -106,7 +106,7 @@
                     
                     <tsml:defaultPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windSpeed" position="1">
+                        <iwxxm:FieldSpecificPointMetadata field="windSpeed" position="1">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
                             <tsml:qualifier>
@@ -116,9 +116,9 @@
                                 </swe:Quantity>
                             </tsml:qualifier>
                             
-                        </tsml:FieldSpecificPointMetadata>
+                        </iwxxm:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windDirection" position="2">
+                        <iwxxm:FieldSpecificPointMetadata field="windDirection" position="2">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
                             <tsml:qualifier>
@@ -127,9 +127,9 @@
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
                                 </swe:Quantity>
                             </tsml:qualifier>
-                        </tsml:FieldSpecificPointMetadata>
+                        </iwxxm:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windGust" position="3">
+                        <iwxxm:FieldSpecificPointMetadata field="windGust" position="3">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/MaxPrec"/>
                             <tsml:aggregationDuration>PT10M</tsml:aggregationDuration>
                             <tsml:qualifier>
@@ -138,7 +138,7 @@
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
                                 </swe:Quantity>
                             </tsml:qualifier>
-                        </tsml:FieldSpecificPointMetadata>
+                        </iwxxm:FieldSpecificPointMetadata>
                         
                     </tsml:defaultPointMetadata>
                     
@@ -194,7 +194,7 @@
                     
                     <tsml:defaultPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windSpeed" position="1">
+                        <iwxxm:FieldSpecificPointMetadata field="windSpeed" position="1">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT1H</tsml:aggregationDuration>
                             <tsml:qualifier>
@@ -203,9 +203,9 @@
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#m_s" code="m/s"/>
                                 </swe:Quantity>
                             </tsml:qualifier>
-                        </tsml:FieldSpecificPointMetadata>
+                        </iwxxm:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windDirection" position="2">
+                        <iwxxm:FieldSpecificPointMetadata field="windDirection" position="2">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/AveragePrec"/>
                             <tsml:aggregationDuration>PT1H</tsml:aggregationDuration>
                             <tsml:qualifier>
@@ -214,9 +214,9 @@
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg"/>
                                 </swe:Quantity>
                             </tsml:qualifier>
-                        </tsml:FieldSpecificPointMetadata>
+                        </iwxxm:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windGust" position="3">
+                        <iwxxm:FieldSpecificPointMetadata field="windGust" position="3">
                             <tsml:interpolationType xlink:href="http://www.opengis.net/def/timeseries/InterpolationCode/MaxPrec"/>
                             <tsml:aggregationDuration>PT1H</tsml:aggregationDuration>
                             <tsml:qualifier>
@@ -225,7 +225,7 @@
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="m/s"/>
                                 </swe:Quantity>
                             </tsml:qualifier>
-                        </tsml:FieldSpecificPointMetadata>
+                        </iwxxm:FieldSpecificPointMetadata>
                         
                     </tsml:defaultPointMetadata>
                     

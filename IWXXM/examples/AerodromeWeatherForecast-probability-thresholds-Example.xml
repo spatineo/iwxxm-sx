@@ -106,7 +106,7 @@
                     </tsml:metadata>
                     
                     <tsml:defaultPointMetadata>
-                        <tsml:FieldSpecificPointMetadata field="windSpeedExceedanceProbability" position="1">
+                        <iwxxm:FieldSpecificPointMetadata field="windSpeedExceedanceProbability" position="1">
                             <tsml:qualifier>
                                 <iwxxm:QuantityValueInRangeProbability>
                                     <swe:label>Probability of 10 min average wind speed 1 hour maximum exceeding 15.0 m/s</swe:label>
@@ -130,9 +130,9 @@
                                     <iwxxm:lowerLimit>15.0</iwxxm:lowerLimit>
                                 </iwxxm:QuantityValueInRangeProbability>
                             </tsml:qualifier>
-                        </tsml:FieldSpecificPointMetadata>
+                        </iwxxm:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windDirectionInRangeProbability" position="2">
+                        <iwxxm:FieldSpecificPointMetadata field="windDirectionInRangeProbability" position="2">
                             <tsml:qualifier>
                                 <iwxxm:QuantityValueInRangeProbability>
                                     <swe:label>Probability of 10 min average wind direction falling between 90 and 110 degrees</swe:label>
@@ -149,9 +149,9 @@
                                     <iwxxm:upperLimit>90</iwxxm:upperLimit>
                                 </iwxxm:QuantityValueInRangeProbability>
                             </tsml:qualifier>
-                        </tsml:FieldSpecificPointMetadata>
+                        </iwxxm:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windGustExceedanceProbability" position="3">
+                        <iwxxm:FieldSpecificPointMetadata field="windGustExceedanceProbability" position="3">
                             <tsml:qualifier>
                                 <iwxxm:QuantityValueInRangeProbability>
                                     <swe:label>Probability of 10 min maximun wind gust exceeding 20.0 m/s</swe:label>
@@ -175,7 +175,7 @@
                                     <iwxxm:upperLimit>20.0</iwxxm:upperLimit>
                                 </iwxxm:QuantityValueInRangeProbability>
                             </tsml:qualifier>
-                        </tsml:FieldSpecificPointMetadata>
+                        </iwxxm:FieldSpecificPointMetadata>
                         
                     </tsml:defaultPointMetadata>
                     <tsml:point>
