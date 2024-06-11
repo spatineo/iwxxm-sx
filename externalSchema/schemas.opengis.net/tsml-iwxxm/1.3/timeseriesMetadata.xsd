@@ -127,27 +127,6 @@ The interpolation type is defined per point within the time series as it is poss
 		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
 	
-	<!-- Added FieldSpecificPointMetadata to introduce possibility for providing point metadata for each field in a record type TVP / Ilkka Rinne 2024-04-16 -->
-	<xs:element name="FieldSpecificPointMetadata" type="tsml:FieldSpecificPointMetadataType" substitutionGroup="tsml:PointMetadata">
-		<xs:annotation>
-			<xs:documentation>Metadata relating to individual data points (can be set to a default for the whole timeseries).</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:complexType name="FieldSpecificPointMetadataType">
-		<xs:complexContent>
-			<xs:extension base="tsml:PointMetadataType">
-				<xs:attribute name="field" type="xs:NCName" use="required" />
-				<xs:attribute name="position" type="xs:int" use="optional" />
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="FieldSpecificPointMetadataPropertyType">
-		<xs:sequence>
-			<xs:element ref="tsml:FieldSpecificPointMetadata"/>
-		</xs:sequence>
-		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
-	</xs:complexType>
-	
 	<xs:element name="TimeseriesMetadata" type="tsml:TimeseriesMetadataType" substitutionGroup="gml:AbstractObject">
 		<xs:annotation>
 			<xs:documentation>Metadata applicable to the whole timeseries or individual regularly spaced segments of an irregularly spaced whole timeseries.</xs:documentation>

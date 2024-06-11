@@ -106,7 +106,7 @@
                     
                     <tsml:defaultPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windSpeedDistribution" position="1">
+                        <iwxxm:FieldSpecificPointMetadata field="windSpeedDistribution" position="1">
                             <tsml:qualifier>
                                 <iwxxm:QuantityProbabilityDistribution>
                                     <swe:label>Probability distribution of 10 min average wind speed</swe:label>
@@ -127,9 +127,9 @@
                                     <iwxxm:distributionType xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
                                 </iwxxm:QuantityProbabilityDistribution>
                             </tsml:qualifier>
-                        </tsml:FieldSpecificPointMetadata>
+                        </iwxxm:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windDirectionDistribution" position="2">
+                        <iwxxm:FieldSpecificPointMetadata field="windDirectionDistribution" position="2">
                             <tsml:qualifier>
                                 <iwxxm:QuantityProbabilityDistribution>
                                     <swe:label>Probability distribution of 10 min average wind direction</swe:label>
@@ -150,9 +150,9 @@
                                     <iwxxm:distributionType xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
                                 </iwxxm:QuantityProbabilityDistribution>
                             </tsml:qualifier>
-                        </tsml:FieldSpecificPointMetadata>
+                        </iwxxm:FieldSpecificPointMetadata>
                         
-                        <tsml:FieldSpecificPointMetadata field="windGustDistribution" position="3">
+                        <iwxxm:FieldSpecificPointMetadata field="windGustDistribution" position="3">
                             <tsml:qualifier>
                                 <iwxxm:QuantityProbabilityDistribution>
                                     <swe:label>Probability distribution of wind gust</swe:label>
@@ -167,7 +167,7 @@
                                     <iwxxm:distributionType xlink:href="http://uncertml.org/distributions/normal" xlink:title="Normal distribution"/>
                                 </iwxxm:QuantityProbabilityDistribution>
                             </tsml:qualifier>
-                        </tsml:FieldSpecificPointMetadata>
+                        </iwxxm:FieldSpecificPointMetadata>
                         
                     </tsml:defaultPointMetadata>
                     
