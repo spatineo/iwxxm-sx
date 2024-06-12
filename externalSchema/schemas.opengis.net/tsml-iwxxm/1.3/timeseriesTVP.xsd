@@ -6,7 +6,7 @@
   elementFormDefault="qualified" targetNamespace="http://www.opengis.net/timeseriesml/1.3/iwxxm" version="1.3.0">
   <xs:annotation>
     <xs:documentation>
-      NOTE: this is an experimental, non-authoritative extraction from the OGC TMS 1.3 schemas.
+      NOTE: this is an experimental, non-authoritative profile of the OGC TMS 1.3 schemas.
       The primary intention is the test TSML structures within the scope of IWXXM aerodrome forecast development.
       
       Ilkka Rinne / Spatineo 2024-04-16

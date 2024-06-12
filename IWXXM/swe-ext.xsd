@@ -40,30 +40,7 @@
         <attributeGroup ref="gml:OwnershipAttributeGroup" />
     </complexType>
     
-    <element name="AggregatedQuantity" type="iwxxm:AggregatedQuantityType" substitutionGroup="swe:Quantity">
-        <annotation>
-            <documentation>
-                
-            </documentation>
-        </annotation>
-    </element>
-    <complexType name="AggregatedQuantityType">
-        <complexContent>
-            <extension base="iwxxm:DerivedQuantityType">
-                <sequence>
-                    <element name="aggregationFunction" type="gml:ReferenceType" minOccurs="0"/>
-                    <element name="aggregationPeriod" type="xs:duration" />
-                </sequence>
-            </extension>
-        </complexContent>
-    </complexType>
-    <complexType name="AggregatedQuantityPropertyType">
-        <sequence minOccurs="0">
-            <element ref="iwxxm:AggregatedQuantity" />
-        </sequence>
-        <attributeGroup ref="gml:AssociationAttributeGroup" />
-        <attributeGroup ref="gml:OwnershipAttributeGroup" />
-    </complexType>
+    
     
     <element name="QuantityValueInRangeProbability" type="iwxxm:QuantityValueInRangeProbabilityType" substitutionGroup="swe:Quantity">
         <annotation>
@@ -91,6 +68,31 @@
         <attributeGroup ref="gml:OwnershipAttributeGroup" />
     </complexType>
     
+    <element name="AggregatedQuantity" type="iwxxm:AggregatedQuantityType" substitutionGroup="swe:Quantity">
+        <annotation>
+            <documentation>
+                
+            </documentation>
+        </annotation>
+    </element>
+    <complexType name="AggregatedQuantityType">
+        <complexContent>
+            <extension base="iwxxm:DerivedQuantityType">
+                <sequence>
+                    <element name="aggregationFunction" type="gml:ReferenceType" minOccurs="0"/>
+                    <element name="aggregationPeriod" type="xs:duration" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="AggregatedQuantityPropertyType">
+        <sequence minOccurs="0">
+            <element ref="iwxxm:AggregatedQuantity" />
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup" />
+        <attributeGroup ref="gml:OwnershipAttributeGroup" />
+    </complexType>
+    
     <element name="DerivedQuantity" type="iwxxm:DerivedQuantityType" substitutionGroup="swe:Quantity">
         <annotation>
             <documentation>
@@ -110,30 +112,6 @@
     <complexType name="DerivedQuantityPropertyType">
         <sequence minOccurs="0">
             <element ref="iwxxm:DerivedQuantity" />
-        </sequence>
-        <attributeGroup ref="gml:AssociationAttributeGroup" />
-        <attributeGroup ref="gml:OwnershipAttributeGroup" />
-    </complexType>
-    
-    <element name="DerivedQuantityRange" type="iwxxm:DerivedQuantityRangeType" substitutionGroup="swe:QuantityRange">
-        <annotation>
-            <documentation>
-                
-            </documentation>
-        </annotation>
-    </element>
-    <complexType name="DerivedQuantityRangeType">
-        <complexContent>
-            <extension base="swe:QuantityRangeType">
-                <sequence>
-                    <element name="baseQuantity" type="swe:AbstractSimpleComponentPropertyType" minOccurs="0" maxOccurs="unbounded"/>
-                </sequence>
-            </extension>
-        </complexContent>
-    </complexType>
-    <complexType name="DerivedQuantityRangePropertyType">
-        <sequence minOccurs="0">
-            <element ref="iwxxm:DerivedQuantityRange" />
         </sequence>
         <attributeGroup ref="gml:AssociationAttributeGroup" />
         <attributeGroup ref="gml:OwnershipAttributeGroup" />
@@ -187,7 +165,7 @@
                 </annotation>
                 <complexType>
                     <simpleContent>
-                        <extension base="iwxxm:PairOFAnySimpleType">
+                        <extension base="iwxxm:PairOfAnySimpleType">
                             <attribute name="level" use="required">
                                 <simpleType>
                                     <restriction base="double">
@@ -210,7 +188,7 @@
         <attributeGroup ref="gml:OwnershipAttributeGroup" />
     </complexType>
    
-    <xs:simpleType name="PairOFAnySimpleType">
+    <xs:simpleType name="PairOfAnySimpleType">
         <restriction>
             <simpleType>
                 <list itemType="xs:anySimpleType"/>

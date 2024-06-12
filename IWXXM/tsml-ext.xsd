@@ -127,21 +127,21 @@
         <xs:complexContent>
             <xs:extension base="tsml:TimeValuePairType">
                 <xs:sequence>
-                    <element name="mean" type="iwxxm:ListOFDouble" minOccurs="0"/>
+                    <element name="mean" type="iwxxm:ListOfDouble" minOccurs="0"/>
                     
-                    <element name="median" type="iwxxm:ListOFAnySimpleType" minOccurs="0"/>
+                    <element name="median" type="iwxxm:ListOfAnySimpleType" minOccurs="0"/>
                     
-                    <element name="mode" type="iwxxm:ListOFAnySimpleType" minOccurs="0"/>
+                    <element name="mode" type="iwxxm:ListOfAnySimpleType" minOccurs="0"/>
                     
-                    <element name="variance" type="iwxxm:ListOFDouble" minOccurs="0"/>
+                    <element name="variance" type="iwxxm:ListOfDouble" minOccurs="0"/>
                     
-                    <element name="standardDeviation" type="iwxxm:ListOFDouble" minOccurs="0"/>
+                    <element name="standardDeviation" type="iwxxm:ListOfDouble" minOccurs="0"/>
                     
-                    <element name="count" type="iwxxm:ListOFInteger" minOccurs="0"/>
+                    <element name="count" type="iwxxm:ListOfInteger" minOccurs="0"/>
                     
-                    <element name="minimum"  type="iwxxm:ListOFAnySimpleType" minOccurs="0"/>
+                    <element name="minimum"  type="iwxxm:ListOfAnySimpleType" minOccurs="0"/>
                     
-                    <element name="maximum" type="iwxxm:ListOFAnySimpleType" minOccurs="0"/>
+                    <element name="maximum" type="iwxxm:ListOfAnySimpleType" minOccurs="0"/>
                     
                     <element name="predictionIntervalBoundary" minOccurs="0" maxOccurs="unbounded">
                         <annotation>
@@ -149,7 +149,7 @@
                         </annotation>
                         <complexType>
                             <simpleContent>
-                                <extension base="iwxxm:ListOFAnySimpleType">
+                                <extension base="iwxxm:ListOfAnySimpleType">
                                     <attribute name="level" use="required">
                                         <simpleType>
                                             <restriction base="double">
@@ -182,15 +182,15 @@
         <xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
     </xs:complexType>
     
-    <xs:simpleType name="ListOFAnySimpleType">
+    <xs:simpleType name="ListOfAnySimpleType">
         <list itemType="xs:anySimpleType"/>  
     </xs:simpleType>
     
-    <xs:simpleType name="ListOFDouble">
+    <xs:simpleType name="ListOfDouble">
         <list itemType="xs:double"/>  
     </xs:simpleType>
     
-    <xs:simpleType name="ListOFInteger">
+    <xs:simpleType name="ListOfInteger">
         <list itemType="xs:integer"/>  
     </xs:simpleType>
 </schema>
