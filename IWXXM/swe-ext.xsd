@@ -187,7 +187,7 @@
                 </annotation>
                 <complexType>
                     <simpleContent>
-                        <extension base="iwxxm:PairOFDouble">
+                        <extension base="iwxxm:PairOFAnySimpleType">
                             <attribute name="level" use="required">
                                 <simpleType>
                                     <restriction base="double">
@@ -210,10 +210,10 @@
         <attributeGroup ref="gml:OwnershipAttributeGroup" />
     </complexType>
    
-    <xs:simpleType name="PairOFDouble">
+    <xs:simpleType name="PairOFAnySimpleType">
         <restriction>
             <simpleType>
-                <list itemType="double"/>
+                <list itemType="xs:anySimpleType"/>
             </simpleType>
             <length value="2"/>
         </restriction>

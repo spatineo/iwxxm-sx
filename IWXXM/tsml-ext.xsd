@@ -149,7 +149,7 @@
                         </annotation>
                         <complexType>
                             <simpleContent>
-                                <extension base="iwxxm:ListOFDouble">
+                                <extension base="iwxxm:ListOFAnySimpleType">
                                     <attribute name="level" use="required">
                                         <simpleType>
                                             <restriction base="double">
