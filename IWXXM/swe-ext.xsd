@@ -163,12 +163,6 @@
         <attributeGroup ref="gml:OwnershipAttributeGroup" />
     </complexType>
     
-    <group name="DesciptiveStatisticsMeasures">
-        <sequence>
-            
-        </sequence>    
-    </group>
-    
     <element name="DescriptiveStatistics" type="iwxxm:DescriptiveStatisticsType">
         <annotation>
             <documentation>
@@ -186,31 +180,25 @@
             <element name="count" type="integer" minOccurs="0"/>
             <element name="minimum" type="anySimpleType" minOccurs="0"/>
             <element name="maximum" type="anySimpleType" minOccurs="0"/>
-            <element name="predIntervalConfLevel95" minOccurs="0">
+            <element name="predictionInterval" minOccurs="0" maxOccurs="unbounded">
                 <annotation>
-                    <documentation>Prediction interval at confidence level 95%</documentation>
+                    <documentation>Prediction interval (lower, upper) at the given confidence 
+                        level (0.0 - 1.0) as a space-separated pair of doubles</documentation>
                 </annotation>
-                <simpleType>
-                    <restriction>
-                        <simpleType>
-                            <list itemType="double"/>
-                        </simpleType>
-                        <length value="2"/>
-                    </restriction>
-                </simpleType>
-            </element>
-            <element name="predIntervalConfLevel90" minOccurs="0">
-                <annotation>
-                    <documentation>Prediction interval at confidence level 90%</documentation>
-                </annotation>
-                <simpleType>
-                    <restriction>
-                        <simpleType>
-                            <list itemType="double"/>
-                        </simpleType>
-                        <length value="2"/>
-                    </restriction>
-                </simpleType>
+                <complexType>
+                    <simpleContent>
+                        <extension base="iwxxm:PairOFDouble">
+                            <attribute name="level" use="required">
+                                <simpleType>
+                                    <restriction base="double">
+                                        <minInclusive value="0"/>
+                                        <maxInclusive value="1"/>
+                                    </restriction>
+                                </simpleType>
+                            </attribute>
+                        </extension>
+                    </simpleContent>
+                </complexType>
             </element>
         </sequence>
     </complexType>
@@ -222,4 +210,12 @@
         <attributeGroup ref="gml:OwnershipAttributeGroup" />
     </complexType>
    
+    <xs:simpleType name="PairOFDouble">
+        <restriction>
+            <simpleType>
+                <list itemType="double"/>
+            </simpleType>
+            <length value="2"/>
+        </restriction>
+    </xs:simpleType>
 </schema>
