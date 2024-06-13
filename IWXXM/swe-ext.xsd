@@ -102,14 +102,14 @@
         <attributeGroup ref="gml:OwnershipAttributeGroup" />
     </complexType>
     
-    <element name="DerivedQuantity" type="iwxxm:DerivedQuantityType" substitutionGroup="swe:Quantity">
+    <element name="DerivedQuantity" type="iwxxm:DerivedQuantityType" substitutionGroup="swe:Quantity" abstract="true">
         <annotation>
             <documentation>
                 
             </documentation>
         </annotation>
     </element>
-    <complexType name="DerivedQuantityType">
+    <complexType name="DerivedQuantityType" abstract="true">
         <complexContent>
             <extension base="swe:QuantityType">
                 <sequence>
@@ -135,7 +135,7 @@
     </element>
     <complexType name="QualifiedQuantityType">
         <complexContent>
-            <extension base="swe:QuantityType">
+            <extension base="iwxxm:DerivedQuantityType">
                 <sequence>
                     <element name="qualifier" type="swe:AbstractDataComponentPropertyType" minOccurs="0" maxOccurs="unbounded"/>
                 </sequence>
