@@ -27,7 +27,16 @@
                     <element name="constraint" type="swe:AllowedValuesPropertyType" minOccurs="0" />
                     <element name="distributionType" type="gml:ReferenceType" minOccurs="0"/>
                     <element name="descriptiveStatistics" type="iwxxm:DescriptiveStatisticsPropertyType" minOccurs="0"/>
-                    <!-- PDF & CDF elements here? -->
+                    <element name="probabilityDensityFunction" type="gml:AssociationRoleType" minOccurs="0">
+                        <annotation>
+                            <documentation>The data model for the PDF is not defined in this schema</documentation>
+                        </annotation>
+                    </element>
+                    <element name="cumulativeDistributionFunction" type="gml:AssociationRoleType" minOccurs="0">
+                        <annotation>
+                            <documentation>The data model for the CDF is not defined in this schema</documentation>
+                        </annotation>
+                    </element>
                 </sequence>
             </extension>
         </complexContent>
