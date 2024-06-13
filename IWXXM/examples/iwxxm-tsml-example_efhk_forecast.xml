@@ -1237,6 +1237,12 @@
                                 <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/500ftWindSpeed">
                                     <swe:label>Wind speed at the height of 500ft</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windSpeed">
+                                            <swe:label>Wind speed</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/height">
                                             <swe:label>Height</swe:label>
@@ -1254,6 +1260,12 @@
                                 <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/500ftWindDirection">
                                     <swe:label>Wind direction at the height of 500ft</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windDirection">
+                                            <swe:label>Wind direction</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/height">
                                             <swe:label>Height</swe:label>
@@ -1271,6 +1283,12 @@
                                 <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/10000ftWindSpeed">
                                     <swe:label>Wind speed at the height of 1000ft</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windSpeed">
+                                            <swe:label>Wind speed</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/height">
                                             <swe:label>Height</swe:label>
@@ -1288,6 +1306,12 @@
                                 <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/1000ftWindDirection">
                                     <swe:label>Wind direction at the height of 1000ft</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windDirection">
+                                            <swe:label>Wind direction</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/height">
                                             <swe:label>Height</swe:label>
@@ -1305,6 +1329,12 @@
                                 <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/2000ftWindSpeed">
                                     <swe:label>Wind speed at the height of 2000ft</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windSpeed">
+                                            <swe:label>Wind speed</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/height">
                                             <swe:label>Height</swe:label>
@@ -1322,6 +1352,12 @@
                                 <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/2000ftWindDirection">
                                     <swe:label>Wind direction at the height of 2000ft</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windDirection">
+                                            <swe:label>Wind direction</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/height">
                                             <swe:label>Height</swe:label>
@@ -1339,6 +1375,12 @@
                                 <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/050flWindSpeed">
                                     <swe:label>Wind speed at light level 50</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windSpeed">
+                                            <swe:label>Wind speed</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/flightLevel">
                                             <swe:label>Flight level</swe:label>
@@ -1356,6 +1398,12 @@
                                 <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/050flWindDirection">
                                     <swe:label>Wind direction at light level 50</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windDirection">
+                                            <swe:label>Wind direction</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/flightLevel">
                                             <swe:label>Flight level</swe:label>
@@ -1373,6 +1421,12 @@
                                 <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/100flWindSpeed">
                                     <swe:label>Wind speed at light level 100</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windSpeed">
+                                            <swe:label>Wind speed</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/flightLevel">
                                             <swe:label>Flight level</swe:label>
@@ -1390,6 +1444,12 @@
                                 <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/100flWindDirection">
                                     <swe:label>Wind direction at light level 100</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windDirection">
+                                            <swe:label>Wind direction</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#deg" code="deg" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/flightLevel">
                                             <swe:label>Flight level</swe:label>
@@ -1511,6 +1571,12 @@
                                         </swe:NilValues>
                                     </swe:nilValues>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windSpeed">
+                                            <swe:label>Wind speed</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/trueBearing">
                                             <swe:label>Direction (true bearing)</swe:label>
@@ -1533,6 +1599,12 @@
                                         </swe:NilValues>
                                     </swe:nilValues>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windSpeed">
+                                            <swe:label>Wind speed</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/trueBearing">
                                             <swe:label>Direction (true bearing)</swe:label>
@@ -1551,6 +1623,12 @@
                                 <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/500ftTailWind">
                                     <swe:label>Tailwind for runway 04L at the height of 500ft</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windSpeed">
+                                            <swe:label>Wind speed</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/height">
                                             <swe:label>Height</swe:label>
@@ -1575,6 +1653,12 @@
                                 <iwxxm:QualifiedQuantity definition="http://preferred.observable-property.registry/wind/1000ftTailWind">
                                     <swe:label>Tailwind for runway 04L at the height of 1000ft</swe:label>
                                     <swe:uom xlink:href="https://unitsofmeasure.org/ucum#M_s" code="m/s" />
+                                    <iwxxm:baseQuantity>
+                                        <swe:Quantity definition="http://preferred.observable-property.registry/wind/windSpeed">
+                                            <swe:label>Wind speed</swe:label>
+                                            <swe:uom xlink:href="https://unitsofmeasure.org/ucum#kn_i" code="kt" />
+                                        </swe:Quantity>
+                                    </iwxxm:baseQuantity>
                                     <iwxxm:qualifier>
                                         <swe:Quantity definition="http://preferred.observable-property.registry/height">
                                             <swe:label>Height</swe:label>
